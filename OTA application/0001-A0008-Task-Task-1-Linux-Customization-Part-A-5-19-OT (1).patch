@@ -1,0 +1,24 @@
+From f2a96705b03b3e2e8820f43470a1e4a9aa87f658 Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Fri, 12 Jul 2024 11:16:27 +0700
+Subject: [PATCH] A0008 [Task] Task 1: Linux Customization Part A #5, #19 OTA
+ for Application.
+
+1. Config the Specifies the URL of package feed to localhost on the target device
+---
+ conf/bblayers.conf | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/conf/bblayers.conf b/conf/bblayers.conf
+index bcfcfc0..e4ec914 100644
+--- a/conf/bblayers.conf
++++ b/conf/bblayers.conf
+@@ -1,4 +1,4 @@
+-LCONF_VERSION = "6"
++LCONF_VERSION = "7"
+ 
+ BBPATH = "${TOPDIR}"
+ BSPDIR := "${@os.path.abspath(os.path.dirname(d.getVar('FILE', True)) + '/../..')}"
+-- 
+2.43.0
+

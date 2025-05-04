@@ -1,0 +1,86 @@
+From 9fcef5d1ec4a100f860868ab95c5e1b2a314377c Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Thu, 11 Jul 2024 14:22:09 +0700
+Subject: [PATCH] A0008 [Task] Task 1: Linux Customization Part A #5, #19 OTA
+ for Application
+
+1.Set the installroot in OSTree's physical sysroot for adapting the DNF upgrade feature with the OSTree feature.
+	- Create the set_installroot.sh script to set the installroot based on the OSTree's Physical sysroot
+	- Create the set-installroot.service to run the set_installroot.sh while booting up
+---
+ .../dnf/dnf/set-installroot.service           |  8 ++++++++
+ recipes-devtools/dnf/dnf/set_installroot.sh   | 20 +++++++++++++++++++
+ recipes-devtools/dnf/dnf_%.bbappend           | 19 ++++++++++++++++++
+ 3 files changed, 47 insertions(+)
+ create mode 100644 recipes-devtools/dnf/dnf/set-installroot.service
+ create mode 100755 recipes-devtools/dnf/dnf/set_installroot.sh
+ create mode 100644 recipes-devtools/dnf/dnf_%.bbappend
+
+diff --git a/recipes-devtools/dnf/dnf/set-installroot.service b/recipes-devtools/dnf/dnf/set-installroot.service
+new file mode 100644
+index 0000000..720143c
+--- /dev/null
++++ b/recipes-devtools/dnf/dnf/set-installroot.service
+@@ -0,0 +1,8 @@
++[Unit]
++Description=Set the installroot for DNF package into OSTree's Physical sysroot
++
++[Service]
++ExecStart=/usr/sbin/set_installroot.sh
++
++[Install]
++WantedBy=multi-user.target
+diff --git a/recipes-devtools/dnf/dnf/set_installroot.sh b/recipes-devtools/dnf/dnf/set_installroot.sh
+new file mode 100755
+index 0000000..33878dd
+--- /dev/null
++++ b/recipes-devtools/dnf/dnf/set_installroot.sh
+@@ -0,0 +1,20 @@
++#!/bin/sh
++
++# get deploy
++DEPLOY=$(ostree admin status \  |awk '{print $3}'| sed '1q')
++# set root directory
++ROOT_DIR=/sysroot/ostree/deploy/wrlinux/deploy/$DEPLOY
++
++# remove the installroot in dnf.conf
++sed -i '/installroot/d' /etc/dnf/dnf.conf
++
++# set installroot to root directory
++if ! grep -q $DEPLOY /etc/dnf/dnf.conf; then
++	if ! grep -q installroot /etc/dnf/dnf.conf; then
++		echo "installroot=$ROOT_DIR" >> /etc/dnf/dnf.conf
++	fi
++fi
++
++# Create the symlink that allows dnf to access the database based on the installroot.
++ln -sf ../../usr/rootdirs/var/lib/dnf/  /sysroot/ostree/deploy/wrlinux/deploy/$DEPLOY/var/lib/dnf
++ln -sf ../../usr/rootdirs/var/lib/rpm/  /sysroot/ostree/deploy/wrlinux/deploy/$DEPLOY/var/lib/rpm
+diff --git a/recipes-devtools/dnf/dnf_%.bbappend b/recipes-devtools/dnf/dnf_%.bbappend
+new file mode 100644
+index 0000000..b8fa81e
+--- /dev/null
++++ b/recipes-devtools/dnf/dnf_%.bbappend
+@@ -0,0 +1,19 @@
++FILESEXTRAPATHS:prepend := "${THISDIR}:${THISDIR}/${PN}:"
++
++SRC_URI += "\
++	file://set_installroot.sh \
++	file://set-installroot.service \
++"
++
++do_install:append() {
++	install -d ${D}${sbindir}
++	install -m 0755 ${WORKDIR}/set_installroot.sh ${D}${sbindir}/set_installroot.sh
++	
++	install -d ${D}${systemd_unitdir}/system
++	install -m 644 ${WORKDIR}/set-installroot.service ${D}${systemd_unitdir}/system
++}
++
++SYSTEMD_SERVICE:${PN} += " set-installroot.service"
++
++SYSTEMD_AUTO_ENABLE:${PN} = "enable"
++
+-- 
+2.43.0
+

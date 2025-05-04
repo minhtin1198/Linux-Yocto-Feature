@@ -1,0 +1,58 @@
+Hi aVu! 
+This is the status of this task:
+1. Workload: 5 man hours
+2. Status: WIP
+```
+1.2.Check how to upgarde a package that already be installed in device.
+```
+I checked the yocto project, which supports an upgraded method for application packages using the dnf package. 
+```
+The dnf package. 
+Software package manager that installs, updates, and removes packages on RPM-based Linux distributions. It automatically computes dependencies and determines the actions required to install packages.
+```
+Here are the steps for performing an upgrade. 
+1.Enable the upgrade feature in the source code by adding the configs into the local.conf
+```
++IMAGE_FEATURES += " package-management"
+
++PACKAGE_FEED_URIS = "http://127.0.0.1:8000"
+```
+
+2.Build the package upgrade.
+-Build the full image by using the following command:
+```
+$  bitbake imx-image-full
+```
+-Generate the package index for upgrade by using the following command:
+```
+$ bitbake package-index
+```
+
+3.Copy the update package into the USB Flash. 
+
+```
+$ cp -rf {YOCTO_ROOT_DIR}/build-se36/tmp/deploy/rpm/ /media/<username>/usb
+```
+
+4. Flashing the image into the device.
+
+5. Plug the USB flash into the device.
+
+6.  Start a package feed URI on the rpm folder from USB flash
+```
+$ mount /dev/sdb /media
+$ python3 -m http.server --directory /media/rpm
+```
+ 7. Perform  the upgrade by using the following command:
+```
+$ dnf makecache
+$ dnf upgrade
+```
+
+Next action:
+I will create the design document for upgraded application packages from USB flash.
+The estimated schedule is Jun 11
+The workload is 4 man hours.
+
+Thanks,
+Tin Nguyen
