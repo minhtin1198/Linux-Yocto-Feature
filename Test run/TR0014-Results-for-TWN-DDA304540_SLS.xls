@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <style>
+      table.data{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table.sub-data{
+        border-collapse: collapse;
+        border: none;
+      }
+      table.sub-data th, table.sub-data td{
+        border-color: white;
+      }
+      h1,h2,h3,h4,h5,h6,p,td,th{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      th,td{
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 3px;
+      }
+
+      h2,h1{
+        font-size: 14px;
+        color: black;
+      }
+      h3{
+        color: rgb(204,24,0);
+        font-size: 21px;
+      }
+
+      h4{
+        font-size: 18px;
+        color: rgb(0,0,0);
+      }
+
+      h5{
+        font-size: 16px;
+        color: rgb(102,102,102);
+      }
+
+      h6{
+        font-size: 14px;
+        color: rgb(0,0,0);
+        font-style: italic;
+      }
+
+      h6.h1{
+        color: rgb(128,128,128);
+      }
+
+      h6.h2{
+        color: rgb(0,0,0);
+        font-style: normal;
+        text-decoration: underline;
+      }
+
+      h6.h3{
+        color: rgb(128,128,128);
+        font-style: normal;
+      }
+
+      h6.h4{
+        color: rgb(0,0,0);
+        text-decoration: underline;
+      }
+      .form-id{
+        white-space: nowrap;
+      }
+      .field-value{
+        margin-left: 1em;
+      }
+      .field-value td{
+        padding: 0px 2px 0px 0px;
+      }
+
+      .positive{
+        color: rgb(0,128,64) !important;
+      }
+      .block-positive{
+      }
+
+      .neutral{
+        color: rgb(128,128,128) !important;
+      }
+      .block-neutral{
+      }
+
+      .negative{
+        color: rgb(204,0,0) !important;
+      }
+      .block-negative{
+      }
+
+      .highlight{
+        color: rgb(0,0,0) !important;
+        background-color: rgb(240,204,204) !important;
+      }
+      .block-highlight{
+      }
+      .nr{
+      }
+      .block-nr{
+      }
+      @page Section1{
+        size:11.0in 8.5in;
+        mso-page-orientation:landscape;
+        margin:1.25in 1.0in 1.25in 1.0in;
+        mso-header-margin:.5in;
+        mso-footer-margin:.5in;
+        mso-paper-source:0;
+      }
+      div.Section1{
+        page:Section1;
+      }
+    </style>
+            <xml xmlns:x="urn:schemas-microsoft-com:office:excel"
+            xmlns:o="urn:schemas-microsoft-com:office:office">
+          <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+              <x:ExcelWorksheet>
+<!--            <x:Name>Sheet1</x:Name> -->
+                <x:WorksheetOptions>
+                  <x:Selected/>
+                </x:WorksheetOptions>
+              </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+          </x:ExcelWorkbook>
+        </xml>
+      </head>
+  <body>
+        <!-- Stats -->
+    <div class="Section1">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th colspan="2" class="stat-type">Test Case</th>
+                        <th class="spacer"> </th>
+              <th colspan="2" class="stat-type">Test Step</th>
+          </tr>
+      </thead>
+      <tbody>            <tr>
+              <th class="positive">Pass</th>
+              <td class="stat-number">1</td>
+              <td class="stat-number">100%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">14</td>
+                  <td class="stat-number">100%</td></tr>            <tr>
+              <th class="negative">Fail</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>            <tr>
+              <th class="neutral">N/A</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>        <tr>
+          <th class="nr">No Result</th>
+          <td class="stat-number">0</td>
+          <td class="stat-number">0%</td>
+                        <td class="spacer"> </td>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td></tr><tr>
+                <th class="ip">In Progress</th>
+                <td class="stat-number">0</td>
+                <td class="stat-number">0%</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>          <tr>
+            <th class="stat-total">Total</th>
+            <td class="stat-total stat-number">1</td>
+            <td> </td>
+                            <td class="spacer">&nbsp;</td>
+                <td class="stat-total stat-number">14</td>
+                <td>&nbsp;</td>
+            </tr>
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <table class="data">
+      <thead>
+        <tr>
+          <th colspan="5">Results Summary</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>
+          <th>Summary</th>
+          <th>Resulted By</th>
+          <th>Resulted On</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 14.1</td>
+                    <td >[I0007] Verify the IMA feature on the TI-am62xx BSP</td>
+          <td >Tin Nguyen</td>
+          <td >2024-10-09 08:17 AM UTC</td>
+        </tr>
+          </tbody>
+    </table>
+    <br/>
+    <br/>    <table class="data" id="results-detail">
+      <thead>
+        <tr>
+          <th colspan="5">Results Detail</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>                <th>Description</th>
+                            <th>Expected Results</th>
+                      <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 14.1 - [I0007] Verify the IMA feature on the TI-am62xx BSP          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.1</td>
+                            <td >Plug the SD into the Host machine Ubuntu 20.04, Then copy the user-owned private key into the root file system:<br />
+$ sudo cp projectDir/build/tmp-glibc/deploy/images/ti-am62xx/user-keys/ima_keys/x509_ima.key /media/&lt;user&gt;/root/etc/keys/<br />
+$ umount /media/&lt;user&gt;/root</td>
+                                <td >The user-owned private key is copied</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.3</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.4</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.2</td>
+                            <td >Plugging the SD card to DUT</td>
+                                <td >Plug the SD card properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.5</td>
+                            <td >Create a simple script and set file attributes:<br />
+$ echo &quot;echo \&quot;Hello from the root user\&quot;&quot; &gt;&gt; /tmp/test1.sh<br />
+$ chmod 755 /tmp/test1.sh</td>
+                                <td >Test1.sh is created in the directory /tmp/</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.6</td>
+                            <td >Run the script to test IMA appraisal functionality.<br />
+$ /tmp/test1.sh</td>
+                                <td >The script must be not executed.<br />
+root@ti-am62xx:~# /tmp/test1.sh<br />
+-sh: /tmp/test1.sh: Permission denied</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.7</td>
+                            <td >Sign the executable with the IMA private key.<br />
+$ evmctl ima_sign --hashalgo sha256 --key /etc/keys/x509_ima.key --pass=Delta@2330 /tmp/test1.sh</td>
+                                <td >The test1.sh will be signed.<br />
+root@ti-am62xx:~# evmctl ima_sign --hashalgo sha256 --key /etc/keys/x509_ima.key --pass=Delta@2330 /tmp/test1.sh<br />
+hash(sha256): 8e7c829b1d60d6dc8987e42e3989c4c83e10b35a3f4d478b8deb8aa5cc5d671f<br />
+evm/ima signature: 264 bytes<br />
+030204013e7e4d010089c1501ebaa675901d4a3f0c92091473e24dabdbb578a0580bb5796bfd232274fa76d3cf540ec6842a46977981440f9399ed3edf92e2c0130e7256f0ba333a8a23e3d162919e99dbf005df0e54d84aa4216fdb54af4b3108bdfbff4b4f3cd9b8f5024cd7130d7ae45fb7a41ca3fc7e91fbc6b266b8d9ef8052f529169c31c240b0c00ca57831519a854a77dc4e8c61a6a365cd9ce4286c90c5ff543f44eee69fa374f703faf6a9decc7034a8395dfe4cda7467c3b0eea9c26a83b0b30b70362b080876b20e23c3e68b81d7efde95da98b74ef03dede8f0a273f81c9d8ae6db5f799d0df76b6fa957fd79146ed9b60c4183ab9a311092a9c3c93b898c807625db</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.8</td>
+                            <td >Run the test1.sh script again to verify that IMA allows the signed executable to run.<br />
+$ /tmp/test1.sh</td>
+                                <td >Script must be executed<br />
+root@ti-am62xx:~# /tmp/test1.sh<br />
+Hello from the root user</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.9</td>
+                            <td >Create a simple script and set file attributes:<br />
+$ echo &quot;echo \&quot;Hello from the regular user\&quot;&quot; &gt;&gt; /tmp/test2.sh<br />
+$ chmod 755 /tmp/test2.sh</td>
+                                <td >Test2.sh is created in the directory /tmp/</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.10</td>
+                            <td >Create a non-root user:<br />
+$ useradd imaperson</td>
+                                <td >Non-root user will be added.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.11</td>
+                            <td >Change the owner and group of the script to the non-root user:<br />
+$ chown imaperson /tmp/test2.sh<br />
+$ chgrp imaperson /tmp/test2.sh</td>
+                                <td >Owner and Group of the script test2.sh will be change to inaperson</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.12</td>
+                            <td >Run the script to test IMA appraisal functionality:<br />
+$ /tmp/test2.sh</td>
+                                <td >The script must be not executed.<br />
+root@ti-am62xx:~# /tmp/test2.sh<br />
+-sh: /tmp/test2.sh: Permission denied</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.13</td>
+                            <td >Sign the executable with the IMA private key.<br />
+$ evmctl ima_sign --hashalgo sha256 --key /etc/keys/x509_ima.key --pass=Delta@2330 /tmp/test2.sh</td>
+                                <td >The test1.sh will be signed.<br />
+root@ti-am62xx:~# evmctl ima_sign --hashalgo sha256 --key /etc/keys/x509_ima.key --pass=Delta@2330 /tmp/test2.sh <br />
+hash(sha256): 97acce903dc268d37dbd44570d9ff9c39a93c7c73eba99bd5d9f0368f5102adb<br />
+evm/ima signature: 264 bytes<br />
+030204013e7e4d01006f390f58581357356775d35ba59b9e3fcf1398b5d1969dfbd3c94813eff235567a7b3a8a1920160cd11523bfc62e5bcc177c6e39cf522e2a53c262e6482f5792f9654a0fa592f846a8a1e75515e135d76ccc344740a6deda47f0149cd7ca8b3dafdc9dd7db91915fd9a044bcec8529767b8d145a44a895184cf41cb10290974017b09c8c6893f33a874d97ba1af359a753e7d8286e819e0f2ff93fb363a60a6bfeafe1fdd5cd0372a3a6a1e4bfda8a64ff0715146abc6cfe05203b60880ce06d3707295398c4137d2f1c08062b65e94e0adae0a465dec472cb5605ee54fa5bc6a1439571064f36e99d420f6bfee53134221854d9b6e82c5e77c5f9bb5ff17a70</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 14.1.14</td>
+                            <td >Run the test2.sh script again to verify that IMA allows the signed executable to run.<br />
+$ /tmp/test2.sh</td>
+                                <td >The script must be executed<br />
+root@ti-am62xx:~# /tmp/test2.sh<br />
+Hello from a regular user</td>
+                        <td >      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+      </body>
+</html>

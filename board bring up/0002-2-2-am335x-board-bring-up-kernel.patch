@@ -1,0 +1,99 @@
+From 3838b500f6efa08dd59878ab54eb8463dbf1d983 Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Thu, 2 Feb 2023 10:36:08 +0700
+Subject: [PATCH 2/2] [2/2] am335x board bring up:kernel
+
+Description:
+	am335x board bring up
+
+Root cause:
+	RTC module was disable by hardware design at RTC PORZ pin
+	PRUSS module don't support on AM5532
+
+Solution:
+	Remove RTC's parent clock
+	Disable PRUSS module in device tree
+---
+ .../ti33x/0001-Disable-PRUSS-module.patch     | 24 +++++++++++++++++++
+ .../ti33x/0001-Remove-RTC-parent-clock.patch  | 24 +++++++++++++++++++
+ .../linux/linux-ti-staging-rt_5.10.bb         |  5 ++++
+ 3 files changed, 53 insertions(+)
+ create mode 100644 recipes-kernel/linux/linux-ti-staging-rt-5.10/ti33x/0001-Disable-PRUSS-module.patch
+ create mode 100644 recipes-kernel/linux/linux-ti-staging-rt-5.10/ti33x/0001-Remove-RTC-parent-clock.patch
+
+diff --git a/recipes-kernel/linux/linux-ti-staging-rt-5.10/ti33x/0001-Disable-PRUSS-module.patch b/recipes-kernel/linux/linux-ti-staging-rt-5.10/ti33x/0001-Disable-PRUSS-module.patch
+new file mode 100644
+index 00000000..4c44eea8
+--- /dev/null
++++ b/recipes-kernel/linux/linux-ti-staging-rt-5.10/ti33x/0001-Disable-PRUSS-module.patch
+@@ -0,0 +1,24 @@
++From 324a17791f6f7deae6b6546d19b84b1dda144e6e Mon Sep 17 00:00:00 2001
++From: lthai <Loc.Thai@windriver.com>
++Date: Wed, 1 Feb 2023 08:34:56 +0000
++Subject: [PATCH] Disable PRUSS module 
++
++---
++ arch/arm/boot/dts/am335x-evmsk.dts |  2 +-
++ 1 files changed, 1 insertions(+), 1 deletions(-)
++
++diff --git a/arch/arm/boot/dts/am335x-evmsk.dts b/arch/arm/boot/dts/am335x-evmsk.dts
++index 1887ec0b5b74..c5a303ca408d 100644
++--- a/arch/arm/boot/dts/am335x-evmsk.dts
+++++ b/arch/arm/boot/dts/am335x-evmsk.dts
++@@ -737,5 +737,5 @@
++ };
++ 
++ &pruss_tm {
++-	status = "okay";
+++	status = "disabled";
++ };
++-- 
++2.17.1
++
++
+diff --git a/recipes-kernel/linux/linux-ti-staging-rt-5.10/ti33x/0001-Remove-RTC-parent-clock.patch b/recipes-kernel/linux/linux-ti-staging-rt-5.10/ti33x/0001-Remove-RTC-parent-clock.patch
+new file mode 100644
+index 00000000..a40c6412
+--- /dev/null
++++ b/recipes-kernel/linux/linux-ti-staging-rt-5.10/ti33x/0001-Remove-RTC-parent-clock.patch
+@@ -0,0 +1,24 @@
++From da04b71e54144e2a0a40429ec4e03da87812d667 Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen@windriver.com>
++Date: Wed, 1 Feb 2023 02:22:10 +0000
++Subject: [PATCH] Remove RTC's parent clock
++
++---
++ drivers/clk/ti/clk-33xx.c | 1 -
++ 1 file changed, 1 deletion(-)
++
++diff --git a/drivers/clk/ti/clk-33xx.c b/drivers/clk/ti/clk-33xx.c
++index 7dc30dd6c8d5..bd0cec5b631b 100644
++--- a/drivers/clk/ti/clk-33xx.c
+++++ b/drivers/clk/ti/clk-33xx.c
++@@ -212,7 +212,6 @@ static const struct omap_clkctrl_reg_data am3_mpu_clkctrl_regs[] __initconst = {
++ };
++ 
++ static const struct omap_clkctrl_reg_data am3_l4_rtc_clkctrl_regs[] __initconst = {
++-	{ AM3_L4_RTC_RTC_CLKCTRL, NULL, CLKF_SW_SUP, "clk-24mhz-clkctrl:0000:0" },
++ 	{ 0 },
++ };
++ 
++-- 
++2.17.1
++
+diff --git a/recipes-kernel/linux/linux-ti-staging-rt_5.10.bb b/recipes-kernel/linux/linux-ti-staging-rt_5.10.bb
+index 05fe4d12..5a9fae3e 100644
+--- a/recipes-kernel/linux/linux-ti-staging-rt_5.10.bb
++++ b/recipes-kernel/linux/linux-ti-staging-rt_5.10.bb
+@@ -8,3 +8,8 @@ BRANCH = "ti-rt-linux-5.10.y"
+ 
+ SRCREV = "204ec708dc86f4334f585f04835527570be1c4eb"
+ PV = "5.10.100+git${SRCPV}"
++
++SRC_URI += " \
++file://0001-Remove-RTC-parent-clock.patch \
++file://0001-Disable-PRUSS-module.patch \
++"
+-- 
+2.25.1
+

@@ -1,0 +1,2886 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <style>
+      table.data{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table.sub-data{
+        border-collapse: collapse;
+        border: none;
+      }
+      table.sub-data th, table.sub-data td{
+        border-color: white;
+      }
+      h1,h2,h3,h4,h5,h6,p,td,th{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      th,td{
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 3px;
+      }
+
+      h2,h1{
+        font-size: 14px;
+        color: black;
+      }
+      h3{
+        color: rgb(204,24,0);
+        font-size: 21px;
+      }
+
+      h4{
+        font-size: 18px;
+        color: rgb(0,0,0);
+      }
+
+      h5{
+        font-size: 16px;
+        color: rgb(102,102,102);
+      }
+
+      h6{
+        font-size: 14px;
+        color: rgb(0,0,0);
+        font-style: italic;
+      }
+
+      h6.h1{
+        color: rgb(128,128,128);
+      }
+
+      h6.h2{
+        color: rgb(0,0,0);
+        font-style: normal;
+        text-decoration: underline;
+      }
+
+      h6.h3{
+        color: rgb(128,128,128);
+        font-style: normal;
+      }
+
+      h6.h4{
+        color: rgb(0,0,0);
+        text-decoration: underline;
+      }
+      .form-id{
+        white-space: nowrap;
+      }
+      .field-value{
+        margin-left: 1em;
+      }
+      .field-value td{
+        padding: 0px 2px 0px 0px;
+      }
+
+      .positive{
+        color: rgb(0,128,64) !important;
+      }
+      .block-positive{
+      }
+
+      .neutral{
+        color: rgb(128,128,128) !important;
+      }
+      .block-neutral{
+      }
+
+      .negative{
+        color: rgb(204,0,0) !important;
+      }
+      .block-negative{
+      }
+
+      .highlight{
+        color: rgb(0,0,0) !important;
+        background-color: rgb(240,204,204) !important;
+      }
+      .block-highlight{
+      }
+      .nr{
+      }
+      .block-nr{
+      }
+      @page Section1{
+        size:11.0in 8.5in;
+        mso-page-orientation:landscape;
+        margin:1.25in 1.0in 1.25in 1.0in;
+        mso-header-margin:.5in;
+        mso-footer-margin:.5in;
+        mso-paper-source:0;
+      }
+      div.Section1{
+        page:Section1;
+      }
+    </style>
+            <xml xmlns:x="urn:schemas-microsoft-com:office:excel"
+            xmlns:o="urn:schemas-microsoft-com:office:office">
+          <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+              <x:ExcelWorksheet>
+<!--            <x:Name>Sheet1</x:Name> -->
+                <x:WorksheetOptions>
+                  <x:Selected/>
+                </x:WorksheetOptions>
+              </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+          </x:ExcelWorkbook>
+        </xml>
+      </head>
+  <body>
+        <!-- Stats -->
+    <div class="Section1">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th colspan="2" class="stat-type">Test Case</th>
+                        <th class="spacer"> </th>
+              <th colspan="2" class="stat-type">Test Step</th>
+          </tr>
+      </thead>
+      <tbody>            <tr>
+              <th class="positive">Pass</th>
+              <td class="stat-number">53</td>
+              <td class="stat-number">100%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">245</td>
+                  <td class="stat-number">100%</td></tr>            <tr>
+              <th class="negative">Fail</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>            <tr>
+              <th class="neutral">N/A</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>        <tr>
+          <th class="nr">No Result</th>
+          <td class="stat-number">0</td>
+          <td class="stat-number">0%</td>
+                        <td class="spacer"> </td>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td></tr><tr>
+                <th class="ip">In Progress</th>
+                <td class="stat-number">0</td>
+                <td class="stat-number">0%</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>          <tr>
+            <th class="stat-total">Total</th>
+            <td class="stat-total stat-number">53</td>
+            <td> </td>
+                            <td class="spacer">&nbsp;</td>
+                <td class="stat-total stat-number">245</td>
+                <td>&nbsp;</td>
+            </tr>
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <table class="data">
+      <thead>
+        <tr>
+          <th colspan="5">Results Summary</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>
+          <th>Summary</th>
+          <th>Resulted By</th>
+          <th>Resulted On</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.1.1</td>
+                    <td >LCD panel (display panel)</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:28 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.1.2</td>
+                    <td >Testing LCD panel resolution,color and dead pixel</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:28 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.1.3</td>
+                    <td >Testing LCD drawing</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:28 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.1.4</td>
+                    <td >Testing LCD multi touch</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:28 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.2.1</td>
+                    <td >Touch Screen</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:28 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.1</td>
+                    <td >Power On Sequence</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:29 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.2</td>
+                    <td >Power Off Sequence</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:29 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.3</td>
+                    <td >Sleep mode</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:29 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.4</td>
+                    <td >Suspend/resume</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:29 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.5</td>
+                    <td >Suspend/resume with Wifi ON</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:29 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.6</td>
+                    <td >Suspend/resume with Wifi OFF</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:30 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.4.1</td>
+                    <td >Hardware Video Codec</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:31 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.5.1</td>
+                    <td >Hardware Audio Codec</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:31 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.5.2</td>
+                    <td >Audio Record by Internal Microphone</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:42 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6.1</td>
+                    <td >Enable Wi-Fi</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:42 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6.2</td>
+                    <td >Disable Wi-Fi</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:42 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6.3</td>
+                    <td >Wi-Fi authentication with WEP</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:43 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6.4</td>
+                    <td >Wi-Fi authentication with WPA</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:43 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6.5</td>
+                    <td >Wi-Fi authentication with WPA2</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:43 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6.6</td>
+                    <td >Wi-Fi without authentication</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:43 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6.7</td>
+                    <td >Download/upload big file (&gt;100MB)</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:43 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.1</td>
+                    <td >Enable Bluetooth</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:43 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.2</td>
+                    <td >Disable Bluetooth</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:44 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.3</td>
+                    <td >Search nearby Bluetooth devices</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:44 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.4</td>
+                    <td >Unpair with Nexus 7 tablet</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:44 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.5</td>
+                    <td >Transfer files with Nexus7</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.6</td>
+                    <td >Connect with Bluetooth Keyboard</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.7</td>
+                    <td >Connect with Bluetooth mouse</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.8.1</td>
+                    <td >Barcode Reader [Honeywell]</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.8.2</td>
+                    <td >Barcode Reader [Opticon]</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.9.1</td>
+                    <td >Card Read Feature</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.1</td>
+                    <td >GPS feature</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:46 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.11.1</td>
+                    <td >Test Sensor Gyroscope</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:46 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.11.2</td>
+                    <td >Test Sensor Accelerometer</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:46 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.11.3</td>
+                    <td >Test Sensor Magnetometer</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:46 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.11.4</td>
+                    <td >Test Light Sensor</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:46 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.11.5</td>
+                    <td >Test E-Compass</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:47 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.12.1.1</td>
+                    <td >Still Image Resolution</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:47 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.12.1.2</td>
+                    <td >Record Resolution</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:47 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.12.2.1</td>
+                    <td >Record Resolution</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:47 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.12.2.2</td>
+                    <td >Still Image Resolution</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.13.1</td>
+                    <td >Cellular network (3G/4G)</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.13.2</td>
+                    <td >Send / Receive SMS</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.13.3</td>
+                    <td >Firmware checking after plug in Sim Card</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.13.4</td>
+                    <td >remove Sim Card</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.14.1</td>
+                    <td >USB tethering</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.14.2</td>
+                    <td >Bluetooth tethering</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.14.3</td>
+                    <td >Wi-Fi hotspot</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.15.1</td>
+                    <td >USB to Ethernet Testing</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:32 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.15.2</td>
+                    <td >Ethernet function in Settings (Office Dock)</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:32 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.15.3</td>
+                    <td >Ethernet function in Settings (Vehicle Dock)</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:32 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.16.1</td>
+                    <td >HDMI feature in Office Dock</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:31 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.16.2</td>
+                    <td >HDMI feature in Vehicle Dock</td>
+          <td >Hieu Vu</td>
+          <td >2020-08-21 06:31 AM UTC</td>
+        </tr>
+          </tbody>
+    </table>
+    <br/>
+    <br/>    <table class="data" id="results-detail">
+      <thead>
+        <tr>
+          <th colspan="5">Results Detail</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>                <th>Description</th>
+                            <th>Expected Results</th>
+                      <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.1.1 - LCD panel (display panel)          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1.2</td>
+                            <td >Go to Setting -&gt; Display-&gt; Brightness:<br />
+* Set Brightness level about 50%</td>
+                                <td >The setting should be done successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1.3</td>
+                            <td >Drag the slider to the left to decrease values(Until Brightness bar comes to minimum)</td>
+                                <td >The screen get dimmer</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1.4</td>
+                            <td >Drag the slider to the right to increase values(Until Brightness bar comes to maximum)</td>
+                                <td >The screen get brighter</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.1.2 - Testing LCD panel resolution,color and dead pixel          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2.2</td>
+                            <td >Install following packages:<br />
+$adb install –r Device_Info_HW.apk</td>
+                                <td >App install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2.3</td>
+                            <td >Open Device_Info_HW app then check info in &quot;General tab&quot;, find information of resolution, touch screen driver, dpi</td>
+                                <td >Information must be corrrect with Hardware specs</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2.4</td>
+                            <td >Open Device_Info_HW app then go to &quot;Screen Test&quot; then go to LCD test mode</td>
+                                <td >Check color of LCD panel is correct and no white or black pixel on LCD</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.1.3 - Testing LCD drawing          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.2</td>
+                            <td >Install following packages:<br />
+$adb install –r Device_Info_HW.apk</td>
+                                <td >App install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.3</td>
+                            <td >Open Device_Info_HW app then go to &quot;Screen Test&quot; , go to &quot;Touch Drawing&quot; test mode, use finger to draw in LCD</td>
+                                <td >Can draw smoothly in LCD, not delay</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.4</td>
+                            <td >Open Device_Info_HW app then go to &quot;Screen Test&quot; , go to &quot;Touch Drawing&quot; test mode, use hard tip stylus pen to draw in LCD</td>
+                                <td >Can draw smoothly in LCD, not delay</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.1.4 - Testing LCD multi touch          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.4.2</td>
+                            <td >Install following packages:<br />
+$adb install –r Device_Info_HW.apk</td>
+                                <td >App install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.4.3</td>
+                            <td >Open Device_Info_HW app then go to &quot;Screen Test&quot; , go to &quot;Multi Touch&quot; test mode =&gt; place 10 fingers into LCD then move it</td>
+                                <td >LCD can receive and show 10 touchs</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.4.4</td>
+                            <td >Open Device_Info_HW app then go to &quot;Screen Test&quot; , go to &quot;Multi Touch&quot; test mode =&gt; place fingers into LCD , then use hard tip stylus pen to draw in lcd</td>
+                                <td >LCD can receive and show touchs which from fingers and stylus pen</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.2.1 - Touch Screen          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.1.2</td>
+                            <td >Copy an image file to DUT</td>
+                                <td >The image file is copied to DUT successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.1.3</td>
+                            <td >Open image file at step2 then:<br />
+Tap/slide/drag/zoom in/zoom out in image</td>
+                                <td >DUT is responsive based on each gesture</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.1 - Power On Sequence          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1.1</td>
+                            <td >Short press power button to start the power on sequence</td>
+                                <td >The power-on sequence is started successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1.2</td>
+                            <td >[During Power-On Sequence] Android logo</td>
+                                <td >Android logo is displayed with animation</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1.3</td>
+                            <td >[Power-On Sequence is completed] Screen display</td>
+                                <td >Screen displays Android Home or Lock Screen</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1.4</td>
+                            <td >[Power-On Sequence is completed] Setting information<br />
+1. Change the settings such as brightness, audio volume. Remember these settings.<br />
+2. Power-off device<br />
+3. Power-on device</td>
+                                <td >Settings such as Brightness, Audio Volume are retrieved from the System Memory and set them. If these values are not memorized, the default settings are to be used.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.2 - Power Off Sequence          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.2.1</td>
+                            <td >Long Press(&gt;3s) of Power-Off Button</td>
+                                <td >Display the shut-down dialog to confirm the shutdown</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.2.2</td>
+                            <td >Press &quot;Power off&quot;</td>
+                                <td >Start the shutdown process. The device will turn off</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.3 - Sleep mode          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.2</td>
+                            <td >Plug-in the USB cable(Micro USB) via PC</td>
+                                <td >The USB cable is connected successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.3</td>
+                            <td >Short press of Power button</td>
+                                <td >DUT go to Light Sleep Mode properly<br />
+Screen turned off</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.4</td>
+                            <td >Short press of Power button</td>
+                                <td >DUT awakes, Screen turned on</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.5</td>
+                            <td >Push a music file (mp3) to sdcard/Music/</td>
+                                <td >The music file is pushed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.6</td>
+                            <td >Unplug the USB cable(Micro USB)</td>
+                                <td >The usb cable is removed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.7</td>
+                            <td >Open music app, then play music file at step5</td>
+                                <td >The music file must be played properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.8</td>
+                            <td >Short press of Power button</td>
+                                <td >DUT go to Light Sleep Mode properly<br />
+Music is played usual. Screen turned off</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.9</td>
+                            <td >Short press of Power button</td>
+                                <td >DUT awakes, Screen turned on</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.4 - Suspend/resume          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.4.2</td>
+                            <td >Unplug the USB cable(Micro USB)</td>
+                                <td >The USB cable is removed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.4.3</td>
+                            <td >Turn on &quot;Airplane mode&quot;</td>
+                                <td >Enter to &quot;Airplane mode&quot; properly, WI-FI and Bluetooth auto disconnected</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.4.4</td>
+                            <td >Short press the power button, wait about 5 minutes</td>
+                                <td >Screen turn off properly, DUT goto suspend mode after some seconds</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.4.5</td>
+                            <td >Short press the power button</td>
+                                <td >DUT awakes in some seconds, Screen turned on</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.4.6</td>
+                            <td >Connect to linux PC via adb. Execute below command: &quot;adb shell cat /d/suspend_stats&quot;</td>
+                                <td >suspend success counter should be increase</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.4.7</td>
+                            <td >Disconnect adb, re-test from step 4 in 5 times</td>
+                                <td >make sure behavior in every steps are correct</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.5 - Suspend/resume with Wifi ON          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.5.2</td>
+                            <td >Unplug the USB cable(Micro USB)</td>
+                                <td >The USB cable is removed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.5.3</td>
+                            <td >Turn Wifi ON</td>
+                                <td >Wifi status is ON</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.5.4</td>
+                            <td >Short press the power button, wait about 5 minutes</td>
+                                <td >Screen turn off properly, DUT go to suspend mode after some seconds</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.5.5</td>
+                            <td >Short press the power button</td>
+                                <td >DUT awakes in some seconds, Screen turned on</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.5.6</td>
+                            <td >Connect to linux PC via adb. Execute below command: &quot;adb shell cat /d/suspend_stats&quot;</td>
+                                <td >suspend success counter should be increase</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.5.7</td>
+                            <td >Disconnect adb, retest from step 4 in 5 times</td>
+                                <td >make sure behaviors in every step are correct</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.6 - Suspend/resume with Wifi OFF          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.6.2</td>
+                            <td >Unplug the USB cable(Micro USB)</td>
+                                <td >The USB cable is removed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.6.3</td>
+                            <td >Turn on &quot;Airplane mode&quot;</td>
+                                <td >Enter to &quot;Airplane mode&quot; properly, WI-FI and Bluetooth auto disconnected</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.6.4</td>
+                            <td >Short press the power button, wait about 5 minutes</td>
+                                <td >Screen turn off properly, DUT goto suspend mode after some seconds</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.6.5</td>
+                            <td >Short press the power button</td>
+                                <td >DUT awakes in some seconds, Screen turned on</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.6.6</td>
+                            <td >Connect to linux PC via adb. Execute below command: &quot;adb shell cat /d/suspend_stats&quot;</td>
+                                <td >suspend success counter should be increase</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.6.7</td>
+                            <td >Disconnect adb, re-test from step 4 in 5 times</td>
+                                <td >make sure behavior in every steps are correct</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.4.1 - Hardware Video Codec          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.1.2</td>
+                            <td >Copy a video file to DUT(Ex: video_720x480_mp4_h264_2048kbps_30fps_aac_stereo_128kbps_44100hz.mp4)</td>
+                                <td >The video file is copied to the DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.1.3</td>
+                            <td >Install following packages:<br />
+$adb install –r MX_Player_v1.9.19.apk</td>
+                                <td >This app is installed successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.1.4</td>
+                            <td >Open MX Player app then play video file at step2 with &quot;HW decoder&quot;</td>
+                                <td >Can play this video file properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.5.1 - Hardware Audio Codec          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.1.2</td>
+                            <td >Copy a audio file to DUT(Ex: Surround_sound_test_5.1_5_tracks_wav_16bit-48Khz.mp3)</td>
+                                <td >The audio file is copied to the DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.1.3</td>
+                            <td >Install following packages:<br />
+$adb install –r MX_Player_v1.9.19.apk</td>
+                                <td >This app is installed successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.1.4</td>
+                            <td >Open MX Player app, go to Settings -&gt; Audio: enable &quot;Audio player&quot;</td>
+                                <td >The setting should be done successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.1.5</td>
+                            <td >Play audio file at step2 with &quot;HW decoder&quot;</td>
+                                <td >Can play this audio file properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TC 1.5.2</td>
+                            <td >Audio Record by Internal Microphone</td>
+                                <td ></td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6.1 - Enable Wi-Fi          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.1.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Wi-Fi, slide the WiFi switch to 'On'</td>
+                                <td >WiFi switch is set to 'On'<br />
+See the list of available Wi-Fi networks in range</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6.2 - Disable Wi-Fi          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.2.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Wi-Fi, slide the WiFi switch to 'Off'</td>
+                                <td >Wi-Fi switch is set to 'Off'</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.2.3</td>
+                            <td >Open Browser &amp; access &quot;youtube.com&quot;</td>
+                                <td >Can't access &quot;youtube.com&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6.3 - Wi-Fi authentication with WEP          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.3.1</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Wi-Fi, slide the WiFi switch to 'On'</td>
+                                <td >WiFi switch is set to 'On'<br />
+See the list of available Wi-Fi networks in range</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.3.2</td>
+                            <td >Select the Wi-Fi network with WEP authentication</td>
+                                <td >Can connect successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.3.3</td>
+                            <td >Open browser, access &quot;youtube.com&quot;</td>
+                                <td >Can see the content of &quot;youtube.com&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6.4 - Wi-Fi authentication with WPA          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.4.1</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Wi-Fi, slide the WiFi switch to 'On'</td>
+                                <td >WiFi switch is set to 'On'<br />
+See the list of available Wi-Fi networks in range</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.4.2</td>
+                            <td >Select the Wi-Fi network with WPA authentication</td>
+                                <td >Can connect successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.4.3</td>
+                            <td >Open browser, access &quot;youtube.com&quot;</td>
+                                <td >Can see the content of &quot;youtube.com&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6.5 - Wi-Fi authentication with WPA2          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.5.1</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Wi-Fi, slide the WiFi switch to 'On'</td>
+                                <td >WiFi switch is set to 'On'<br />
+See the list of available Wi-Fi networks in range</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.5.2</td>
+                            <td >Select the Wi-Fi network with WPA2 authentication</td>
+                                <td >Can connect successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.5.3</td>
+                            <td >Open browser, access &quot;youtube.com&quot;</td>
+                                <td >Can see the content of &quot;youtube.com&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6.6 - Wi-Fi without authentication          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.6.1</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Wi-Fi, slide the WiFi switch to 'On'</td>
+                                <td >WiFi switch is set to 'On'<br />
+See the list of available Wi-Fi networks in range</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.6.2</td>
+                            <td >Select the Wi-Fi network with open security (no authentication is required)</td>
+                                <td >Can connect successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.6.3</td>
+                            <td >Open browser, access &quot;youtube.com&quot;</td>
+                                <td >Can see the content of &quot;youtube.com&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6.7 - Download/upload big file (&gt;100MB)          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.7.1</td>
+                            <td >Turn on Wi-Fi and connect to a working Wi-Fi network</td>
+                                <td >Connect to Wi-Fi network successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.7.2</td>
+                            <td >Upload a big file (&gt;100MB) to any file sharing website e.g: mediafire.com</td>
+                                <td >Uploading is done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.7.3</td>
+                            <td >Download a big file (&gt;100MB) from any file sharing website e.g: mediafire.com</td>
+                                <td >Downloading is done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.1 - Enable Bluetooth          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.2</td>
+                            <td >Go to Settings -&gt; Connected devices -&gt; Connection preferences -&gt; Bluetooth, slide the Bluetooth switch to 'On'</td>
+                                <td >Bluetooth switch is set to 'On'</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.3</td>
+                            <td >Press &quot;Pair new device&quot;</td>
+                                <td >See Nexus 7 (or other Bluetooth enabled devices in range) in &quot;Available devices&quot; list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.2 - Disable Bluetooth          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.2</td>
+                            <td >Go to Settings -&gt; Connected devices -&gt; Connection preferences -&gt; Bluetooth, slide the Bluetooth switch to 'Off'</td>
+                                <td >Bluetooth switch is set to 'Off'</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.3</td>
+                            <td >On Nexus 7, Go to Settings-&gt; Bluetooth( Under [Wireless and Networks] ), slide the Bluetooth switch to 'On'</td>
+                                <td >The DUT's name does not appear in &quot;Available devices&quot; list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.3 - Search nearby Bluetooth devices          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.1</td>
+                            <td >On DUT, Go to Settings -&gt; Connected devices -&gt; Connection preferences -&gt; Bluetooth, slide the Bluetooth switch to 'On' then select &quot;Pair new device&quot;</td>
+                                <td >Nexus 7 does not appears in &quot;Available Devices&quot; list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.2</td>
+                            <td >On Nexus 7, Go to Settings-&gt; Bluetooth( Under [Wireless and Networks] ), slide the Bluetooth switch to 'On'</td>
+                                <td >Bluetooth on Nexus 7 is turned 'ON'</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.3</td>
+                            <td >On DUT, wait for a while</td>
+                                <td >Nexus 7 and other Bluebooth enabled devices in range appear in &quot;Available Devices&quot; list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.4 - Unpair with Nexus 7 tablet          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.4.1</td>
+                            <td >Refer to TC1.15.4<br />
+Pair DUT with Nexus 7</td>
+                                <td >Pairing is done successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.4.2</td>
+                            <td >On DUT, Go to Settings -&gt; Connected devices</td>
+                                <td >Nexus 7 appears in 'Connected devices' list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.4.3</td>
+                            <td >Select Nexus 7 on &quot;Connected devices&quot; list then select 'Forget' -&gt; &quot;Forget device&quot;</td>
+                                <td >Nexus 7 disappears from &quot;Connected devices&quot; list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.5 - Transfer files with Nexus7          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.1</td>
+                            <td >On DUT, launch Photos app</td>
+                                <td >App is launched successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.2</td>
+                            <td >In Photos app, select a picture then click on Share icon</td>
+                                <td >A dialog with Bluetooth icon appears</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.3</td>
+                            <td >Select Bluetooth icon, then choose Nexus 7</td>
+                                <td >A dialog appears on Nexus 7</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.4</td>
+                            <td >Select 'Accept' on Nexus 7</td>
+                                <td >File transfer between DUT &amp; Nexus 7 is done successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.5</td>
+                            <td >Launch Photos app of Nexus 7, browse to Device folder</td>
+                                <td >See the picture transferred from DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.6</td>
+                            <td >In Nexus 7's Photos app, select a picture &amp; send back to DUT (follow above steps)</td>
+                                <td >DUT can receive the picture properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.6 - Connect with Bluetooth Keyboard          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.6.1</td>
+                            <td >On DUT, Go to Settings -&gt; Connected devices -&gt; Connection preferences -&gt; Bluetooth, slide the Bluetooth switch to 'On'<br />
+Then select &quot;Pair new device&quot;</td>
+                                <td >See Bluetooth Keyboard in &quot;Available Devices&quot; list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.6.2</td>
+                            <td >Select Bluetooth Keyboard</td>
+                                <td >A dialog appears to request input PIN 'xxx' appears</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.6.3</td>
+                            <td >Input PIN 'xxxx' from the Bluetooth Keyboard</td>
+                                <td >Pairing is done successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.6.4</td>
+                            <td >On DUT, open Browser app, type 'www.youtube.com' using Bluetooth keyboard</td>
+                                <td >Typing is done properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.7 - Connect with Bluetooth mouse          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.7.1</td>
+                            <td >On DUT, Go to Settings -&gt; Connected devices -&gt; Connection preferences -&gt; Bluetooth, slide the Bluetooth switch to 'On'<br />
+Then select &quot;Pair new device&quot;</td>
+                                <td >See Bluetooth mouse in &quot;Available Devices&quot; list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.7.2</td>
+                            <td >Select Bluetooth mouse</td>
+                                <td >Pairing is done successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.7.3</td>
+                            <td >Use the mouse to select and click to launch Browser app</td>
+                                <td >Able to move the pointer on screen, select and launch Browser app properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.8.1 - Barcode Reader [Honeywell]          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.1.1</td>
+                            <td >Boot up SKU1 DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.1.2</td>
+                            <td >Tap &quot;Search bar&quot;</td>
+                                <td >Search bar is shown.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.1.3</td>
+                            <td >Press FN key and trigger barcode scanner.</td>
+                                <td >Barcode scanner is working.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.1.4</td>
+                            <td >Scan barcode.</td>
+                                <td >Barcode ID should be detected and appear after few seconds.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.1.5</td>
+                            <td >Check result.</td>
+                                <td >Barcode ID scans properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.8.2 - Barcode Reader [Opticon]          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.2.1</td>
+                            <td >Boot up SKU3 DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.2.2</td>
+                            <td >Tap &quot;Search bar&quot;</td>
+                                <td >Search bar is shown.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.2.3</td>
+                            <td >Press FN key and trigger barcode scanner.</td>
+                                <td >Barcode scanner is working.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.2.4</td>
+                            <td >Scan barcode.</td>
+                                <td >Barcode ID should be detected and appear after few seconds.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.2.5</td>
+                            <td >Check result.</td>
+                                <td >Barcode ID scans properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.9.1 - Card Read Feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.9.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.9.1.2</td>
+                            <td >Install following packages:<br />
+$ adb install NFC-Tools_v8.0.apk</td>
+                                <td >This app is installed successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.9.1.3</td>
+                            <td >Open NFC Tools app, go to the &quot;READ tab&quot; of the app and tag your NFC tag under your device</td>
+                                <td >NFC Tools shows you all the technical information of your NFC chip and the data it contains</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.1 - GPS feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.2</td>
+                            <td >Install following package:<br />
+$adb install –r GPS_Test_v1.5.8.apk</td>
+                                <td >GPS_Test_v1.5.8.apk is installed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.3</td>
+                            <td >Launch GPS test app</td>
+                                <td >The GPS test app is launched properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.4</td>
+                            <td >Observer GPS app on the screen:<br />
+Statellite Signal View:<br />
+1. Gps status:<br />
+2. In View<br />
+3. In use<br />
+4. Accuracy(feet)<br />
+Location View:<br />
+1. Lat (latitude)<br />
+2. Lon (longitude)</td>
+                                <td >Statellite Signal View:<br />
+<br />
+1. Gps status has to 2D or 3D mode<br />
+2. In view must be bigger than zero.<br />
+3. “In use” must be bigger than zero. <br />
+4. The smaller the number the better<br />
+Location View:<br />
+1. Lat (latitude) is displayed exactly<br />
+2. Lon (longitude) is displayed exactly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.11.1 - Test Sensor Gyroscope          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.1.2</td>
+                            <td >Install following packages:<br />
+$adb install –r com.innoventions.sensorkinetics-1.apk</td>
+                                <td >App install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.1.3</td>
+                            <td >Open &quot;Sensor Kinetics&quot; app</td>
+                                <td >Can see: Gyroscope are woking</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.1.4</td>
+                            <td >Move devices</td>
+                                <td >See Gyroscope stats change</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.11.2 - Test Sensor Accelerometer          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.2.2</td>
+                            <td >Install following packages:<br />
+$adb install –r com.innoventions.sensorkinetics-1.apk</td>
+                                <td >App install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.2.3</td>
+                            <td >Open &quot;Sensor Kinetics&quot; app</td>
+                                <td >Can see: Accelerometer are woking</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.2.4</td>
+                            <td >Move devices</td>
+                                <td >See Accelerometer stats change</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.11.3 - Test Sensor Magnetometer          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.3.2</td>
+                            <td >Install following packages:<br />
+$adb install –r com.innoventions.sensorkinetics-1.apk</td>
+                                <td >App install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.3.3</td>
+                            <td >Open &quot;Sensor Kinetics&quot; app</td>
+                                <td >Can see: Magnetometer are woking</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.3.4</td>
+                            <td >Move devices , rotate devices</td>
+                                <td >See Magnetometer stats change</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.11.4 - Test Light Sensor          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.4.2</td>
+                            <td >Install following packages:<br />
+$adb install –r com.innoventions.sensorkinetics-1.apk</td>
+                                <td >App install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.4.3</td>
+                            <td >Open &quot;Sensor Kinetics&quot; app</td>
+                                <td >Can see: light sensor are woking</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.4.4</td>
+                            <td >Place device in light place and dark place</td>
+                                <td >See Light sensor stats change</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.4.5</td>
+                            <td >Use hand to cover light sensor</td>
+                                <td >Light sensor should be reduce immediately</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.11.5 - Test E-Compass          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.5.2</td>
+                            <td >Install following package:<br />
+$adb install –r GPS_Test_v1.5.8.apk</td>
+                                <td >GPS_Test_v1.5.8.apk is installed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.5.3</td>
+                            <td >Launch GPS test app</td>
+                                <td >The GPS test app is launched properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.5.4</td>
+                            <td >Enter compass mode in GPS test app, then rotate DUT 360 degree</td>
+                                <td >Compass GUI should be react correctly with DUT moving direction</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.5.5</td>
+                            <td >Use a real compass to compare with E-compass GUI in GPS Test app</td>
+                                <td >Compass GUI should be the same with real compass direction</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.12.1.1 - Still Image Resolution          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.2</td>
+                            <td >Launch Camera app</td>
+                                <td >The camera app is launched properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.3</td>
+                            <td >Go to Camera Setting -&gt; Resolution &amp; quality -&gt; Back camera photo -&gt; (16:9) 0.9 megapixels(1280×720)</td>
+                                <td >camera photo -&gt; (16:9) 0.9 megapixels(1280×720) 	The setting should be done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.4</td>
+                            <td >Plug-in the USB cable  via PC(Ubuntu 14.04LTS)</td>
+                                <td >The USB cable is connected successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.5</td>
+                            <td >Go back to camera preview, select Rear camera and take a photo</td>
+                                <td >Photo is taken properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.6</td>
+                            <td >Copy the photo taken above to PC(host) below command:<br />
+$adb pull /sdcard/DCIM/Camera/&lt;image.jpg&gt;  $&lt;DEST_DIR&gt;</td>
+                                <td >The command should be done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.7</td>
+                            <td >On PC(host), right click the image at step6 -&gt; Properties -&gt; Image</td>
+                                <td >Can see the resolution same at step3(Width 1280, Height 720)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.8</td>
+                            <td >Re-run step3-&gt;step7 with resolution (16:9) 2.1 megapixels(1920x1080)</td>
+                                <td >step7, can see the resolution same at step3(Width 1920, Height 1080)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.9</td>
+                            <td >Re-run step3-&gt;step7 with resolution (4:3) 3.1 megapixels(2048x1536)</td>
+                                <td >At step7, can see the resolution same at step3(Width 2048, Height 1536)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.10</td>
+                            <td >Re-run step3-&gt;step7 with resolution (4:3) 5.0 megapixels(2592x1944)</td>
+                                <td >At step7, can see the resolution same at step3(Width 2592, Height 1944)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.1.11</td>
+                            <td >Re-run step3-&gt;step7 with resolution (4:3) 8.0 megapixels(3264x2448)</td>
+                                <td >At step7, can see the resolution same at step3(Width 3264, Height 2448)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.12.1.2 - Record Resolution          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.2</td>
+                            <td >Launch Camera app</td>
+                                <td >The camera app is launched properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.3</td>
+                            <td >Go to Camera Setting -&gt; Resolution &amp; quality -&gt; Back camera video -&gt; CIF</td>
+                                <td >The setting should be done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.4</td>
+                            <td >Go back to camera preview, select Rear camera and record a video for 10 seconds</td>
+                                <td >The video is recorded properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.5</td>
+                            <td >Plug-in the USB cable  via PC(Ubuntu 14.04LTS)</td>
+                                <td >The USB cable is connected successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.6</td>
+                            <td >Copy the above video to PC(host)  below command:<br />
+$adb pull /sdcard/DCIM/Camera/&lt;video.3gp&gt;  $&lt;DEST_DIR&gt;</td>
+                                <td >The command should be done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.7</td>
+                            <td >On PC(host), right click the video at step6 -&gt; Properties -&gt; Audio/Video</td>
+                                <td >Can see : Codec H264, Framerate 30 fps, Dimensions: same at step3(352x288)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.8</td>
+                            <td >Re-run step3-&gt;step7 with resolution SD 480p(720x480)</td>
+                                <td >At step7, can see : Codec H264, Framerate 30 fps, Dimensions: same at step3(720x480)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1.2.9</td>
+                            <td >Re-run step3-&gt;step7 with resolution HD 720p(1280x720)</td>
+                                <td >At step7, can see : Codec H264, Framerate 30 fps, Dimensions: same at step3(1280x720)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.12.2.1 - Record Resolution          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.2</td>
+                            <td >Launch Camera app</td>
+                                <td >The camera app is launched properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.3</td>
+                            <td >Go to Camera Setting -&gt; Resolution &amp; quality -&gt; Front camera video -&gt; CIF</td>
+                                <td >The setting should be done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.4</td>
+                            <td >Go back to camera preview, select Front camera and record a video for 10 seconds</td>
+                                <td >The video is recorded properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.5</td>
+                            <td >Plug-in the USB cable  via PC(Ubuntu 14.04LTS)</td>
+                                <td >The USB cable is connected successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.6</td>
+                            <td >Copy the above video to PC(host)  below command:<br />
+$adb pull /sdcard/DCIM/Camera/&lt;video.mp4&gt;  $&lt;DEST_DIR&gt;</td>
+                                <td >The command should be done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.7</td>
+                            <td >On PC(host), right click the video at step6 -&gt; Properties -&gt; Audio/Video</td>
+                                <td >Can see : Codec H264, Framerate 30 fps, Dimensions: same at step3(352x288)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.8</td>
+                            <td >Re-run step3-&gt;step7 with resolution SD 480p(720x480)</td>
+                                <td >At step7, can see : Codec H264, Framerate 30 fps, Dimensions: same at step3(720x480)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.1.9</td>
+                            <td >Re-run step3-&gt;step7 with resolution HD 720p(1280x720 )</td>
+                                <td >At step7, can see : Codec H264, Framerate 30 fps, Dimensions: same at step3(1280x720)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.12.2.2 - Still Image Resolution          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.2</td>
+                            <td >Launch Camera app</td>
+                                <td >The camera app is launched properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.3</td>
+                            <td >Go to Camera Setting -&gt; Resolution &amp; quality -&gt; Front camera photo -&gt; (16:9) 0.9 megapixels(1280×720)</td>
+                                <td >The setting should be done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.4</td>
+                            <td >Plug-in the USB cable  via PC(Ubuntu 14.04LTS)</td>
+                                <td >The USB cable is connected successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.5</td>
+                            <td >Go back to camera preview, select Front camera and take a photo</td>
+                                <td >Photo is taken properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.6</td>
+                            <td >Copy the photo taken above to PC(host) below command:<br />
+$adb pull /sdcard/DCIM/Camera/&lt;image.jpg&gt;  $&lt;DEST_DIR&gt;</td>
+                                <td >The command should be done successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.7</td>
+                            <td >On PC(host), right click the image at step6 -&gt; Properties -&gt; Image</td>
+                                <td >Can see the resolution same at step3(Width 1280, Height 720)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.8</td>
+                            <td >Re-run step3-&gt;step7 with resolution (4:3) 0.3 megapixels(640x480)</td>
+                                <td >At step7, can see the resolution same at step3(Width 640, Height 480)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.9</td>
+                            <td >Re-run step3-&gt;step7 with resolution (4:3) 1.2 megapixels(1280x960)</td>
+                                <td >At step7, can see the resolution same at step3(Width 1280, Height 960)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2.2.10</td>
+                            <td >Re-run step3-&gt;step7 with resolution (4:3) 1.9 megapixels(1600x1200)</td>
+                                <td >At step7, can see the resolution same at step3(Width 1600, Height 1200)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.13.1 - Cellular network (3G/4G)          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.1</td>
+                            <td >Plug in 3G/4G SIM card then Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.2</td>
+                            <td >Turn off Wi-Fi</td>
+                                <td >Wi-Fi is turned off successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.3</td>
+                            <td >Turn on Mobile data in &quot;Settings --&gt; Network &amp; internet --&gt; Mobile network --&gt; Mobile data&quot;</td>
+                                <td >Mobile data is turned on successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.4</td>
+                            <td >Open Brower app, access &quot;youtube.com&quot;</td>
+                                <td >Can see the content of &quot;youtube.com&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.5</td>
+                            <td >Reboot DUT , then check Mobile data still turn on</td>
+                                <td >DUT reboot successfully<br />
+Mobile data still turn on</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.13.2 - Send / Receive SMS          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.1</td>
+                            <td >Insert SIM then boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.2</td>
+                            <td >Open Messaging app</td>
+                                <td >App is launched successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.3</td>
+                            <td >Create new message, send &quot;random&quot; text to test-phone</td>
+                                <td >The test-phone can receive this message</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.4</td>
+                            <td >From test-phone, send a message to DUT</td>
+                                <td >DUT can receive this message</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.13.3 - Firmware checking after plug in Sim Card          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.3.2</td>
+                            <td >Plug in 3G/4G SIM</td>
+                                <td >Dialog checking firmware is shown then restart device automatically</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.13.4 - remove Sim Card          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.4.1</td>
+                            <td >Plug in 3G/4G SIM card then Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.4.2</td>
+                            <td >Unplug SIM card</td>
+                                <td >Dialog is shown request us to restart device</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.4.3</td>
+                            <td >press reset button on Dialog</td>
+                                <td >device reboot successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.14.1 - USB tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.1.2</td>
+                            <td >Enable Wi-Fi on DUT</td>
+                                <td >DUT can access internet via Wi-Fi</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.1.3</td>
+                            <td >Plug-in the micro USB cable via PC</td>
+                                <td >The USB cable is connected successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.1.4</td>
+                            <td >Go to Settings -&gt; More -&gt; Tethering &amp; portable hotspot: Enable USB tethering</td>
+                                <td >The setting should be done successful<br />
+PC can access internet via USB tethering</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.1.5</td>
+                            <td >Disable Wi-Fi on DUT</td>
+                                <td >DUT can not access internet<br />
+PC can not access internet via USB tethering</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.1.6</td>
+                            <td >Enable 4G network on DUT</td>
+                                <td >DUT can access internet<br />
+PC can access internet via USB tethering</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.14.2 - Bluetooth tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.2</td>
+                            <td >DUT connected to Wi-Fi</td>
+                                <td >DUT can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.3</td>
+                            <td >Connect DUT to Windows-PC via Bluetooth<br />
+Enable Bluetooth PAN on PC</td>
+                                <td >PC can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.4</td>
+                            <td >Disable Wifi on DUT<br />
+Enable Mobile data on DUT(4G/3G)</td>
+                                <td >DUT can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.5</td>
+                            <td >Connect DUT to Windows-PC via BT<br />
+Enable Bluetooth PAN</td>
+                                <td >PC can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.6</td>
+                            <td >Go to Settings -&gt; More -&gt; Ethernet: Turn on Ethernet</td>
+                                <td >The setting should be done successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.7</td>
+                            <td >Disable 4G/3G network on DUT<br />
+Plugin Ethernet card then connect DUT to internet</td>
+                                <td >DUT can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.8</td>
+                            <td >Connect DUT to Windows-PC via Bluetooth<br />
+Enable Bluetooth PAN on PC</td>
+                                <td >PC can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.9</td>
+                            <td >Remove Ethernet card, plugin USB Ethernet then connect DUT to internet</td>
+                                <td >DUT can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2.10</td>
+                            <td >Connect DUT to Windows-PC via Bluetooth<br />
+Enable Bluetooth PAN on PC</td>
+                                <td >PC can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.14.3 - Wi-Fi hotspot          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.3.2</td>
+                            <td >Enable 4G network on DUT</td>
+                                <td >DUT can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.3.3</td>
+                            <td >Go to Settings -＞More -＞Tethering＆portable hotspot</td>
+                                <td >&quot;Tethering＆portable hotspot&quot; is existed</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.3.4</td>
+                            <td >Set up Wi-Fi hotspot and enable Portable Wi-Fi hotspot</td>
+                                <td >The setting should be done successful</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.3.5</td>
+                            <td >On Nexus 7, Connect to Wi-Fi name(SSID) created at step 4</td>
+                                <td >Nexus 7 can access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.3.6</td>
+                            <td >Disable 4G network</td>
+                                <td >Nexus 7 cannot access internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.15.1 - USB to Ethernet Testing          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.1.2</td>
+                            <td >turn off wifi &amp; 3G.<br />
+Connect Ethernet to DUT via Ethernet-USB converter</td>
+                                <td >make sure wifi &amp; 3G are disable. Ethernet connection is OK</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.1.3</td>
+                            <td >turn on Setting--&gt;More--&gt;Ethernet</td>
+                                <td >Ethernet icon is shown on status bar</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.1.4</td>
+                            <td >open Chrome app</td>
+                                <td >able to surf the internet as usual</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.15.2 - Ethernet function in Settings (Office Dock)          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.2.2</td>
+                            <td >Connect Ethernet to Dock</td>
+                                <td >Connection is OK</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.2.3</td>
+                            <td >Turn Off wifi, 3G<br />
+Turn On Setting--&gt;More--&gt;Ethernet</td>
+                                <td >Ethernet icon is shown on status bar</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.2.4</td>
+                            <td >Open Chrome app</td>
+                                <td >Able to surf the internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.15.3 - Ethernet function in Settings (Vehicle Dock)          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.3.2</td>
+                            <td >Connect Ethernet to Dock</td>
+                                <td >Connection is OK</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.3.3</td>
+                            <td >Turn Off wifi, 3G<br />
+Turn On Setting--&gt;More--&gt;Ethernet</td>
+                                <td >Ethernet icon is shown on status bar</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.3.4</td>
+                            <td >Open Chrome app</td>
+                                <td >Able to surf the internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.16.1 - HDMI feature in Office Dock          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.1.2</td>
+                            <td >Mount DUT to office dock</td>
+                                <td >DUT switch to dock mode<br />
+Status bar show &quot;office dock&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.1.3</td>
+                            <td >Plug HDMI which is output from Monitor, Tivi ... to HDMI port  in office dock</td>
+                                <td >Monitor or Tivi show screen mirroring at the same time with DUT<br />
+DUT resolution max support is 1280x720.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.1.4</td>
+                            <td >Plug ethernet cable into dock</td>
+                                <td >DUT show connected to ethernet in status bar</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.1.5</td>
+                            <td >Open youtube in web browser</td>
+                                <td >DUT can access internet and see content in Monitor or TV at the same time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.16.2 - HDMI feature in Vehicle Dock          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.2.2</td>
+                            <td >Mount DUT to Vehicle dock</td>
+                                <td >DUT switch to dock mode<br />
+Status bar show &quot;Driving app is running&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.2.3</td>
+                            <td >Plug HDMI which is output from Monitor, Tivi ... to HDMI port  in vehicle dock</td>
+                                <td >Monitor or Tivi show screen mirroring at the same time with DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.2.4</td>
+                            <td >Plug ethernet cable into dock</td>
+                                <td >DUT show connected to ethernet in status bar</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.2.5</td>
+                            <td >Open youtube in web browser</td>
+                                <td >DUT can access internet and see content in Monitor or TV at the same time</td>
+                        <td >      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+      </body>
+</html>

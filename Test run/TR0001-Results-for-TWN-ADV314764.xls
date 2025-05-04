@@ -1,0 +1,1477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <style>
+      table.data{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table.sub-data{
+        border-collapse: collapse;
+        border: none;
+      }
+      table.sub-data th, table.sub-data td{
+        border-color: white;
+      }
+      h1,h2,h3,h4,h5,h6,p,td,th{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      th,td{
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 3px;
+      }
+
+      h2,h1{
+        font-size: 14px;
+        color: black;
+      }
+      h3{
+        color: rgb(204,24,0);
+        font-size: 21px;
+      }
+
+      h4{
+        font-size: 18px;
+        color: rgb(0,0,0);
+      }
+
+      h5{
+        font-size: 16px;
+        color: rgb(102,102,102);
+      }
+
+      h6{
+        font-size: 14px;
+        color: rgb(0,0,0);
+        font-style: italic;
+      }
+
+      h6.h1{
+        color: rgb(128,128,128);
+      }
+
+      h6.h2{
+        color: rgb(0,0,0);
+        font-style: normal;
+        text-decoration: underline;
+      }
+
+      h6.h3{
+        color: rgb(128,128,128);
+        font-style: normal;
+      }
+
+      h6.h4{
+        color: rgb(0,0,0);
+        text-decoration: underline;
+      }
+      .form-id{
+        white-space: nowrap;
+      }
+      .field-value{
+        margin-left: 1em;
+      }
+      .field-value td{
+        padding: 0px 2px 0px 0px;
+      }
+
+      .positive{
+        color: rgb(0,128,64) !important;
+      }
+      .block-positive{
+      }
+
+      .neutral{
+        color: rgb(128,128,128) !important;
+      }
+      .block-neutral{
+      }
+
+      .negative{
+        color: rgb(204,0,0) !important;
+      }
+      .block-negative{
+      }
+
+      .highlight{
+        color: rgb(0,0,0) !important;
+        background-color: rgb(240,204,204) !important;
+      }
+      .block-highlight{
+      }
+      .nr{
+      }
+      .block-nr{
+      }
+      @page Section1{
+        size:11.0in 8.5in;
+        mso-page-orientation:landscape;
+        margin:1.25in 1.0in 1.25in 1.0in;
+        mso-header-margin:.5in;
+        mso-footer-margin:.5in;
+        mso-paper-source:0;
+      }
+      div.Section1{
+        page:Section1;
+      }
+    </style>
+            <xml xmlns:x="urn:schemas-microsoft-com:office:excel"
+            xmlns:o="urn:schemas-microsoft-com:office:office">
+          <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+              <x:ExcelWorksheet>
+<!--            <x:Name>Sheet1</x:Name> -->
+                <x:WorksheetOptions>
+                  <x:Selected/>
+                </x:WorksheetOptions>
+              </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+          </x:ExcelWorkbook>
+        </xml>
+      </head>
+  <body>
+        <!-- Stats -->
+    <div class="Section1">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th colspan="2" class="stat-type">Test Case</th>
+                        <th class="spacer"> </th>
+              <th colspan="2" class="stat-type">Test Step</th>
+          </tr>
+      </thead>
+      <tbody>            <tr>
+              <th class="positive">Pass</th>
+              <td class="stat-number">12</td>
+              <td class="stat-number">100%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">104</td>
+                  <td class="stat-number">100%</td></tr>            <tr>
+              <th class="negative">Fail</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>            <tr>
+              <th class="neutral">N/A</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>        <tr>
+          <th class="nr">No Result</th>
+          <td class="stat-number">0</td>
+          <td class="stat-number">0%</td>
+                        <td class="spacer"> </td>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td></tr><tr>
+                <th class="ip">In Progress</th>
+                <td class="stat-number">0</td>
+                <td class="stat-number">0%</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>          <tr>
+            <th class="stat-total">Total</th>
+            <td class="stat-total stat-number">12</td>
+            <td> </td>
+                            <td class="spacer">&nbsp;</td>
+                <td class="stat-total stat-number">104</td>
+                <td>&nbsp;</td>
+            </tr>
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <table class="data">
+      <thead>
+        <tr>
+          <th colspan="5">Results Summary</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>
+          <th>Summary</th>
+          <th>Resulted By</th>
+          <th>Resulted On</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.1.1</td>
+                    <td >electron package</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-21 10:50 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.1.2</td>
+                    <td >weston package</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-21 10:52 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.1.3</td>
+                    <td >docker package</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-21 10:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.2</td>
+                    <td >A0008 OTA for Application</td>
+          <td >Tin Nguyen</td>
+          <td >2024-09-25 08:15 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3</td>
+                    <td >A0010 Remote-control feature</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-22 02:32 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.4</td>
+                    <td >A0012 Upgrade of OS will be do by OTA server</td>
+          <td >Tin Nguyen</td>
+          <td >2024-09-25 08:05 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.5</td>
+                    <td >A0011 Upgrade of OS will be do with USB storage</td>
+          <td >Tin Nguyen</td>
+          <td >2024-09-25 08:16 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6</td>
+                    <td >A0009 Touch Gestures</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-23 03:57 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.1</td>
+                    <td >Disable/Enable touch by command</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-21 11:01 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.2</td>
+                    <td >Disable/Enable touch with timeout</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-21 11:02 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.3</td>
+                    <td >Enable touch with physical button</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-21 11:05 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.4</td>
+                    <td >Enable touch when triggered by the application.</td>
+          <td >Hoang Bui</td>
+          <td >2024-08-21 11:06 AM UTC</td>
+        </tr>
+          </tbody>
+    </table>
+    <br/>
+    <br/>    <table class="data" id="results-detail">
+      <thead>
+        <tr>
+          <th colspan="5">Results Detail</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>                <th>Description</th>
+                            <th>Expected Results</th>
+                      <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.1.1 - electron package          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1.1</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1.3</td>
+                            <td >Run the command to check the electron package<br />
+$ npm list -g --depth=0 | grep electron</td>
+                                <td >Can find this package in the npm list packages.<br />
+root@imx8mpdmsse36:~# npm list -g --depth=0 | grep electron<br />
++-- electron@30.0.9</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1.4</td>
+                            <td >Run the command below to start the electron app.<br />
+$ electron</td>
+                                <td >The Electron app will open on the monitor.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.1.2 - weston package          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2.1</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2.3</td>
+                            <td >Run the command below to show the version of weston package<br />
+$ weston --version</td>
+                                <td >Run the command successfully. It will display the version of weston<br />
+root@imx8mpdmsse36:~# weston --version<br />
+weston 10.0.1</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2.4</td>
+                            <td >Run the below command to check that Weston is automatically started at boot by systemd.<br />
+$ systemctl status weston</td>
+                                <td >The status of weston service is active (running)<br />
+<br />
+root@imx8mpdmsse36:~# systemctl status weston<br />
+* weston.service - Weston, a Wayland compositor, as a system service<br />
+     Loaded: loaded (/usr/lib/systemd/system/weston.service; enabled; vendor preset: enabled)<br />
+     Active: active (running) since Thu 2024-07-04 04:25:09 UTC; 10min ago<br />
+TriggeredBy: * weston.socket<br />
+       Docs: man:weston(1)<br />
+             man:weston.ini(5)<br />
+             http://wayland.freedesktop.org/<br />
+   Main PID: 1072 (weston)<br />
+      Tasks: 0 (limit: 5520)<br />
+     Memory: 1.0M<br />
+     CGroup: /system.slice/weston.service<br />
+             &gt;  1072 /usr/bin/weston --log=/run/user/0/weston.log --modules=systemd-notify.so,screen-share.so</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.1.3 - docker package          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.1</td>
+                            <td >Plug-in ethernet wire to port CN32( eth0 interface) of the device.</td>
+                                <td >Plug-in successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.2</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.3</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.4</td>
+                            <td >Check the device's Ethernet access by ping to Google.<br />
+$ ping google.com</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.5</td>
+                            <td >Run the command below to start a container:<br />
+$ docker run --name UBUNTU -dit -p 8081:8081 -p 29418:29418 ubuntu:xenial-20200212<br />
+<br />
+Waiting for a minute.</td>
+                                <td >Run command successfully. You can see this log: <br />
+root@imx8mpdmsse36:~# docker run --name UBUNTU -dit -p 8081:8081 -p 29418:29418 ubuntu:xenial-20200212<br />
+Unable to find image 'ubuntu:xenial-20200212' locally<br />
+xenial-20200212: Pulling from library/ubuntu<br />
+a7bab9946de3: Pull complete <br />
+38630c4d9093: Pull complete <br />
+6ef678cbe74d: Pull complete <br />
+78928743b0e7: Pull complete <br />
+Digest: sha256:e9938f45e51d9ff46e2b05a62e0546d0f07489b7f22fbc5288defe760599e38a<br />
+Status: Downloaded newer image for ubuntu:xenial-20200212<br />
+c7809a181b89110daa97a7a054626bbeb52262f57173c310e64635a151baea51</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.6</td>
+                            <td >Run the command below to check the container status:<br />
+$ docker ps</td>
+                                <td >Can find the UBUNTU container that is running.<br />
+<br />
+root@imx8mpdmsse36:~# docker ps<br />
+CONTAINER ID   IMAGE                    COMMAND       CREATED         STATUS         PORTS                                                                                      NAMES<br />
+c7809a181b89   ubuntu:xenial-20200212   &quot;/bin/bash&quot;   4 minutes ago   Up 4 minutes   0.0.0.0:8081-&gt;8081/tcp, :::8081-&gt;8081/tcp, 0.0.0.0:29418-&gt;29418/tcp, :::29418-&gt;29418/tcp   UBUNTU</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.7</td>
+                            <td >Run the command below to access the container's shell:<br />
+$ docker exec -it UBUNTU /bin/bash</td>
+                                <td >Run the command successfully and the shell will be changed to the container's shell.<br />
+root@am62xx-lp-evm:~# docker exec -it UBUNTU /bin/bash<br />
+root@0e1d609f4df7:/#</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3.8</td>
+                            <td >Run the command below to show the version of the Ubuntu container:&quot;<br />
+$ cat /etc/lsb-release</td>
+                                <td >Run the command successfully. The Ubuntu Version was shown.<br />
+<br />
+root@c7809a181b89:/# cat /etc/lsb-release<br />
+DISTRIB_ID=Ubuntu<br />
+DISTRIB_RELEASE=16.04<br />
+DISTRIB_CODENAME=xenial<br />
+DISTRIB_DESCRIPTION=&quot;Ubuntu 16.04.6 LTS&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.2 - A0008 OTA for Application          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.1</td>
+                            <td >Build for a image in docker container on host computer:<br />
+$ export CONTAINER_NAME=imx8LBVC0016<br />
+$ docker start ${CONTAINER_NAME}<br />
+$ docker attach ${CONTAINER_NAME}<br />
+$ cd /home/adv/adv-release-bsp/<br />
+$ source setup-environment build-se36/<br />
+$ bitbake imx-image-full</td>
+                                <td >Build successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.2</td>
+                            <td >Flashing the image into the SD card:<br />
+- Open the new terminal host computer:<br />
+$ cd &lt;Working Dir&gt;/projectDir/build-se36/tmp/deploy/image/<br />
+$ sudo zstd -d imx-image-full-imx8mpdmsse36-YYYYMMDDXXXXXX.rootfs.wic.zst<br />
+$ umount /dev/sdX* (depend on environment)<br />
+$ sudo dd if=imx-image-full-imx8mpdmsse36-YYYYMMDDXXXXXX.rootfs.wic of=/dev/sdX bs=1M</td>
+                                <td >Run the commands successfully to flashing the image into the SD card.<br />
+Example:<br />
+sudo dd if=imx-image-full-imx8mpdmsse36-20240702022302.rootfs.wic of=/dev/sdb bs=4M <br />
+3126+1 records in<br />
+3126+1 records out<br />
+13113430016 bytes (13 GB, 12 GiB) copied, 191.26 s, 68.6 MB/s</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.3</td>
+                            <td >Clean the build output by running the command below.<br />
+$ cd &lt;Working Dir&gt;/projectDir/build-se36/<br />
+$ sudo rm -rf cache/ sstate-cache/ tmp/ bitbake-cookerdaemon.log README_templates</td>
+                                <td >Run the commands successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.4</td>
+                            <td >To Upgrade the the application. We add the new version of the application to the meta layer.  <br />
+So Apply the 0001-A0008-Package-upgradation-for-Tesing.patch patch on SharePoint into adv-hmi layer to upgrade the package below:<br />
+- openssh 8.9p1-r0 to 9.0p1-r0 <br />
+- freerdp 1:2.4.1-r0 to 1:2.11.7-r0<br />
+<br />
+Run the command below to apply this patch to adv-hmi layer<br />
+$ sudo cp -rf &lt;Download directory&gt;/0001-A0008-Package-upgradation-for-Tesing.patch &lt;Working Dir&gt;/projectDir/sources/adv-hmi/<br />
+$ export CONTAINER_NAME=imx8LBVC0016<br />
+$ docker start ${CONTAINER_NAME}<br />
+$ docker attach ${CONTAINER_NAME}<br />
+$ cd /home/adv/adv-release-bsp/sources/adv-hmi<br />
+$ git apply 0001-A0008-Package-upgradation-for-Tesing.patch</td>
+                                <td >Apply patch successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.5</td>
+                            <td >Upgrade the version of any recipes in the BSP. Then rebuild the image.<br />
+$ export CONTAINER_NAME=imx8LBVC0016<br />
+$ docker start ${CONTAINER_NAME}<br />
+$ docker attach ${CONTAINER_NAME}<br />
+$ cd /home/adv/adv-release-bsp/<br />
+$ source setup-environment build-se36/<br />
+$ bitbake imx-image-full</td>
+                                <td >Build successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.6</td>
+                            <td >Copy ostree_repo folder in build output to the USB flash<br />
+$ cp -rf &lt;Working Dir&gt;/projectDir/build-se36/tmp/deploy/image/ostree_repo /media/&lt;User's name&gt;/USB</td>
+                                <td >The ostree_repo folder is copied to USB successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.7</td>
+                            <td >Plug the USB flash into the DUT.</td>
+                                <td >Plug the USB successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.8</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.9</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.10</td>
+                            <td >Run the command below on the DUT to get the OSTree status.<br />
+$ ostree admin status</td>
+                                <td >The DUT can show the ostree status</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.11</td>
+                            <td >Mount this USB on the DUT.<br />
+$ mount /dev/&lt;sdx&gt; /media/</td>
+                                <td >Mount successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.12</td>
+                            <td >Set the system time to the current time:<br />
+- Automatically: Connect the Ethernet cable to the DUT to update the system time via NTP.<br />
+- Manually: Run the commands below:<br />
+$ date +%Y%m%d -s &quot;20240925&quot;<br />
+$ date +%T -s &quot;07:44:22&quot;<br />
+<br />
+Finally, run the command below to check the system time:<br />
+$ date</td>
+                                <td >After running the command successfully, the system time is now correct.<br />
+Example:<br />
+$ date<br />
+Wed Sep 25 07:44:22 UTC 2024</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.13</td>
+                            <td >On the DUT Board, Run the commands below to start an OTA server:<br />
+$ python3 -m http.server --directory /media/ 8090 &amp;</td>
+                                <td >Starting an OTA server successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.14</td>
+                            <td >On the DUT Board:<br />
+Run the commands below to setup the OTA server config to Local host.<br />
+$ ostree config set --group='remote &quot;local&quot;' url http://127.0.0.1:8090/ostree_repo<br />
+$ ostree config set --group='upgrade' remote local</td>
+                                <td >Setup the OTA server config successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.15</td>
+                            <td >Run the command below to start an upgrade<br />
+$ ostree_upgrade.sh -s</td>
+                                <td >The DUT can connect an OTA server and start an upgrade.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.16</td>
+                            <td >After finishing the upgrade, reboot the DUT:<br />
+$ reboot</td>
+                                <td >The DUT can reboot normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.17</td>
+                            <td >When the DUT boots up, check the status of the 2nd image:<br />
+$ ostree admin status<br />
+Then check OSTree status changed.</td>
+                                <td >The DUT can be upgraded successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.18</td>
+                            <td >Check the version of openssh package by running the command below:<br />
+$ rpm -qa | grep openssh</td>
+                                <td >The openssh version of openssh package was changed form 8.9p1-r0 to 9.0p1-r0</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.19</td>
+                            <td >Check the version of freerdp package by running the command below:<br />
+$ rpm -qa | grep freerdp</td>
+                                <td >The freerdp version of openssh package was changed form 1:2.4.1-r0 to 1:2.11.7-r0</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3 - A0010 Remote-control feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1</td>
+                            <td >Plug-in ethernet wire to port CN32( eth0 interface) of the device.</td>
+                                <td >Plug-in successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.2</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.4</td>
+                            <td >Run the commands below on the DUT to generate RDP certificates<br />
+$ mkdir -p /etc/freerdp/keys/<br />
+$ winpr-makecert -rdp -path /etc/freerdp/keys/<br />
+$ ls -l /etc/freerdp/keys/</td>
+                                <td >Run the commands sucessfully, The RPD certificates was generated<br />
+root@imx8mpdmsse36:~# ls -l /etc/freerdp/keys/<br />
+total 8<br />
+-rw-r--r-- 1 root root 1022 Jul  5 02:46 imx8mpdmsse36.crt<br />
+-rw-r--r-- 1 root root 1705 Jul  5 02:46 imx8mpdmsse36.key</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.5</td>
+                            <td >Run the command below to get the DUT's IP<br />
+$ ifconfig eth0</td>
+                                <td >Run the command successfully. The DUT's IP will show on the ternimal. <br />
+Example: <br />
+DUT's IP is 10.10.10.159<br />
+root@imx8mpdmsse36:~# ifconfig eth0 <br />
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500<br />
+        inet 10.10.10.159  netmask 255.0.0.0  broadcast 10.255.255.255<br />
+        inet6 fe80::76fe:48ff:fe90:755e  prefixlen 64  scopeid 0x20&lt;link&gt;<br />
+        ether 74:fe:48:90:75:5e  txqueuelen 1000  (Ethernet)<br />
+        RX packets 26691  bytes 7382243 (7.0 MiB)<br />
+        RX errors 0  dropped 2334  overruns 0  frame 0<br />
+        TX packets 382  bytes 60931 (59.5 KiB)<br />
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.6</td>
+                            <td >Connect the Ubuntu host to the same network as the DUT. Then try to ping the DUT from Ubuntu host by the command below:<br />
+$ ping &lt;DUT's IP&gt;</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.7</td>
+                            <td >On the Ubuntu host, Remote Connection by the command below:<br />
+$ sudo apt install freerdp2-x11<br />
+$ xfreerdp /v:&lt;DUT's IP&gt; /u:root<br />
+<br />
+Example: <br />
+$ xfreerdp /v:10.10.10.159 /u:root</td>
+                                <td >Remote Screen display will show on the Ubuntu host.<br />
+You can now see the DUT's monitor and Remote Screen displaying the same content simultaneously.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.4 - A0012 Upgrade of OS will be do by OTA server          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.1</td>
+                            <td >Build for 1st image in Ubuntu host<br />
+$ export CONTAINER_NAME=imx8LBVC0016<br />
+$ docker start ${CONTAINER_NAME}<br />
+$ docker attach ${CONTAINER_NAME}<br />
+$ cd /home/adv/adv-release-bsp/<br />
+$ source setup-environment build-se36/<br />
+$ bitbake imx-image-full</td>
+                                <td >Build successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.2</td>
+                            <td >Flashing the image into the SD card:<br />
+- Open the new terminal host computer:<br />
+$ cd &lt;Working Dir&gt;/projectDir/build-se36/tmp/deploy/image/<br />
+$ sudo zstd -d imx-image-full-imx8mpdmsse36-YYYYMMDDXXXXXX.rootfs.wic.zst<br />
+$ umount /dev/sdX* (depend on environment)<br />
+$ sudo dd if=imx-image-full-imx8mpdmsse36-YYYYMMDDXXXXXX.rootfs.wic of=/dev/sdX bs=1M</td>
+                                <td >Run the commands successfully to flashing the image into the SD card.<br />
+Example:<br />
+sudo dd if=imx-image-full-imx8mpdmsse36-20240702022302.rootfs.wic of=/dev/sdb bs=4M<br />
+3126+1 records in<br />
+3126+1 records out<br />
+13113430016 bytes (13 GB, 12 GiB) copied, 191.26 s, 68.6 MB/s</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.3</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.4</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.5</td>
+                            <td >Run the command below on the DUT to get the OSTree status.<br />
+$ ostree admin status</td>
+                                <td >The DUT can show the ostree status</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.6</td>
+                            <td >Remove the build output to create the ostree_repo to check the whole image upgrade by running the command below.<br />
+$ cd &lt;Working Dir&gt;/projectDir/build-se36/<br />
+$ sudo rm -rf cache/ sstate-cache/ tmp/ bitbake-cookerdaemon.log README_templates</td>
+                                <td >Run the commands successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.7</td>
+                            <td >Build 2nd Image in Ubuntu host : Change some settings in the source.<br />
+$ export CONTAINER_NAME=imx8LBVC0016<br />
+$ docker start ${CONTAINER_NAME}<br />
+$ docker attach ${CONTAINER_NAME}<br />
+$ cd /home/adv/adv-release-bsp/<br />
+$ source setup-environment build-se36/<br />
+$ bitbake imx-image-full</td>
+                                <td >Build successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.8</td>
+                            <td >Run the commands below on Ubuntu host to start an OTA server:<br />
+$ cd &lt;Working Dir&gt;/projectDir/build-se36/<br />
+$ sudo python3 -m http.server --directory tmp/deploy/images/imx8mpdmsse36/ 8090</td>
+                                <td >Starting an OTA server successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.9</td>
+                            <td >Run The command below on the Ubuntu host to get the OTA server's IP.<br />
+$ ifconfig &lt;ethenet_device&gt;<br />
+<br />
+Example<br />
+$ ifconfig enp3s0</td>
+                                <td >Get the OTA server's IP successfully.<br />
+Example:<br />
+the OTA server's IP is 10.10.10.82<br />
+$ ifconfig enp3s0<br />
+enp3s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500<br />
+inet 10.10.10.82 netmask 255.0.0.0 broadcast 10.255.255.255<br />
+inet6 fe80::7ac:93d7:1fcb:79b9 prefixlen 64 scopeid 0x20&lt;link&gt;<br />
+ether 2c:f0:5d:6e:4c:a9 txqueuelen 1000 (Ethernet)<br />
+RX packets 24054806 bytes 28271144313 (28.2 GB)<br />
+RX errors 0 dropped 216364 overruns 0 frame 0<br />
+TX packets 12753091 bytes 3144854263 (3.1 GB)<br />
+TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.15</td>
+                            <td >Plug-in ethernet wire to port CN31( eth0 interface) of the device to connect the DUT to the same network as the Ubuntu host.</td>
+                                <td >Plug-in successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.11</td>
+                            <td >Then try to ping the DUT to Ubuntu host by the command below:<br />
+$ ping &lt;OTA server's IP&gt;</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.12</td>
+                            <td >On the DUT Board:<br />
+Run the commands below to setup the OTA server config.<br />
+$ ostree config set --group='remote &quot;wrlinux&quot;' url http://&lt;OTA server's IP&gt;:8090/ostree_repo<br />
+$ ostree config set --group='upgrade' remote wrlinux<br />
+<br />
+Example: <br />
+$ ostree config set --group='remote &quot;wrlinux&quot;' url http://10.10.10.82:8090/ostree_repo<br />
+$ ostree config set --group='upgrade' remote wrlinux</td>
+                                <td >Setup the OTA server config successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.13</td>
+                            <td >Run the command below to start an upgrade<br />
+$ ostree_upgrade.sh -s</td>
+                                <td >The DUT can connect an OTA server and start an upgrade.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.14</td>
+                            <td >After finishing the upgrade, reboot the DUT:<br />
+$ reboot</td>
+                                <td >The DUT can reboot normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.15</td>
+                            <td >When the DUT boots up, check the status of the 2nd image:<br />
+$ ostree admin status<br />
+Then check OSTree status changed.</td>
+                                <td >The DUT can be upgraded successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.5 - A0011 Upgrade of OS will be do with USB storage          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.1</td>
+                            <td >Build for 1st image in Ubuntu host<br />
+$ export CONTAINER_NAME=imx8LBVC0016<br />
+$ docker start ${CONTAINER_NAME}<br />
+$ docker attach ${CONTAINER_NAME}<br />
+$ cd /home/adv/adv-release-bsp/<br />
+$ source setup-environment build-se36/<br />
+$ bitbake imx-image-full</td>
+                                <td >Build successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.2</td>
+                            <td >Flashing the image into the SD card:<br />
+- Open the new terminal host computer:<br />
+$ cd &lt;Working Dir&gt;/projectDir/build-se36/tmp/deploy/image/<br />
+$ sudo zstd -d imx-image-full-imx8mpdmsse36-YYYYMMDDXXXXXX.rootfs.wic.zst<br />
+$ umount /dev/sdX* (depend on environment)<br />
+$ sudo dd if=imx-image-full-imx8mpdmsse36-YYYYMMDDXXXXXX.rootfs.wic of=/dev/sdX bs=1M</td>
+                                <td >Run the commands successfully to flashing the image into the SD card.<br />
+Example:<br />
+sudo dd if=imx-image-full-imx8mpdmsse36-20240702022302.rootfs.wic of=/dev/sdb bs=4M<br />
+3126+1 records in<br />
+3126+1 records out<br />
+13113430016 bytes (13 GB, 12 GiB) copied, 191.26 s, 68.6 MB/s</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.3</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.4</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.5</td>
+                            <td >Run the command below on the DUT to get the OSTree status.<br />
+$ ostree admin status</td>
+                                <td >The DUT can show the ostree status</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.6</td>
+                            <td >Remove the build output to create the ostree_repo to check the whole image upgrade by running the command below.<br />
+$ cd &lt;Working Dir&gt;/projectDir/build-se36/<br />
+$ sudo rm -rf cache/ sstate-cache/ tmp/ bitbake-cookerdaemon.log README_templates</td>
+                                <td >Run the commands successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.7</td>
+                            <td >Build 2nd Image in Ubuntu host : Change some settings in the source.<br />
+$ export CONTAINER_NAME=imx8LBVC0016<br />
+$ docker start ${CONTAINER_NAME}<br />
+$ docker attach ${CONTAINER_NAME}<br />
+$ cd /home/adv/adv-release-bsp/<br />
+$ source setup-environment build-se36/<br />
+$ bitbake imx-image-full</td>
+                                <td >Build successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.8</td>
+                            <td >Plug-in the USB flash to the Ubuntu host.</td>
+                                <td >Plug-in successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.9</td>
+                            <td >Copy ostree_repo folder in build output to the USB flash<br />
+$ cp -rf &lt;Working Dir&gt;/projectDir/build-se36/tmp/deploy/image/ostree_repo /media/&lt;User's name&gt;/USB</td>
+                                <td >The ostree_repo folder is copied to USB successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.10</td>
+                            <td >Plug-in this USB to DUT.</td>
+                                <td >Plug-in successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.11</td>
+                            <td >Mount this USB on the DUT.<br />
+$ mount /dev/&lt;sdx&gt; /media/</td>
+                                <td >Mount successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.12</td>
+                            <td >Set the system time to the current time:<br />
+- Automatically: Connect the Ethernet cable to the DUT to update the system time via NTP.<br />
+- Manually: Run the commands below:<br />
+$ date +%Y%m%d -s &quot;20240925&quot;<br />
+$ date +%T -s &quot;07:44:22&quot;<br />
+<br />
+Finally, run the command below to check the system time:<br />
+$ date</td>
+                                <td >After running the command successfully, the system time is now correct.<br />
+Example:<br />
+$ date<br />
+Wed Sep 25 07:44:22 UTC 2024</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.13</td>
+                            <td >On the DUT Board, Run the commands below to start an OTA server:<br />
+$ python3 -m http.server --directory /media/ 8090 &amp;</td>
+                                <td >Starting an OTA server successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.14</td>
+                            <td >On the DUT Board:<br />
+Run the commands below to setup the OTA server config to Local host.<br />
+$ ostree config set --group='remote &quot;local&quot;' url http://127.0.0.1:8090/ostree_repo<br />
+$ ostree config set --group='upgrade' remote local</td>
+                                <td >Setup the OTA server config successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.15</td>
+                            <td >Run the command below to start an upgrade<br />
+$ ostree_upgrade.sh -s</td>
+                                <td >The DUT can connect an OTA server and start an upgrade.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.16</td>
+                            <td >After finishing the upgrade, reboot the DUT:<br />
+$ reboot</td>
+                                <td >The DUT can reboot normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.17</td>
+                            <td >When the DUT boots up, check the status of the 2nd image:<br />
+$ ostree admin status<br />
+Then check OSTree status changed.</td>
+                                <td >The DUT can be upgraded successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6 - A0009 Touch Gestures          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.1</td>
+                            <td >Add the chromium application to validate the touch Gestures into the image by adding the config below to  <br />
+&lt;Working Dir&gt;/projectDir/build-se36/conf/local.conf file <br />
+<br />
+IMAGE_INSTALL:append = &quot; chromium-ozone-wayland&quot;</td>
+                                <td >Add this config successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.2</td>
+                            <td >Build an image in Ubuntu host<br />
+$ export CONTAINER_NAME=imx8LBVC0016<br />
+$ docker start ${CONTAINER_NAME}<br />
+$ docker attach ${CONTAINER_NAME}<br />
+$ cd /home/adv/adv-release-bsp/<br />
+$ source setup-environment build-se36/<br />
+$ bitbake imx-image-full</td>
+                                <td >Build successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.3</td>
+                            <td >Flashing the image into the SD card.</td>
+                                <td >Flash the image into the SD card successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.4</td>
+                            <td >Plug-in ethernet wire to port CN32( eth0 interface) of the device.</td>
+                                <td >Plug-in successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.5</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.6</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.7</td>
+                            <td >Run the command below to open the Chromium application.<br />
+$ chromium --no-sandbox &amp;</td>
+                                <td >Run the command successfully. The Chromium application will be opened on the touch screen.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.8</td>
+                            <td >Check the click gestures by Tap an &quot;+&quot; item on the screen.</td>
+                                <td >The new Chromium's Tap will be opened.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.9</td>
+                            <td >Check the long click gestures by Tap and hold the &quot;Chrome Web ...&quot; item on the screen.</td>
+                                <td >The Chromium application will be shown more commands (like right-clicking)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.10</td>
+                            <td >Search anything on the Chromium application.<br />
+Check the swipe gestures by swiping with one finger. <br />
+-From the left edge of the screen to go back in the browser.<br />
+-From the right edge of the screen to go forward in the browser.<br />
+-From the top edge of the screen to go to the top.<br />
+-From the bottom edge of the screen to go to the bottom.</td>
+                                <td >You can perform those actions on the Chrome app.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.11</td>
+                            <td >Check pinch to zoom in/out by Place two fingers on the screen and pinch in or stretch out.</td>
+                                <td >The Chromium application will zoom in or out.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.12</td>
+                            <td >Run the command below to open the weston-editor application. <br />
+$ weston-editor</td>
+                                <td >Run the command successfully. The  weston-editor application will be opened on the touch screen.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.13</td>
+                            <td >Check double-click gestures by double-tapping the 'Text Editor' item in the Weston-editor application.</td>
+                                <td >The Weston-editor application will switch to full-screen mode.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.1 - Disable/Enable touch by command          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.1</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.3</td>
+                            <td >Run the command to disable touch:<br />
+$ eGTouchD -k</td>
+                                <td >The touch screen will be disabled</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.4</td>
+                            <td >Run the command to enable touch events<br />
+$ eGTouchD</td>
+                                <td >The touch screen will be re-enabled.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.2 - Disable/Enable touch with timeout          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.1</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.3</td>
+                            <td >Run the command to enable cleaning mode in 20 seconds<br />
+$ cleaning_mode 20</td>
+                                <td >Cleaning mode is turned on.The touch screen is disabled <br />
+&quot;Cleaning mode ON&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.4</td>
+                            <td >While the cleaning mode is on, try to use the touch screen to control the device.</td>
+                                <td >The touch screen is disabled while the clean mode is on</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.5</td>
+                            <td >After 20 seconds, the cleaning mode will automatically turn off and show this log on the terminal.<br />
+&quot;Cleaning mode OFF&quot;<br />
+Try to use the touch screen to control the device.</td>
+                                <td >The touch screen is re-enable when the clean mode is turned off.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.3 - Enable touch with physical button          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.1</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.3</td>
+                            <td >Run the command to enable cleaning mode in 50 seconds<br />
+$ cleaning_mode 50</td>
+                                <td >Cleaning mode is turned on and the touch screen will be disabled.<br />
+You can see this log in the terminal.<br />
+&quot;Cleaning mode ON&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.4</td>
+                            <td >During the cleaning_mode is on, Press the BLK_UP or BLK_DOWN button to turn off cleaning mode</td>
+                                <td >The Cleaning mode will be turn off. The touch screen will be re-enable. <br />
+You can see this log in the terminal.<br />
+&quot;Cleaning mode OFF triggered by an external event.&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.4 - Enable touch when triggered by the application.          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.4.1</td>
+                            <td >Open the serial port terminal on your PC's terminal to establish a connection with the target debug port.<br />
+$ sudo gtkterm -p /dev/ttyUSB0</td>
+                                <td >The connection with the target debug port has been established successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.4.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.4.3</td>
+                            <td >Run the command to enable cleaning mode in 50 seconds<br />
+$ cleaning_mode 50 &amp;</td>
+                                <td >Cleaning mode is turned on and the touch screen will be disabled.<br />
+You can see this log in the terminal.<br />
+&quot;Cleaning mode ON&quot;</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.4.4</td>
+                            <td >While the cleaning mode is on, run the command to enable the touch screen to simulate a trigger by the application.<br />
+$ eGTouchD</td>
+                                <td >The Cleaning mode will be turn off. The touch screen will be re-enable. <br />
+You can see this log in the terminal.<br />
+&quot;Cleaning mode OFF triggered by an external event.&quot;</td>
+                        <td >      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+      </body>
+</html>

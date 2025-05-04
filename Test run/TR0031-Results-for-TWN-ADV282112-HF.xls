@@ -1,0 +1,3462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <style>
+      table.data{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table.sub-data{
+        border-collapse: collapse;
+        border: none;
+      }
+      table.sub-data th, table.sub-data td{
+        border-color: white;
+      }
+      h1,h2,h3,h4,h5,h6,p,td,th{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      th,td{
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 3px;
+      }
+
+      h2,h1{
+        font-size: 14px;
+        color: black;
+      }
+      h3{
+        color: rgb(204,24,0);
+        font-size: 21px;
+      }
+
+      h4{
+        font-size: 18px;
+        color: rgb(0,0,0);
+      }
+
+      h5{
+        font-size: 16px;
+        color: rgb(102,102,102);
+      }
+
+      h6{
+        font-size: 14px;
+        color: rgb(0,0,0);
+        font-style: italic;
+      }
+
+      h6.h1{
+        color: rgb(128,128,128);
+      }
+
+      h6.h2{
+        color: rgb(0,0,0);
+        font-style: normal;
+        text-decoration: underline;
+      }
+
+      h6.h3{
+        color: rgb(128,128,128);
+        font-style: normal;
+      }
+
+      h6.h4{
+        color: rgb(0,0,0);
+        text-decoration: underline;
+      }
+      .form-id{
+        white-space: nowrap;
+      }
+      .field-value{
+        margin-left: 1em;
+      }
+      .field-value td{
+        padding: 0px 2px 0px 0px;
+      }
+
+      .positive{
+        color: rgb(0,128,64) !important;
+      }
+      .block-positive{
+      }
+
+      .neutral{
+        color: rgb(128,128,128) !important;
+      }
+      .block-neutral{
+      }
+
+      .negative{
+        color: rgb(204,0,0) !important;
+      }
+      .block-negative{
+      }
+
+      .highlight{
+        color: rgb(0,0,0) !important;
+        background-color: rgb(240,204,204) !important;
+      }
+      .block-highlight{
+      }
+      .nr{
+      }
+      .block-nr{
+      }
+      @page Section1{
+        size:11.0in 8.5in;
+        mso-page-orientation:landscape;
+        margin:1.25in 1.0in 1.25in 1.0in;
+        mso-header-margin:.5in;
+        mso-footer-margin:.5in;
+        mso-paper-source:0;
+      }
+      div.Section1{
+        page:Section1;
+      }
+    </style>
+            <xml xmlns:x="urn:schemas-microsoft-com:office:excel"
+            xmlns:o="urn:schemas-microsoft-com:office:office">
+          <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+              <x:ExcelWorksheet>
+<!--            <x:Name>Sheet1</x:Name> -->
+                <x:WorksheetOptions>
+                  <x:Selected/>
+                </x:WorksheetOptions>
+              </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+          </x:ExcelWorkbook>
+        </xml>
+      </head>
+  <body>
+        <!-- Stats -->
+    <div class="Section1">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th colspan="2" class="stat-type">Test Case</th>
+                        <th class="spacer"> </th>
+              <th colspan="2" class="stat-type">Test Step</th>
+          </tr>
+      </thead>
+      <tbody>            <tr>
+              <th class="positive">Pass</th>
+              <td class="stat-number">62</td>
+              <td class="stat-number">94%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">294</td>
+                  <td class="stat-number">99%</td></tr>            <tr>
+              <th class="negative">Fail</th>
+              <td class="stat-number">4</td>
+              <td class="stat-number">6%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">4</td>
+                  <td class="stat-number">1%</td></tr>            <tr>
+              <th class="neutral">N/A</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>        <tr>
+          <th class="nr">No Result</th>
+          <td class="stat-number">0</td>
+          <td class="stat-number">0%</td>
+                        <td class="spacer"> </td>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td></tr><tr>
+                <th class="ip">In Progress</th>
+                <td class="stat-number">0</td>
+                <td class="stat-number">0%</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>          <tr>
+            <th class="stat-total">Total</th>
+            <td class="stat-total stat-number">66</td>
+            <td> </td>
+                            <td class="spacer">&nbsp;</td>
+                <td class="stat-total stat-number">298</td>
+                <td>&nbsp;</td>
+            </tr>
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <table class="data">
+      <thead>
+        <tr>
+          <th colspan="5">Results Summary</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>
+          <th>Summary</th>
+          <th>Resulted By</th>
+          <th>Resulted On</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.1.1</td>
+                    <td >eMMC</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 05:03 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.1.2.1</td>
+                    <td >Function Test</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 05:09 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.1.2.2</td>
+                    <td >Slot Protection</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 08:32 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.1.2.3</td>
+                    <td >Encryption Test</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 05:32 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.2.1</td>
+                    <td >USB 2.0</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 06:21 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.2.2</td>
+                    <td >USB 3.0</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 06:32 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.3.1.1</td>
+                    <td >DHCP</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 06:59 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positiveclass="deletedForm"">
+           Pass</td>
+          <td class="form-id class="deletedForm"">
+          TC 3.3.1.2</td>
+                    <td class="deletedForm">Static IP</td>
+          <td class="deletedForm">Thinh Dinh</td>
+          <td class="deletedForm">2021-11-23 07:53 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.3.1.2</td>
+                    <td >Ethernet Tethering</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 03:43 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.3.2.1</td>
+                    <td >DHCP</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 07:05 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positiveclass="deletedForm"">
+           Pass</td>
+          <td class="form-id class="deletedForm"">
+          TC 3.3.2.2</td>
+                    <td class="deletedForm">Static IP</td>
+          <td class="deletedForm">Thinh Dinh</td>
+          <td class="deletedForm">2021-11-23 07:52 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.3.2.2</td>
+                    <td >Ethernet Tethering</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 03:44 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 3.4.1.1</td>
+                    <td >DHCP | Configuration A</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 09:31 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 3.4.1.2</td>
+                    <td >Static IP | Configuration A</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 11:01 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.4.1.3</td>
+                    <td >Antenna Check | Configuration A</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 03:47 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.4.1.4</td>
+                    <td >Hotspot | Configuration A</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 03:43 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 3.4.2.1</td>
+                    <td >DHCP | Configuration B</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 08:07 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 3.4.2.2</td>
+                    <td >Static IP | Configuration B</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 10:15 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.4.2.3</td>
+                    <td >Hotspot | Configuration B</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 09:14 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.4.3.1</td>
+                    <td >Hotspot | Configuration C</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 09:44 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.5.1.1</td>
+                    <td >Internet Connection</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-21 08:51 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.5.1.2</td>
+                    <td >Slot Protection</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 08:31 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.5.1.3</td>
+                    <td >Antenna Check</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 10:09 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.6.1</td>
+                    <td >Information Receive &amp; Location Test</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 03:46 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.6.2</td>
+                    <td >Antenna Detection Test</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 07:25 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.6.3</td>
+                    <td >Cold Start Time Test</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 02:04 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.6.4</td>
+                    <td >Antenna Check</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 09:12 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.7</td>
+                    <td >Bluetooth</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-24 07:41 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.8.1</td>
+                    <td >WLAN Transmission Mode</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-23 10:26 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.9</td>
+                    <td >Reset</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 08:29 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.10.1</td>
+                    <td >The CU Power LED</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 08:27 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.10.2</td>
+                    <td >The GNSS LED</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 08:06 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.10.3</td>
+                    <td >The WWAN LED</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 07:24 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.1</td>
+                    <td >Connect one device close to USB 3.0 before power on</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-22 06:41 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.2</td>
+                    <td >Connect one device close to UI port before power on</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-22 06:41 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.3</td>
+                    <td >Connect two devices before power on</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-22 06:42 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.4</td>
+                    <td >Connect one device close to USB 3.0 after turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-22 06:42 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.5</td>
+                    <td >Connect one device close to UI port after turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-22 06:57 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.6</td>
+                    <td >Connect two devices after turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-22 08:02 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.7</td>
+                    <td >Connect one device close to USB 3.0 after power on and before turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-22 08:03 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.8</td>
+                    <td >Connect one device close to UI port after power on and before turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-22 08:03 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.9</td>
+                    <td >Connect two devices after power on and before turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:19 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.10</td>
+                    <td >Connect one device close to USB 3.0 first, then power on device after turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:24 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.11</td>
+                    <td >Connect one device close to UI port first, then power on device after turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:24 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.11.12</td>
+                    <td >Connect two devices close to UI port first, then power on device after turn on Ethernet tethering</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:26 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.1</td>
+                    <td >Disable RCS</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:40 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.2</td>
+                    <td >GNSS antenna's status</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:40 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.3</td>
+                    <td >SC66 LED status</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:41 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.4</td>
+                    <td >Device capacity is 64GB</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:41 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.5</td>
+                    <td >Remove QTR</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:42 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.6</td>
+                    <td >Default phone app</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 03:43 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.9</td>
+                    <td >Auto set Time from satellite</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 07:09 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.10</td>
+                    <td >At least 4 Bluetooth device</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 09:12 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.11</td>
+                    <td >At least 5 WIFI device</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 06:47 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.12</td>
+                    <td >WIFI tethering with many devices without crash</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 07:10 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.13</td>
+                    <td >GPS LED</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 01:56 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.14</td>
+                    <td >LTE LED</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 07:08 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.15</td>
+                    <td >Setupwizard orientation</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-21 08:54 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.16</td>
+                    <td >Dialer with all ICONs</td>
+          <td >Thinh Dinh</td>
+          <td >2021-11-23 07:05 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.18</td>
+                    <td >Pin Code more than 5 digits</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 06:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.17</td>
+                    <td >G Sensor</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 06:56 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.21</td>
+                    <td >Remove Battery feature</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-21 08:53 PM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.20</td>
+                    <td >Log files</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 06:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.24</td>
+                    <td >QxDM port</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 06:44 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.22</td>
+                    <td >Dual Ethernet</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-22 07:35 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.12.23</td>
+                    <td >Remove Camera</td>
+          <td >DucHoang Nguyen</td>
+          <td >2021-11-21 08:52 PM UTC</td>
+        </tr>
+          </tbody>
+    </table>
+    <br/>
+    <br/>    <table class="data" id="results-detail">
+      <thead>
+        <tr>
+          <th colspan="5">Results Detail</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>                <th>Description</th>
+                            <th>Expected Results</th>
+                      <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.1.1 - eMMC          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.1.1</td>
+                            <td >Power on the DUT and boots into OS</td>
+                                <td >DUT boots into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.1.2</td>
+                            <td >Check the eMMC real capacity:<br />
+Go to Settings-&gt;Storage then check the total storage of device</td>
+                                <td >Shall be greater than or equal to 64GB</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.1.3</td>
+                            <td >Install the test program named &quot;ATP_FOR_PROJECT.apk&quot;</td>
+                                <td >System should install test program successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.1.4</td>
+                            <td >Run test program to read/write eMMC at least 1000 times</td>
+                                <td >System should read/write eMMC successfully without any error for 1000 times.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.1.5</td>
+                            <td >Check the Encrypt phone setting under Settings-&gt;Security-&gt;Encryption &amp; credentials</td>
+                                <td >The Encrypt phone should set Encrypted</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.1.2.1 - Function Test          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.1</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.2</td>
+                            <td >Inserts the MicroSD card into DUT MicroSD slot (CN18)</td>
+                                <td >The DUT shall support MicroSD card<br />
+The DUT shall detect MicroSD card normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.3</td>
+                            <td >Check the MicroSD can be auto mount and work status</td>
+                                <td >MicroSD card can be auto mount and work normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.4</td>
+                            <td >Remove the MicroSD card and shutdown the system</td>
+                                <td >MicroSD card is removed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.5</td>
+                            <td >Re-plug the MicroSD card and power on the DUT</td>
+                                <td >The DUT boot into OS successfully<br />
+The DUT shall support MicroSD card.<br />
+The DUT shall detect MicroSD card normally.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.6</td>
+                            <td >Check the MicroSD card can be auto mount and work status again</td>
+                                <td >MicroSD card can be auto mount and work normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.7</td>
+                            <td >Install the test program named &quot;ATP_FOR_PROJECT.apk&quot; then run test program to read/write the MicroSD at least 1000 times</td>
+                                <td >System should read/write the MicroSD card successfully without any error for 1000 times</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.8</td>
+                            <td >Hot plug the MicroSD card 5 times and check the MicroSD card work status each time</td>
+                                <td >MicroSD card can be detected and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.1.9</td>
+                            <td >Reboot the OS 5 times and check the MicroSD card work status each time</td>
+                                <td >MicroSD card can be detected and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.1.2.2 - Slot Protection          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.2.1</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.2.2</td>
+                            <td >Check the MicroSD card slot has protection cover and special screw to against unauthorised removal.</td>
+                                <td >- The MicroSD card slot should have protection cover and special screw to against unauthorised removal<br />
+- MicroSD expansion memory card can be stowed in device securely</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.1.2.3 - Encryption Test          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.3.1</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT and boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.3.2</td>
+                            <td >Inserts the MicroSD card into DUT MicroSD slot (CN18).</td>
+                                <td >The DUT shall support MicroSD card<br />
+The DUT shall detect MicroSD card normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.3.3</td>
+                            <td >Format the MicroSD card as phone storage.</td>
+                                <td >MicroSD is formatted successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2.3.4</td>
+                            <td >Check the MicroSD encryption status.</td>
+                                <td >The MicroSD card can’t be read/write the data normally on other place after it set to phone storage on the DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.2.1 - USB 2.0          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.1</td>
+                            <td >Power on the DUT and boot into OS</td>
+                                <td >The DUT boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.2</td>
+                            <td >Plug USB flash drives into USB connectors separately</td>
+                                <td >The DUT shall detect the USB storage device on USB 2.0 ports normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.3</td>
+                            <td >Check the USB flash drives can be auto mount at the same time and work status</td>
+                                <td >USB flash drives can be auto mount at the same time and work normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.4</td>
+                            <td >Remove the USB flash drives and shutdown the system</td>
+                                <td >USB flash drive is removed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.5</td>
+                            <td >Re-plug the USB flash drives and power on the DUT</td>
+                                <td >The DUT shall detect the USB storage device on USB 2.0 ports normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.6</td>
+                            <td >Check the USB flash drives can be auto mount at the same time and work status again</td>
+                                <td >USB flash drives can be auto mount at the same time and work normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.7</td>
+                            <td >- USB2 a test:<br />
+Run test program to read/write the USB flash drive of “USB2 a” port at least 1000 times</td>
+                                <td >System should read/write the USB flash drive successfully without any error for 1000 times</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.8</td>
+                            <td >- USB2 a test:<br />
+Hot plug the USB flash drive of “USB2 a” port 5 times and check the USB flash drive work status each time</td>
+                                <td >USB flash drive can be detected and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.9</td>
+                            <td >- USB2 a test:<br />
+Reboot the OS 5 times and check the USB flash drive of “USB2 a” port work status each time</td>
+                                <td >USB flash drive can be detected and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.10</td>
+                            <td >- USB2 b test:<br />
+Run test program to read/write the USB flash drive of “USB2 b” port at least 1000 times</td>
+                                <td >System should read/write the USB flash drive successfully without any error for 1000 times</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.11</td>
+                            <td >- USB2 b test:<br />
+Hot plug the USB flash drive of “USB2 b” port 5 times and check the USB flash drive work status each time</td>
+                                <td >USB flash drive can be detected and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1.12</td>
+                            <td >- USB2 b test:<br />
+Reboot the OS 5 times and check the USB flash drive of “USB2 b” port work status each time</td>
+                                <td >USB flash drive can be detected and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.2.2 - USB 3.0          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.1</td>
+                            <td >As Device:<br />
+- Using cable connects USB 3.0 port (CN4) with updating device</td>
+                                <td >One USB 3.0 port is provided and tested</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.2</td>
+                            <td >- Execute test program “Qualcomm Flash Image Loader” to do image updating</td>
+                                <td >Image shall update successfully via USB 3.0 port.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.3</td>
+                            <td >- When image update completely, make sure DUT can boot into OS successfully</td>
+                                <td >- OS update successfully<br />
+- The DUT should boot into OS successfully with any problem</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.4</td>
+                            <td >As Host: Face the DUT, USB switch to right side during “As Host” test.<br />
+- Power on the DUT and boot into OS</td>
+                                <td >The DUT boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.5</td>
+                            <td >- Plug the USB flash drive into USB3 port</td>
+                                <td >The DUT shall detect the USB storage device on USB 3.0 port normally.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.6</td>
+                            <td >- Check the USB flash drive can be auto mount and work status</td>
+                                <td >USB flash drive can be auto mount and work normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.7</td>
+                            <td >- Remove the USB flash drive and shutdown the system</td>
+                                <td >USB flash drive is removed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.8</td>
+                            <td >- Re-plug the USB flash drive and power on the DUT</td>
+                                <td >The DUT shall detect the USB storage device on USB 3.0 port normally.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.9</td>
+                            <td >- Check the USB flash drive can be auto mount and work status again</td>
+                                <td >USB flash drive can be auto mount and work normally</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.10</td>
+                            <td >- Install the test program named &quot;ATP_FOR_PROJECT.apk&quot; then run test program to read/write the USB flash drive of USB3 port at least 1000 times</td>
+                                <td >The USB storage device on USB 3.0 port read/write test result shall be passed and without any error</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.11</td>
+                            <td >- Hot plug the USB flash drive of USB3 port 5 times and check the USB flash drive work status each time.</td>
+                                <td >USB flash drive can be detected and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2.12</td>
+                            <td >- Reboot the OS 5 times and check the USB flash drive of USB3 port work status each time.</td>
+                                <td >USB flash drive can be detected and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.3.1.1 - DHCP          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.1.1</td>
+                            <td >Power on the DUT and boot into OS</td>
+                                <td >The DUT boots into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.1.2</td>
+                            <td >LAN cable connects DUT to Internet</td>
+                                <td >The connection is successfully established</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.1.3</td>
+                            <td >Check DUT can obtain the IP address automatically and browse the website successfully</td>
+                                <td >DUT can obtain the IP address automatically and browse the website successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.1.4</td>
+                            <td >Remove the LAN cable and shutdown the system</td>
+                                <td >The LAN cable is successfully unplugged</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.1.5</td>
+                            <td >Re-plug the LAN cable and power on the DUT</td>
+                                <td >The connection is successfully established and the DUT boots into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.1.6</td>
+                            <td >Check DUT can obtain the IP address automatically and browse the website successfully again</td>
+                                <td >DUT can obtain the IP address automatically and browse the website successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.1.7</td>
+                            <td >Hot plug the LAN cable 5 times and check the Ethernet connects status each time</td>
+                                <td >System can connect to Internet and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.1.8</td>
+                            <td >Reboot the OS 5 times and check the Ethernet connects status each time</td>
+                                <td >System can connect to Internet and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail deletedForm">
+            TC 3.3.1.2 - Static IP          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.3.1.2.1</td>
+                            <td  deletedForm>Power on the DUT and boot into OS.</td>
+                                <td  deletedForm>The DUT boot into OS successfully</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.3.1.2.2</td>
+                            <td  deletedForm>Plug LAN cable between DUT and PC.</td>
+                                <td  deletedForm>LAN cable is successfully plugged</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.3.1.2.3</td>
+                            <td  deletedForm>Set the static IP for DUT and PC in the same domain.</td>
+                                <td  deletedForm>The setting is successfully established</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.3.1.2.4</td>
+                            <td  deletedForm>Check DUT and PC can ping each other.</td>
+                                <td  deletedForm>The DUT and PC can ping each other successfully</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.3.1.2 - Ethernet Tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.2.1</td>
+                            <td >Put the Mini SIM card to SIM card slot (CN9).</td>
+                                <td >The mini SIM is successfully inserted into DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.2.2</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT boots into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.2.3</td>
+                            <td >Enable WWAN function</td>
+                                <td >System can connect to Internet through WWAN</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.2.4</td>
+                            <td >Enable Ethernet tethering under Settings.</td>
+                                <td >The Ethernet tethering setting is able to enable successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.1.2.5</td>
+                            <td >Plug LAN cable between DUT and End User device.</td>
+                                <td >The End User device can connect to Internet through DUT’s Ethernet tethering and browse the website.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.3.2.1 - DHCP          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.1.1</td>
+                            <td >Power on the DUT and boot into OS</td>
+                                <td >The DUT boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.1.2</td>
+                            <td >LAN cable connects DUT to Internet</td>
+                                <td >The connection is successfully established</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.1.3</td>
+                            <td >Check DUT can obtain the IP address automatically and browse the website successfully</td>
+                                <td >The DUT can obtain the IP address automatically and browse the website successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.1.4</td>
+                            <td >Remove the LAN cable and shutdown the system</td>
+                                <td >The LAN cable is successfully unplugged</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.1.5</td>
+                            <td >Re-plug the LAN cable and power on the DUT</td>
+                                <td >The connection is successfully established and the DUT boots into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.1.6</td>
+                            <td >Check DUT can obtain the IP address automatically and browse the website successfully again</td>
+                                <td >UT can obtain the IP address automatically and browse the website successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.1.7</td>
+                            <td >Hot plug the LAN cable 5 times and check the Ethernet connects status each time</td>
+                                <td >System can connect to Internet and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.1.8</td>
+                            <td >Reboot the OS 5 times and check the Ethernet connects status each time</td>
+                                <td >System can connect to Internet and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail deletedForm">
+            TC 3.3.2.2 - Static IP          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.3.2.2.1</td>
+                            <td  deletedForm>Power on the DUT and boot into OS.</td>
+                                <td  deletedForm>The DUT boot into OS successfully</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.3.2.2.2</td>
+                            <td  deletedForm>Plug LAN cable between DUT and PC.</td>
+                                <td  deletedForm>LAN cable is successfully plugged</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.3.2.2.3</td>
+                            <td  deletedForm>Set the static IP for DUT and PC in the same domain.</td>
+                                <td  deletedForm>The setting is successfully established</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.3.2.2.4</td>
+                            <td  deletedForm>Check DUT and PC can ping each other.</td>
+                                <td  deletedForm>The DUT and PC can ping each other successfully</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.3.2.2 - Ethernet Tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.2.1</td>
+                            <td >Put the Mini SIM card to SIM card slot (CN9).</td>
+                                <td >The mini SIM is successfully inserted into DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.2.2</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT boots into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.2.3</td>
+                            <td >Enable WWAN function</td>
+                                <td >System can connect to Internet through WWAN</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.2.4</td>
+                            <td >Enable Ethernet tethering under Settings.</td>
+                                <td >The Ethernet tethering setting is able to enable successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.3.2.2.5</td>
+                            <td >Plug LAN cable between DUT and End User device.</td>
+                                <td >The End User device can connect to Internet through DUT’s Ethernet tethering and browse the website.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.4.1.1 - DHCP | Configuration A          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.1.1</td>
+                            <td >Power on the DUT and boots into OS.</td>
+                                <td >The DUT boots into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.1.2</td>
+                            <td >Enable the Wi-Fi and set DHCP mode to connect with Wireless AP of 2.4GHz frequency band under Settings.</td>
+                                <td >The DUT can search and connect to Wireless AP properly without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.1.3</td>
+                            <td >Check DUT can obtain the IP address automatically and browse the website.</td>
+                                <td >The Wi-Fi function should work property without any error.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.1.4</td>
+                            <td >Wi-Fi connects to Wireless AP of 5GHz frequency band and browses the website again.</td>
+                                <td >The DUT can search and connect to Wireless AP properly without any problem.<br />
+The Wi-Fi function should work property without any error.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.1.5</td>
+                            <td >Enable/Disable the Wi-Fi 5 times and check the Wi-Fi connects status each time.</td>
+                                <td >Wi-Fi can auto connect with Wireless AP and work normally when turn on the Wi-Fi switch.<br />
+Wi-Fi disable when turn off the Wi-Fi switch.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative deletedForm">
+            Fail</td>
+          <td class="form-id  deletedForm">TS 3.4.1.1.6</td>
+                            <td  deletedForm>Reboot the OS 5 times, and check the Wi-Fi connects status each time.</td>
+                                <td  deletedForm>Wi-Fi will be disabled after system reboot.</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.4.1.1.7</td>
+                            <td  deletedForm>Enable/Disable the Airplane mode and check the Wi-Fi connects status.</td>
+                                <td  deletedForm>Wi-Fi disable when turn on the Airplane mode.<br />
+Wi-Fi can auto connect with Wireless AP and work normally when turn off the Airplane mode.</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.4.1.2 - Static IP | Configuration A          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.2.1</td>
+                            <td >Power on the DUT and boots into OS.</td>
+                                <td >The DUT boots into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.2.2</td>
+                            <td >Enable the Wi-Fi and set static mode to connect with Wireless AP of 5GHz frequency band under Settings.</td>
+                                <td >The DUT can search and connect to Wireless AP properly without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.2.3</td>
+                            <td >Check DUT and PC can ping each other IP address when DUT and PC in the same domain.</td>
+                                <td >The Wi-Fi function should work property without any error.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.2.4</td>
+                            <td >Wi-Fi connects to Wireless AP of 2.4GHz frequency band and ping each other IP address again.</td>
+                                <td >The DUT can search and connect to Wireless AP properly without any problem.<br />
+The Wi-Fi function should work property without any error.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.2.5</td>
+                            <td >Enable/Disable the Wi-Fi 5 times and check the Wi-Fi connects status each time</td>
+                                <td >Wi-Fi can auto connect with Wireless AP and work normally when turn on the Wi-Fi switch.<br />
+Wi-Fi disable when turn off the Wi-Fi switch.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative deletedForm">
+            Fail</td>
+          <td class="form-id  deletedForm">TS 3.4.1.2.6</td>
+                            <td  deletedForm>Reboot the OS 5 times, and check the Wi-Fi connects status each time.</td>
+                                <td  deletedForm>Wi-Fi will be disabled after system reboot.</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.4.1.2.7</td>
+                            <td  deletedForm>Enable/Disable the Airplane mode and check the Wi-Fi connects status.</td>
+                                <td  deletedForm>Wi-Fi disable when turn on the Airplane mode.<br />
+Wi-Fi can auto connect with Wireless AP and work normally when turn off the Airplane mode.</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.4.1.3 - Antenna Check | Configuration A          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.3.1</td>
+                            <td >Check the Wi-Fi/BT antenna can mount on the DUT and it work status.</td>
+                                <td >Wi-Fi/BT antenna can be mounted on the system and work properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.3.2</td>
+                            <td >The DUT has two Fakra type connectors.</td>
+                                <td >System should have two Fakra type connectors.<br />
+- Beige Color --- Wi-Fi Main &amp; Bluetooth<br />
+- Waterblue Color --- Wi-Fi Aux</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.4.1.4 - Hotspot | Configuration A          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.4.1</td>
+                            <td >Put the Mini SIM card to SIM card slot (CN9).</td>
+                                <td >The mini SIM card is successfully inserted to the DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.4.2</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT and boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.4.3</td>
+                            <td >Enable WWAN function</td>
+                                <td >System can connect to Internet through WWAN.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.4.4</td>
+                            <td >Enable Wi-Fi hotspot under Settings.</td>
+                                <td >The Wi-Fi hotspot is able to be enabled</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.4.5</td>
+                            <td >End User device connects with Wi-Fi hotspot of DUT.</td>
+                                <td >The End User device should connect to Internet through DUT’s Wi-Fi hotspot and browse the website without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.4.6</td>
+                            <td >Let five End User devices connect to DUT’s Wi-Fi hotspot simultaneously.</td>
+                                <td >The five End User devices should connect to DUT’s Wi-Fi hotspot simultaneously</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.1.4.7</td>
+                            <td >Check the five End User devices work status.</td>
+                                <td >The five End User devices work normally without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.4.2.1 - DHCP | Configuration B          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.1.1</td>
+                            <td >Enable/Disable the Wi-Fi 5 times and check the Wi-Fi connects status each time.</td>
+                                <td >Wi-Fi can auto connect with Wireless AP and work normally when turn on the Wi-Fi switch.<br />
+Wi-Fi disable when turn off the Wi-Fi switch.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative deletedForm">
+            Fail</td>
+          <td class="form-id  deletedForm">TS 3.4.2.1.2</td>
+                            <td  deletedForm>Reboot the OS 5 times, and check the Wi-Fi connects status each time.</td>
+                                <td  deletedForm>Wi-Fi will be disabled after system reboot</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.4.2.1.3</td>
+                            <td  deletedForm>Enable/Disable the Airplane mode and check the Wi-Fi connects status.</td>
+                                <td  deletedForm>Wi-Fi disable when turn on the Airplane mode.<br />
+Wi-Fi can auto connect with Wireless AP and work normally when turn off the Airplane mode.</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.4.2.2 - Static IP | Configuration B          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.2.1</td>
+                            <td >Enable/Disable the Wi-Fi 5 times and check the Wi-Fi connects status each time</td>
+                                <td >Wi-Fi can auto connect with Wireless AP and work normally when turn on the Wi-Fi switch.<br />
+Wi-Fi disable when turn off the Wi-Fi switch.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative deletedForm">
+            Fail</td>
+          <td class="form-id  deletedForm">TS 3.4.2.2.2</td>
+                            <td  deletedForm>Reboot the OS 5 times, and check the Wi-Fi connects status each time.</td>
+                                <td  deletedForm>Wi-Fi will be disabled after system reboot.</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive deletedForm">
+            Pass</td>
+          <td class="form-id  deletedForm">TS 3.4.2.2.3</td>
+                            <td  deletedForm>Enable/Disable the Airplane mode and check the Wi-Fi connects status.</td>
+                                <td  deletedForm>Wi-Fi disable when turn on the Airplane mode.<br />
+Wi-Fi can auto connect with Wireless AP and work normally when turn off the Airplane mode.</td>
+                        <td  deletedForm>      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.4.2.3 - Hotspot | Configuration B          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.3.1</td>
+                            <td >Put the Mini SIM card to SIM card slot (CN9).</td>
+                                <td >The mini SIM card is successfully inserted to the DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.3.2</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT and boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.3.3</td>
+                            <td >Enable WWAN function</td>
+                                <td >System can connect to Internet through WWAN.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.3.4</td>
+                            <td >Enable Wi-Fi hotspot under Settings.</td>
+                                <td >The Wi-Fi hotspot is able to be enabled</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.3.5</td>
+                            <td >End User device connects with Wi-Fi hotspot of DUT.</td>
+                                <td >The End User device should connect to Internet through DUT’s Wi-Fi hotspot and browse the website without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.3.6</td>
+                            <td >Let five End User devices connect to DUT’s Wi-Fi hotspot simultaneously.</td>
+                                <td >The five End User devices should connect to DUT’s Wi-Fi hotspot simultaneously</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.2.3.7</td>
+                            <td >Check the five End User devices work status.</td>
+                                <td >The five End User devices work normally without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.4.3.1 - Hotspot | Configuration C          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.3.1.1</td>
+                            <td >Put the Mini SIM card to SIM card slot (CN9).</td>
+                                <td >The mini SIM card is successfully inserted to the DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.3.1.2</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT and boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.3.1.3</td>
+                            <td >Enable WWAN function</td>
+                                <td >System can connect to Internet through WWAN.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.3.1.4</td>
+                            <td >Enable Wi-Fi hotspot under Settings.</td>
+                                <td >The Wi-Fi hotspot is able to be enabled</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.3.1.5</td>
+                            <td >End User device connects with Wi-Fi hotspot of DUT.</td>
+                                <td >The End User device should connect to Internet through DUT’s Wi-Fi hotspot and browse the website without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.3.1.6</td>
+                            <td >Let 20 End User devices connect to DUT’s Wi-Fi hotspot simultaneously.</td>
+                                <td >The 20 End User devices should connect to DUT’s Wi-Fi hotspot simultaneously</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.4.3.1.7</td>
+                            <td >Check the 20 End User devices work status.</td>
+                                <td >The 20 End User devices work normally without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.5.1.1 - Internet Connection          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.1.1</td>
+                            <td >Put the Mini SIM card to SIM card slot (CN9).</td>
+                                <td >The mini SIM card is successfully inserted to the DUT</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.1.2</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.1.3</td>
+                            <td >Enable WWAN function and connect to Internet through WWAN.</td>
+                                <td >The DUT should connect to Internet successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.1.4</td>
+                            <td >Browse the website and download data.</td>
+                                <td >Browse the website and download file successfully without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.1.5</td>
+                            <td >Let system into sleep mode for 3 days</td>
+                                <td >The system goes into sleep mode for 3 days without any suspension</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.1.6</td>
+                            <td >Check the LTE connecting status after system resume.</td>
+                                <td >LTE should connect to Internet normally after resume from sleep mode.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.5.1.2 - Slot Protection          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.2.1</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.2.2</td>
+                            <td >Check test SIM card slot has protection cover and special screw to against unauthorised removal.</td>
+                                <td >The Mini SIM card slot should have protection cover and special screw to against unauthorized removal.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.5.1.3 - Antenna Check          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.3.1</td>
+                            <td >Check the cellular antenna can mount on the DUT and it work status.</td>
+                                <td >Cellular antenna can be mounted on the system and work properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.5.1.3.2</td>
+                            <td >Make sure the DUT has two SMA connectors.</td>
+                                <td >The DUT provides and supports two SMA connections for connection to external cellular antennas configured in MIMO mode<br />
+The DUT provides at least one connector for connection to external cellular antenna.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.6.1 - Information Receive &amp; Location Test          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.1.1</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.1.2</td>
+                            <td >Install &amp; execute test program “GPS Test”.</td>
+                                <td >Test program should be installed and executed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.1.3</td>
+                            <td >Check system can get the GNSS information from satellites of GPS and GLONASS.</td>
+                                <td >System should get the GNSS information from satellites of GPS and GLONASS without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.1.4</td>
+                            <td >System connects to Internet.</td>
+                                <td >System connects to the Internet successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.1.5</td>
+                            <td >Execute the test program “Maps”.</td>
+                                <td >Test program should be executed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.1.6</td>
+                            <td >Click the “Your Location” icon to track the physical location of DUT and the DUT can be located normally.</td>
+                                <td >System should get the physical location of DUT correctly from Maps without any problem</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.6.2 - Antenna Detection Test          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.2.1</td>
+                            <td >In below condition, measure the waveform of GPS antenna.<br />
+Short the antenna pin to ground (ANT SHORT) / No connecting antenna (ANT OPEN) / Connecting antenna (Normal).</td>
+                                <td >The measuring waveform should consist with the GNSS antenna detecting table.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.2.2</td>
+                            <td >Short GPS antennas<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio21→1<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio14→0</td>
+                                <td >The measuring waveform should consist with the GNSS antenna detecting table.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.2.3</td>
+                            <td >Remove GPS antennas<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio21→0<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio14→1</td>
+                                <td >The measuring waveform should consist with the GNSS antenna detecting table.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.2.4</td>
+                            <td >Connect GPS antennas<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio21→1<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio14→1</td>
+                                <td >The measuring waveform should consist with the GNSS antenna detecting table.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.6.3 - Cold Start Time Test          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.3.1</td>
+                            <td >Using “Qualcomm Flash Image Loader” tool to update an Android image on eMMC.</td>
+                                <td >The Android image update completely,</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.3.2</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT and boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.3.3</td>
+                            <td >Install and execute test program “GPS Test”.</td>
+                                <td >Test program should be installed and executed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.3.4</td>
+                            <td >Check the time until GNSS status “Fixed”.</td>
+                                <td >The taking time should less than 45 secs.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.6.4 - Antenna Check          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.4.1</td>
+                            <td >Check the cellular antenna can mount on the DUT and it work status.</td>
+                                <td >Cellular antenna can be mounted on the system and work properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.6.4.2</td>
+                            <td >The DUT has single Fakra type connector.</td>
+                                <td >System should have one Fakra type connector (Blue Color)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.7 - Bluetooth          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.1</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >The DUT and boot into OS successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.2</td>
+                            <td >Enable the Bluetooth under Settings.</td>
+                                <td >The DUT can scan Bluetooth devices around it.<br />
+The DUT can pair with the one of Bluetooth devices successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.3</td>
+                            <td >DUT pair with handheld terminal and transfer files between DUT and handheld terminal.</td>
+                                <td >The DUT can transfer and receive files with handheld terminal successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.4</td>
+                            <td >DUT pair with Bluetooth keyboard then check the Bluetooth keyboard work status.</td>
+                                <td >Bluetooth keyboard should work normally without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.5</td>
+                            <td >DUT pair with Bluetooth mouse then check the Bluetooth mouse work status.</td>
+                                <td >Bluetooth mouse should work normally without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.6</td>
+                            <td >DUT pair with Bluetooth speaker then play the audio files and make sure sound can output from the Bluetooth speaker.</td>
+                                <td >The sound can output from Bluetooth speaker successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.7</td>
+                            <td >DUT pair with Bluetooth headset then play the audio files and make sure sound can output from the Bluetooth headset earpiece.</td>
+                                <td >The sound can output from Bluetooth headset earpiece successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.8</td>
+                            <td >Install &amp; execute test program “Voice Recorder” and record file with Bluetooth headset Mic.</td>
+                                <td >Test program should be Installed &amp; executed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.9</td>
+                            <td >Play the recording file and check sound output with Bluetooth headset earpiece.</td>
+                                <td >Sound output should not have abnormal noise when playback the recording file of Bluetooth headset Mic.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.10</td>
+                            <td >Disconnect and then reconnect the Bluetooth headset 5 times and check the Bluetooth headset connect status each time</td>
+                                <td >Bluetooth can auto pair with Bluetooth device and work normally when disconnect and then reconnect Bluetooth device</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.11</td>
+                            <td >Enable/Disable the Bluetooth 5 times and check the Bluetooth headset connects status each time.</td>
+                                <td >Bluetooth can auto pair with Bluetooth device and work normally when turn on the Bluetooth switch.<br />
+Bluetooth disable when turn off the Bluetooth switch.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.12</td>
+                            <td >Enable/Disable the Airplane mode and check the Bluetooth headset connect status.</td>
+                                <td >Airplane Mode:<br />
+- Bluetooth disable when turn on the Airplane mode.<br />
+- Bluetooth can auto pair with Bluetooth device and work normally when turn off the Airplane mode.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.13</td>
+                            <td >Reboot the OS 5 times and check the Bluetooth headset connect status each time.</td>
+                                <td >Bluetooth can auto pair with Bluetooth device and work normally when system reboot.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.7.14</td>
+                            <td >DUT pair with four Bluetooth devices simultaneously, one of which is an audio device then check the four Bluetooth devices work status.</td>
+                                <td >The four Bluetooth devices can connect simultaneously and work normally without any problem.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.8.1 - WLAN Transmission Mode          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.8.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.8.1.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Wi-Fi hotspot -&gt; Advanced -&gt; AP Band -&gt; Enable 5.0 GHz Band</td>
+                                <td >The Wireless AP parameters can set 5GHz Mode to 11a/n/ac mixed</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.8.1.3</td>
+                            <td >Wi-Fi connects to the Wireless AP of 2.4GHz frequency band</td>
+                                <td >DUT can search and connect to the Wireless AP properly without any problem</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.8.1.4</td>
+                            <td >Check DUT and PC can ping each other IP address when DUT and PC in the same domain.</td>
+                                <td >DUT and PC can ping each other IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.8.1.5</td>
+                            <td >Wi-Fi connects to the Wireless AP of 5GHz frequency band</td>
+                                <td >DUT can search and connect to the Wireless AP properly without any problem</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.8.1.6</td>
+                            <td >Check DUT and PC can ping each other IP address when DUT and PC in the same domain again</td>
+                                <td >DUT and PC can ping each other IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.9 - Reset          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.9.1</td>
+                            <td >Power on the DUT and boot into OS.</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.9.2</td>
+                            <td >Input test command to reboot the system 5 times.<br />
+#reboot</td>
+                                <td >DUT can reboot successfully and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.9.3</td>
+                            <td >Press the CU power button 1 second and select “Restart” on the power management menu. <br />
+Test for 5 times.</td>
+                                <td >DUT can restart successfully and work normally each time</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.10.1 - The CU Power LED          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly and the CU Power LED is light</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.1.2</td>
+                            <td >The system Suspend</td>
+                                <td >The CU Power LED is slow Blink 1 time/ 3sec</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.1.3</td>
+                            <td >The System No Power</td>
+                                <td >The CU Power LED is dark</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.10.2 - The GNSS LED          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.2.1</td>
+                            <td >Disconnect GPS antenna then Boot up DUT</td>
+                                <td >The GNSS LED is dark</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.2.2</td>
+                            <td >Plug-in GPS antenna cable and open Google Map to get device location</td>
+                                <td >The GNSS LED is blinking</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.2.3</td>
+                            <td >Wait until Google Map get device location successfully</td>
+                                <td >The GNSS LED is light</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.10.3 - The WWAN LED          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.3.1</td>
+                            <td >Boot up DUT without plugging sim card</td>
+                                <td >DUT boots up properly and the WWAN LED is dark</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.3.2</td>
+                            <td >Plugin 3G/4G SIM card then Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.3.3</td>
+                            <td >Go to &quot;Network &amp; internet&quot; -&gt; &quot;Mobile network&quot; -&gt; &quot;Advanced&quot; -&gt; &quot;Automatically select network&quot; to searching for network</td>
+                                <td >The WWAN LED is blinking</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.10.3.4</td>
+                            <td >Wait until signal strength symbol is shown that indicates device connected to LTE network</td>
+                                <td >The WWAN LED is light</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.1 - Connect one device close to USB 3.0 before power on          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.1.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.1.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.1.4</td>
+                            <td >Open SC66 Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.1.5</td>
+                            <td >Access www.google.com from this computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.2 - Connect one device close to UI port before power on          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.2.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.2.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.2.4</td>
+                            <td >Open SC66 Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.2.5</td>
+                            <td >Access www.google.com from the computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.3 - Connect two devices before power on          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.3.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.3.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.3.4</td>
+                            <td >Open SC66 Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.3.5</td>
+                            <td >Access www.google.com from those computers</td>
+                                <td >Computers access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.4 - Connect one device close to USB 3.0 after turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.4.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.4.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.4.4</td>
+                            <td >Open SC66 Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.4.5</td>
+                            <td >Connect Ethernet cable from a computer to DUT's Ethernet 1,<br />
+access www.google.com from this computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.5 - Connect one device close to UI port after turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.5.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.5.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.5.4</td>
+                            <td >Open Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.5.5</td>
+                            <td >Connect ethernet cable from a computer to DUT's Ethernet 2 then access www.google.com from this computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.6 - Connect two devices after turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.6.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.6.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.6.4</td>
+                            <td >Open Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.6.5</td>
+                            <td >Connect ethernet cable from two computers to DUT's Ethernet 1 and Ethernet 2 then access www.google.com from those computers</td>
+                                <td >Computers access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.7 - Connect one device close to USB 3.0 after power on and before turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.7.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.7.2</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.7.3</td>
+                            <td >Open Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.7.4</td>
+                            <td >Connect ethernet cable from a computer to DUT's Ethernet 1,<br />
+Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.7.5</td>
+                            <td >Access www.google.com from this computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.8 - Connect one device close to UI port after power on and before turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.8.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.8.2</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.8.3</td>
+                            <td >Open Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.8.4</td>
+                            <td >Connect ethernet cable from a computer to DUT's Ethernet 2,<br />
+Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.8.5</td>
+                            <td >Access www.google.com from this computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.9 - Connect two devices after power on and before turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.9.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.9.2</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.9.3</td>
+                            <td >Open Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.9.4</td>
+                            <td >Connect ethernet cable from a computer to DUT's Ethernet 1 and Ethernet 2,<br />
+Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.9.5</td>
+                            <td >Access www.google.com from this computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.10 - Connect one device close to USB 3.0 first, then power on device after turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.10.1</td>
+                            <td >Power off computer, connect ethernet cable from a computer to DUT's Ethernet 1 then<br />
+Boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.10.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.10.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.10.4</td>
+                            <td >Open Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.10.5</td>
+                            <td >Power on the computer then access www.google.com from this computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.11 - Connect one device close to UI port first, then power on device after turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.11.1</td>
+                            <td >Power off computer, connect ethernet cable from a computer to DUT's Ethernet 2 then boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.11.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.11.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.11.4</td>
+                            <td >Open Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.11.5</td>
+                            <td >Power on the computer then access www.google.com from this computer</td>
+                                <td >Computer access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.11.12 - Connect two devices close to UI port first, then power on device after turn on Ethernet tethering          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.12.1</td>
+                            <td >Power off computers, connect ethernet cable from two computers to DUT's Ethernet then boot up DUT</td>
+                                <td >Boot up DUT properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.12.2</td>
+                            <td >Go to Settings -&gt; Network &amp; internet -&gt; Hotspot &amp; tethering -&gt; Ethernet Tethering</td>
+                                <td >Ethernet tethering is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.12.3</td>
+                            <td >Enable LTE</td>
+                                <td >LTE is enabled successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.12.4</td>
+                            <td >Open Browser, enter www.google.com</td>
+                                <td >Access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.11.12.5</td>
+                            <td >Power on computers then access www.google.com from this computer</td>
+                                <td >Computers access www.google.com successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.1 - Disable RCS          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.1.2</td>
+                            <td >adb shell<br />
+$getprop | grep rcs</td>
+                                <td >Check returned value is : [persist.rcs.supported]: [0]</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.2 - GNSS antenna's status          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.2.2</td>
+                            <td >adb shell:<br />
+Connect GPS antennas<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio21→1<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio14→1</td>
+                                <td >Normal:<br />
+value_gpio14 = 1 ; value_gpio21 = 1</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.2.3</td>
+                            <td >Remove GPS antennas<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio21→0<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio14→1</td>
+                                <td >Open:<br />
+value_gpio14 = 1 ; value_gpio21 = 0</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.2.4</td>
+                            <td >Short GPS antennas<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio21→1<br />
+/sys/devices/virtual/misc/gpio-control/value_gpio14→0</td>
+                                <td >Short:<br />
+value_gpio14 = 0 ; value_gpio21 = 1</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.3 - SC66 LED status          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.3.2</td>
+                            <td >Stay wake up</td>
+                                <td >Red light continuance</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.4 - Device capacity is 64GB          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.4.1</td>
+                            <td >Burn image then boot up DUT( Do not do factory reset)</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.4.2</td>
+                            <td >Open Settings-&gt;Storage <br />
+then check total size</td>
+                                <td >Total size: 64GB</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.5 - Remove QTR          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.5.2</td>
+                            <td >Open Settings→System</td>
+                                <td >Can not find Hardware Feeback</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.6 - Default phone app          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.6.2</td>
+                            <td >Go to Settings→Apps &amp; notifications→Default apps-&gt;Phone</td>
+                                <td >Check Phone App will be set</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.9 - Auto set Time from satellite          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.9.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.9.2</td>
+                            <td >Do not connect to the network and insert SIM card, connect to GPS and wait to 3D fix and enable satellite time from Settings</td>
+                                <td >Satellite time can be set</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.9.3</td>
+                            <td >Check the time</td>
+                                <td >Time will be correct by satellite</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.10 - At least 4 Bluetooth device          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.10.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.10.2</td>
+                            <td >Turn on Bluetooth, connect to 4 different devices, and one is audio devices</td>
+                                <td >More than 4 BT devices</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.11 - At least 5 WIFI device          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.11.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.11.2</td>
+                            <td >Turn on WIFI hotspot</td>
+                                <td >WIFI hotspot can be set on</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.11.3</td>
+                            <td >More than 5 devices connect to SC66</td>
+                                <td >More than 5 client</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.12 - WIFI tethering with many devices without crash          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.12.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.12.2</td>
+                            <td >Turn on the WIFI hotspot, then use many devices to connect</td>
+                                <td >Devices can connect to the WIFI hotspot</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.12.3</td>
+                            <td >Turn on/off those devices WIFI</td>
+                                <td >The system does not crash</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.13 - GPS LED          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.13.1</td>
+                            <td >Connect GPS antenna then boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.13.2</td>
+                            <td >Search GPS without 3D Fix, then check Led status</td>
+                                <td >Led status: twinkle</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.13.3</td>
+                            <td >Wait to 3D fix then check Led status</td>
+                                <td >Led status: Light</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.13.4</td>
+                            <td >Remove GPS antenna then check Led status</td>
+                                <td >Led status: Dark</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.14 - LTE LED          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.14.1</td>
+                            <td >Connect LTE antenna and insert SIM then boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.14.2</td>
+                            <td >Link to operator and check Led status</td>
+                                <td >Led status: Light</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.14.3</td>
+                            <td >Remove LTE antenna let the signal is weakly then check Led status</td>
+                                <td >Led status: Twinkle</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.14.4</td>
+                            <td >Remove SIM Card and check Led status</td>
+                                <td >Led status: Dark</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.15 - Setupwizard orientation          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.15.1</td>
+                            <td >Boot up DUT( Do factory reset)</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.15.2</td>
+                            <td >Check Setupwizard orientation</td>
+                                <td >Setupwizard orientation: Landscape</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.16 - Dialer with all ICONs          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.16.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.16.2</td>
+                            <td >Dial out, receive this call then check the ICON number</td>
+                                <td >5 extra ICONs</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.16.3</td>
+                            <td >adb shell<br />
+$wm density</td>
+                                <td >Density: 220</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.18 - Pin Code more than 5 digits          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.18.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.18.2</td>
+                            <td >Go to Settings→Security→Screen Lock-&gt;Pin</td>
+                                <td >Enter more than 5 digits</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.18.3</td>
+                            <td >Press power key to enter suspend, press power key to exit suspend then enter this digits</td>
+                                <td >DUT can unlock</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.17 - G Sensor          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.17.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.17.2</td>
+                            <td >Install Sensor test APK then check G-Sensor value</td>
+                                <td >Read acceleration value</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.21 - Remove Battery feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.21.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.21.2</td>
+                            <td >Check status bar</td>
+                                <td >Can not find Battery Level</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.21.3</td>
+                            <td >Check Settings</td>
+                                <td >Can not find Battery feature</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.21.4</td>
+                            <td >Check battery status by “Device info”</td>
+                                <td >Check Battery<br />
+Health: Unknown<br />
+Level: 0%<br />
+Status: Unknown</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.20 - Log files          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.20.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.20.2</td>
+                            <td >adb shell<br />
+/storage/emulated/0/logd/ <br />
+ls</td>
+                                <td >List file like logcat.xxxxx</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.24 - QxDM port          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.24.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.24.2</td>
+                            <td >Plug USB 3.0 port to PC then use “lsusb” to list USB devices</td>
+                                <td >05C6:9091 in the list</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.22 - Dual Ethernet          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.22.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.22.2</td>
+                            <td >Ethernet 1 connect to IP router</td>
+                                <td >Get IP and connect to internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.22.3</td>
+                            <td >Plug out ethernet 1 and Ethernet 2 connect to IP router</td>
+                                <td >Get IP and connect to internet</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.12.23 - Remove Camera          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.23.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.23.2</td>
+                            <td >Check left shortcut icon on left</td>
+                                <td >Without camera icon</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.23.3</td>
+                            <td >Press and move up on the desktop to show programs</td>
+                                <td >Without camera icon</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.12.23.4</td>
+                            <td >Press power key twice fast</td>
+                                <td >Can not launch Camera</td>
+                        <td >      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+      </body>
+</html>

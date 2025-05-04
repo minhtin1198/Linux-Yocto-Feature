@@ -1,0 +1,3781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <style>
+      table.data{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table.sub-data{
+        border-collapse: collapse;
+        border: none;
+      }
+      table.sub-data th, table.sub-data td{
+        border-color: white;
+      }
+      h1,h2,h3,h4,h5,h6,p,td,th{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      th,td{
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 3px;
+      }
+
+      h2,h1{
+        font-size: 14px;
+        color: black;
+      }
+      h3{
+        color: rgb(204,24,0);
+        font-size: 21px;
+      }
+
+      h4{
+        font-size: 18px;
+        color: rgb(0,0,0);
+      }
+
+      h5{
+        font-size: 16px;
+        color: rgb(102,102,102);
+      }
+
+      h6{
+        font-size: 14px;
+        color: rgb(0,0,0);
+        font-style: italic;
+      }
+
+      h6.h1{
+        color: rgb(128,128,128);
+      }
+
+      h6.h2{
+        color: rgb(0,0,0);
+        font-style: normal;
+        text-decoration: underline;
+      }
+
+      h6.h3{
+        color: rgb(128,128,128);
+        font-style: normal;
+      }
+
+      h6.h4{
+        color: rgb(0,0,0);
+        text-decoration: underline;
+      }
+      .form-id{
+        white-space: nowrap;
+      }
+      .field-value{
+        margin-left: 1em;
+      }
+      .field-value td{
+        padding: 0px 2px 0px 0px;
+      }
+
+      .positive{
+        color: rgb(0,128,64) !important;
+      }
+      .block-positive{
+      }
+
+      .neutral{
+        color: rgb(128,128,128) !important;
+      }
+      .block-neutral{
+      }
+
+      .negative{
+        color: rgb(204,0,0) !important;
+      }
+      .block-negative{
+      }
+
+      .highlight{
+        color: rgb(0,0,0) !important;
+        background-color: rgb(240,204,204) !important;
+      }
+      .block-highlight{
+      }
+      .nr{
+      }
+      .block-nr{
+      }
+      @page Section1{
+        size:11.0in 8.5in;
+        mso-page-orientation:landscape;
+        margin:1.25in 1.0in 1.25in 1.0in;
+        mso-header-margin:.5in;
+        mso-footer-margin:.5in;
+        mso-paper-source:0;
+      }
+      div.Section1{
+        page:Section1;
+      }
+    </style>
+            <xml xmlns:x="urn:schemas-microsoft-com:office:excel"
+            xmlns:o="urn:schemas-microsoft-com:office:office">
+          <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+              <x:ExcelWorksheet>
+<!--            <x:Name>Sheet1</x:Name> -->
+                <x:WorksheetOptions>
+                  <x:Selected/>
+                </x:WorksheetOptions>
+              </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+          </x:ExcelWorkbook>
+        </xml>
+      </head>
+  <body>
+        <!-- Stats -->
+    <div class="Section1">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th colspan="2" class="stat-type">Test Case</th>
+                        <th class="spacer"> </th>
+              <th colspan="2" class="stat-type">Test Step</th>
+          </tr>
+      </thead>
+      <tbody>            <tr>
+              <th class="positive">Pass</th>
+              <td class="stat-number">61</td>
+              <td class="stat-number">90%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">281</td>
+                  <td class="stat-number">98%</td></tr>            <tr>
+              <th class="negative">Fail</th>
+              <td class="stat-number">7</td>
+              <td class="stat-number">10%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">7</td>
+                  <td class="stat-number">2%</td></tr>            <tr>
+              <th class="neutral">N/A</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>        <tr>
+          <th class="nr">No Result</th>
+          <td class="stat-number">0</td>
+          <td class="stat-number">0%</td>
+                        <td class="spacer"> </td>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td></tr><tr>
+                <th class="ip">In Progress</th>
+                <td class="stat-number">0</td>
+                <td class="stat-number">0%</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>          <tr>
+            <th class="stat-total">Total</th>
+            <td class="stat-total stat-number">68</td>
+            <td> </td>
+                            <td class="spacer">&nbsp;</td>
+                <td class="stat-total stat-number">288</td>
+                <td>&nbsp;</td>
+            </tr>
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <table class="data">
+      <thead>
+        <tr>
+          <th colspan="5">Results Summary</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>
+          <th>Summary</th>
+          <th>Resulted By</th>
+          <th>Resulted On</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.1</td>
+                    <td >General Output Feature</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:34 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.2</td>
+                    <td >General Input Feature</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:34 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3.3</td>
+                    <td >General Interrupt Handler Feature</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:34 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.4</td>
+                    <td >RTC</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:35 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.5</td>
+                    <td >Audio playback</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6</td>
+                    <td >Audio record</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.1</td>
+                    <td >Camera port 1</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.2</td>
+                    <td >Camera port 2</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.3</td>
+                    <td >Camera port 3</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:48 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7.5</td>
+                    <td >2 Camera video recording feature simultaneously</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.8</td>
+                    <td >Ethernet port 1 - SOC ethernet</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.1.1</td>
+                    <td >Detection mSATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-02 03:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.10.1.2</td>
+                    <td >Format mSATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-02 04:44 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.10.1.3</td>
+                    <td >Writing data to the mSATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-02 04:44 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.1.4</td>
+                    <td >Reading data from the mSATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-02 03:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.2.1</td>
+                    <td >Detection SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.2.2</td>
+                    <td >Format SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:50 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.10.2.3</td>
+                    <td >Writing data to the SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 09:02 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.2.4</td>
+                    <td >Reading data from the SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:50 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.3.1</td>
+                    <td >Detection SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:50 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.3.2</td>
+                    <td >Format SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:50 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.10.3.3</td>
+                    <td >Writing data to the SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 09:02 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.3.4</td>
+                    <td >Reading data from the SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:51 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.4.1</td>
+                    <td >Detection SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:51 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.4.2</td>
+                    <td >Format SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:52 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.10.4.3</td>
+                    <td >Writing data to the SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 09:02 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.10.4.4</td>
+                    <td >Reading data from the SATA Hard Drive</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:52 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.11</td>
+                    <td >TPM (Trusted Platform Module) enable</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:52 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.12</td>
+                    <td >Ethernet port 2 - PCIe ethernet</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:52 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.13.1</td>
+                    <td >CAN0 bus</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:53 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.13.2</td>
+                    <td >CAN1 bus</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:53 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.14</td>
+                    <td >Read/Write MAC address</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:53 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.15</td>
+                    <td >SD Card Read/Write</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:53 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.16</td>
+                    <td >USB Type-C</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:53 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.17</td>
+                    <td >SPI bus</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:54 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.18.1</td>
+                    <td >General Output Feature</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:54 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.18.2</td>
+                    <td >General Input Feature</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:54 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.18.3</td>
+                    <td >General Interrupt Handler Feature</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:54 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.19.1</td>
+                    <td >USB Type-A port 1</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:54 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.19.2</td>
+                    <td >USB Type-A port 2</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:54 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.19.3</td>
+                    <td >USB Type-A port 3</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:54 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.19.4</td>
+                    <td >USB Type-A port 4</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.20.1</td>
+                    <td >fio tool</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.20.2</td>
+                    <td >dmidecode tool</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.20.3</td>
+                    <td >lshw tool</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.21.1</td>
+                    <td >System EEPROM (AT24C02D)</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.22.1</td>
+                    <td >Turn on system LED</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.22.2</td>
+                    <td >Turn off system LED</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.23.1</td>
+                    <td >MySQL Open Source Database System</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:56 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.24.1</td>
+                    <td >RTSP Server</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:56 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.25</td>
+                    <td >Testing meta-debian integration</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:56 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.26</td>
+                    <td >[Support raised by ADlink] Ethernet PORT1 MAC address configuration</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:56 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.27</td>
+                    <td >The mdio-tool's writing function</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:57 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.28</td>
+                    <td >Turn off fan when Poweroff OS</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 09:01 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.29</td>
+                    <td >Control PIN &quot;SW_POWER_OFF&quot; when poweroff</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 09:01 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.30</td>
+                    <td >[STL] HDMI</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:57 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.31.1</td>
+                    <td >Power key</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:57 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.31.2</td>
+                    <td >Reset key</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:57 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.31.3</td>
+                    <td >USB Type-C</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:57 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.31.4</td>
+                    <td >Giga Ethernet - AR8035</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.31.5</td>
+                    <td >Micro SD card Read/Write</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.31.6</td>
+                    <td >Turn off SOM2's fan when Poweroff OS</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.32.1</td>
+                    <td >Power key</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.32.2</td>
+                    <td >Reset key</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.32.3</td>
+                    <td >USB Type-C</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.32.4</td>
+                    <td >Giga Ethernet - AR8035</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:59 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.32.5</td>
+                    <td >Micro SD card Read/Write</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:59 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.32.6</td>
+                    <td >Turn off SOM3's fan when Poweroff OS</td>
+          <td >Nguyen Tai</td>
+          <td >2021-02-01 08:59 AM UTC</td>
+        </tr>
+          </tbody>
+    </table>
+    <br/>
+    <br/>    <table class="data" id="results-detail">
+      <thead>
+        <tr>
+          <th colspan="5">Results Detail</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>                <th>Description</th>
+                            <th>Expected Results</th>
+                      <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.1 - General Output Feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1.2</td>
+                            <td >Determine the GPIO controller<br />
+- Run command:<br />
+$ ls /sys/class/gpio/<br />
+Result: export  gpiochip382  gpiochip400  gpiochip432 gpiochip380  gpiochip384  gpiochip416  unexport<br />
+$ cat /sys/class/gpio/{gpiochip384,gpiochip400,gpiochip416}/label <br />
+Result: 4-0021,4-0020,3-0020</td>
+                                <td >Return the result correctly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1.3</td>
+                            <td >Check pin GPIO on IO Expander 0 [gpiochip416-3-0020]<br />
+Check pin gpio 2 (PIN 6 on header CN4701) using this command:<br />
+$ cd /sys/class/gpio/<br />
+$ echo 418 &gt; export<br />
+Change direction to out and value of gpio 2 (PIN 6 on header CN4701):<br />
+$ cd gpio418<br />
+$ echo out &gt; direction<br />
+$ echo 0 &gt; value<br />
+$ echo 1 &gt; value</td>
+                                <td >Echo to direction and value successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1.4</td>
+                            <td >Measure voltage output of pin gpio 2 using power meter or scope.<br />
+The voltage: 0 if set value equal 0 and 3.3V if set value equal 1.</td>
+                                <td >The voltage return correctly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.2 - General Input Feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.2.2</td>
+                            <td >Determine the GPIO controller - run command:<br />
+$ ls /sys/class/gpio/<br />
+Result: export  gpiochip382  gpiochip400  gpiochip432 gpiochip380  gpiochip384  gpiochip416  unexport<br />
+$ cat /sys/class/gpio/{gpiochip384,gpiochip400,gpiochip416}/label<br />
+Result: 4-0021,4-0020,3-0020</td>
+                                <td >Return the result correctly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.2.3</td>
+                            <td >Check pin GPIO on IO Expander 0 [gpiochip416-3-0020]<br />
+Check pin gpio 2 (PIN 6 on header CN4701) using this command:<br />
+$ cd /sys/class/gpio/<br />
+$ echo 418 &gt; export<br />
+Change direction to out and value of gpio 2 (PIN 6 on header CN4701):<br />
+$ cd gpio418<br />
+$ echo in &gt; direction<br />
+Create signal input using voltage 0 or 3.3V to go into pin gpio2.</td>
+                                <td >Echo to direction and create signal input successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.2.4</td>
+                            <td >Get value from the terminal.<br />
+$ cat /sys/class/gpio/gpio418/value<br />
+0 if signal input equals 0 and 1 if signal input equals 3.3V.</td>
+                                <td >The value return correctly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3.3 - General Interrupt Handler Feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.2</td>
+                            <td >Determine the GPIO controller - run command:<br />
+$ ls /sys/class/gpio/<br />
+Result: export  gpiochip382  gpiochip400  gpiochip432 gpiochip380  gpiochip384  gpiochip416  unexport<br />
+$ cat /sys/class/gpio/{gpiochip384,gpiochip400,gpiochip416}/label<br />
+Result: 4-0021,4-0020,3-0020</td>
+                                <td >Return the result correctly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.3</td>
+                            <td >Check pin GPIO on IO Expander 0 [gpiochip416-3-0020]<br />
+Check pin gpio2 (PIN 6 on header CN4701) using this command:<br />
+$ cd /sys/class/gpio/<br />
+$ echo 418 &gt; export<br />
+Change direction to out and value of gpio 2 (PIN 6 on header CN4701):<br />
+$ cd gpio418<br />
+$ echo in &gt; direction<br />
+$ echo both &gt; edge</td>
+                                <td >Echo to direction and edge successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3.4</td>
+                            <td >Create interrupt handler:<br />
+Create signal input using voltage 0 or 3.3V go into pin gpio2<br />
+Check interrupt by command:<br />
+$ cat /proc/interrupts</td>
+                                <td >The interrupt CPU0 keembay-gpio will count up successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.4 - RTC          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.2</td>
+                            <td >Using hwclock for calling Real Time Clock (RTC), it is a utility for accessing the hardware clock.<br />
+$ hwclock --show</td>
+                                <td >Return date and time value successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.5 - Audio playback          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.2</td>
+                            <td >Plug-in headphone to KMB device</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.3</td>
+                            <td >In serial port terminal, Run command:<br />
+$ amixer sset -q 'PCM' 127<br />
+$ amixer sset -q 'HP DAC' 118<br />
+$ amixer sset -q 'HP' 9<br />
+$ amixer sset -q 'Left HP Mixer DACL1' on<br />
+$ amixer sset -q 'Left HP Mixer DACR1' on<br />
+$ amixer set 'Left HP Mixer Line2L Bypass' 'off'<br />
+$ amixer set 'Left HP Mixer Line2R Bypass' 'off'<br />
+$ amixer set 'Left HP Mixer PGAL Bypass' 'off'<br />
+$ amixer set 'Left HP Mixer PGAR Bypass' 'off'<br />
+$ amixer sset -q 'Left DAC Mux' 'DAC_L1'<br />
+$ amixer sset -q 'Right HP Mixer DACR1'  on<br />
+$ amixer sset -q 'Right HP Mixer DACL1' on<br />
+$ amixer set 'Right HP Mixer Line2L Bypass' 'off'<br />
+$ amixer set 'Right HP Mixer Line2R Bypass' 'off'<br />
+$ amixer set 'Right HP Mixer PGAL Bypass' 'off'<br />
+$ amixer set 'Right HP Mixer PGAR Bypass' 'off'<br />
+$ amixer sset -q  'Right DAC Mux' 'DAC_R1'</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.4</td>
+                            <td >Copy an audio file to DUT (Ex: 16kHz.wav)</td>
+                                <td >The audio file is copied to the DUT.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.5</td>
+                            <td >In serial port terminal.<br />
+$ aplay 16kHz.wav</td>
+                                <td >You can hear audio in headphone.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6 - Audio record          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.2</td>
+                            <td >Plug-in the microphone to mic-in connector on KMB device</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.3</td>
+                            <td >In serial port terminal, run below command on yocto for alsamixer setup:<br />
+$ amixer cset name='Left PGA Mixer Line1L Switch' off<br />
+$ amixer cset name='Left PGA Mixer Line1R Switch' off<br />
+$ amixer cset name='Left PGA Mixer Line2L Switch' off<br />
+$ amixer cset name='Left PGA Mixer Mic3L Switch' on<br />
+$ amixer cset name='Left PGA Mixer Mic3R Switch' off<br />
+$ amixer cset name='Right PGA Mixer Line1L Switch' off<br />
+$ amixer cset name='Right PGA Mixer Line1R Switch' off<br />
+$ amixer cset name='Right PGA Mixer Line2R Switch' off<br />
+$ amixer cset name='Right PGA Mixer Mic3L Switch' off<br />
+$ amixer cset name='Right PGA Mixer Mic3R Switch' on</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.4</td>
+                            <td >Run pipeline (sound source need to be put closely to microphone)<br />
+$ gst-launch-1.0 alsasrc num-buffers=2000 device=hw:0,0 ! audio/x-raw,channels=2,rate=48000,format=S16LE ! audioconvert ! audioresample ! wavenc ! filesink location=mic.wav</td>
+                                <td >Run successfully and receive a mic.wav file.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.5</td>
+                            <td >Play this recording</td>
+                                <td >Make sure the sounds can be playback.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.1 - Camera port 1          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up and login properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.2</td>
+                            <td >Plug-in a camera module (IMX334) to camera port 1 (CN2701) on the DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.3</td>
+                            <td >Install the camera drivers and VAAPI encode driver<br />
+- Run command:<br />
+$ modprobe kmb_flash<br />
+$ modprobe kmb_lens<br />
+$ modprobe kmb_cam<br />
+$ modprobe kmb-imx334<br />
+$ modprobe hantrodriver</td>
+                                <td >All modules are probed successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.4</td>
+                            <td >Check /dev folder.<br />
+- Run command:<br />
+$ ls -l /dev/video*</td>
+                                <td >Have eight video files in the /dev folder, named from video0 to video7.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.5</td>
+                            <td >Start VPU on the UART console<br />
+- Run command:<br />
+$ echo -e &quot;3&quot; | XLinkStartStop; StartVpu vpu_ipc.bin</td>
+                                <td >Loading VPU firmware file successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.6</td>
+                            <td >Run camera via IPS pipeline<br />
+- Run command:<br />
+$ cd ~/<br />
+$ gst-launch-1.0 kmbcamsrc name=kmbsrc num-frames=10 transform-hub=basic kmbsrc. ! queue ! filesink location=ull_2_sensorInput_video0_3840x2160.nv12 kmbsrc. ! queue ! capsfilter caps=video/x-raw,width=1920,height=1080 ! filesink location=ull_2_sensorInput_video1_1920x1080.nv12</td>
+                                <td >Have 2 files: ull_2_sensorInput_video0_3840x2160.nv12 and ull_2_sensorInput_video1_1920x1080.nv12 that it has value.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1.7</td>
+                            <td >Check output files camera<br />
+	- Copy 2 files ull_2_sensorInput_video0_3840x2160.nv12 and ull_2_sensorInput_video1_1920x1080.nv12 to the computer. <br />
+	- Using vooya player to open them.</td>
+                                <td >2 files can open.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.2 - Camera port 2          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >boot up and login properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.2</td>
+                            <td >Plug-in a camera module (IMX334) to camera port 2 (CN2702) on the DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.3</td>
+                            <td >Install the camera drivers and VAAPI encode driver<br />
+- Run command:<br />
+$ modprobe kmb_flash<br />
+$ modprobe kmb_lens<br />
+$ modprobe kmb_cam<br />
+$ modprobe kmb-imx334<br />
+$ modprobe hantrodriver</td>
+                                <td >All modules are probed successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.4</td>
+                            <td >Check /dev folder<br />
+- Run command:<br />
+$ ls -l /dev/video*</td>
+                                <td >Have eight video files in the /dev folder, named from video0 to video7</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.5</td>
+                            <td >Start VPU on the UART console<br />
+- Run command:<br />
+$ echo -e &quot;3&quot; | XLinkStartStop; StartVpu vpu_ipc.bin</td>
+                                <td >$ Loading VPU firmware file successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.6</td>
+                            <td >Run camera via IPS pipeline<br />
+- Run command:<br />
+$ cd ~/<br />
+$ gst-launch-1.0 kmbcamsrc name=kmbsrc num-frames=10 transform-hub=basic kmbsrc. ! queue ! filesink location=ull_2_sensorInput_video0_3840x2160.nv12 kmbsrc. ! queue ! capsfilter caps=video/x-raw,width=1920,height=1080 ! filesink location=ull_2_sensorInput_video1_1920x1080.nv12</td>
+                                <td >Have 2 files: ull_2_sensorInput_video0_3840x2160.nv12 and ull_2_sensorInput_video1_1920x1080.nv12 that it has value.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2.7</td>
+                            <td >Check output files camera<br />
+	- Copy 2 files ull_2_sensorInput_video0_3840x2160.nv12 and ull_2_sensorInput_video1_1920x1080.nv12 to Computer. <br />
+	- Using vooya player to open them.</td>
+                                <td >2 files can open sucessfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.3 - Camera port 3          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up and login properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.2</td>
+                            <td >Plug-in a camera module (MV0250) to camera port 3 (CN2801) on the DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.3</td>
+                            <td >Install the camera drivers and VAAPI encode driver<br />
+- Run command:<br />
+$ modprobe kmb_flash<br />
+$ modprobe kmb_lens<br />
+$ modprobe kmb_cam<br />
+$ modprobe kmb-ov9282<br />
+$ modprobe hantrodriver</td>
+                                <td >All modules are probed successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.4</td>
+                            <td >Check /dev folder<br />
+- Run command:<br />
+$ ls -l /dev/video*</td>
+                                <td >Have nine video files in the /dev folder, named from video0 to video8</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.5</td>
+                            <td >Start VPU on the UART console<br />
+- Run command:<br />
+$ echo -e &quot;3&quot; | XLinkStartStop; StartVpu vpu_ipc.bin</td>
+                                <td >Loading VPU firmware file successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.6</td>
+                            <td >Run 1st camera via IPS pipeline<br />
+- Run command:<br />
+$ cd ~/<br />
+$ gst-launch-1.0 -v kmbcamsrc name=kmbsrc num-frames=100 transform-hub=none camera-mode=mono camera_id=0 kmbsrc. ! queue ! capsfilter caps=video/x-raw,width=1280,height=720 name=imgout ! filesink location=ull_2_sensorInput_video1_1280x720.nv12</td>
+                                <td >ull_2_sensorInput_video1_1280x720.nv12 that it has value.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.8</td>
+                            <td >Check output files camera<br />
+- Copy file ull_2_sensorInput_video1_1280x720.nv12 and ull_2_sensorInput_video2_1280x720.nv12 to Computer.<br />
+- Using vooya player to open them.</td>
+                                <td >File can open and show video.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3.7</td>
+                            <td >Run 2nd camera via IPS pipeline<br />
+- Run command:<br />
+$ cd ~/<br />
+$ gst-launch-1.0 -v kmbcamsrc name=kmbsrc num-frames=100 transform-hub=none camera-mode=mono camera_id=1 kmbsrc. ! queue ! capsfilter caps=video/x-raw,width=1280,height=720 name=imgout ! filesink location=ull_2_sensorInput_video2_1280x720.nv12</td>
+                                <td >ull_2_sensorInput_video2_1280x720.nv12 that it has value</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7.5 - 2 Camera video recording feature simultaneously          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.1</td>
+                            <td >Plug-in a camera module (IMX334) to camera port 1 (CN2701) and Plug-in a camera module (MV0250) to camera port 3 (CN2801) on the DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.2</td>
+                            <td >Install the camera drivers and VAAPI encode driver<br />
+- Run command:<br />
+$ modprobe pwm_keembay<br />
+$ modprobe kmb_flash<br />
+$ modprobe kmb_lens<br />
+$ modprobe kmb-lens<br />
+$ modprobe kmb_cam</td>
+                                <td >All modules are probed successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.3</td>
+                            <td >Check /dev folder<br />
+- Run command:<br />
+$ ls -l /dev/video*</td>
+                                <td >Have eighteen video files in the /dev folder, named from video0 to video17</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.4</td>
+                            <td >Start VPU on the UART console<br />
+- Run command:<br />
+$ export GST_DEBUG=2,kmbcamsrc*:4<br />
+$ XLinkCleanUp; StartVpu vpu_ipc.bin</td>
+                                <td >Loading VPU firmware file successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.5</td>
+                            <td >Run camera via IPS pipeline<br />
+- Run command:<br />
+$ cd ~/<br />
+$ gst-launch-1.0 kmbcamsrc name=kmbsrc num-frames=100 transform-hub=none ! filesink location=ull_1_video_3840x2160.nv12 &amp; gst-launch-1.0 kmbcamsrc name=kmbsrc camera-id=&quot;1&quot; num-frames=100 kmbsrc. ! 'video/x-raw(memory:DMABuf),width=1280,height=720' ! queue ! filesink location=mono_0_1280x720.yuv &amp;</td>
+                                <td >ull_1_video_3840x2160.nv12 and mono_0_1280x720.yuv<br />
+that it has value</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.5.6</td>
+                            <td >Check output files camera<br />
+- Copy file ull_1_video_3840x2160.nv12 and mono_0_1280x720.yuv  to Computer.<br />
+- Using vooya player to open them.</td>
+                                <td >Files can open and show video.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.8 - Ethernet port 1 - SOC ethernet          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.2</td>
+                            <td >Plug-in ethernet wire to port 1 of the device.</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.3</td>
+                            <td >Run command:<br />
+$ ifconfig -a</td>
+                                <td >eth0 show up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.5</td>
+                            <td >Run command:<br />
+$ ifconfig eth0 up</td>
+                                <td >Run command successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.5</td>
+                            <td >Ping to google by run command:<br />
+$ ping google.com</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.1.1 - Detection mSATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.1.1</td>
+                            <td >Plug-in mSATA hard drive to mSATA port(CN2003) on DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.1.2</td>
+                            <td >Boot-up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.1.3</td>
+                            <td >In serial port terminal, run below command to get mSATA's name:<br />
+$ lsblk</td>
+                                <td >Run successfully. You can see a device name, which is match your mSATA size.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.1.2 - Format mSATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.2.1</td>
+                            <td >TC 1.10.1.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.10.1.2.2</td>
+                            <td >In serial port terminal, run below command to format mSATA device:<br />
+$ mkfs.vfat /dev/&lt;your mSATA's name&gt;<br />
+Eg: mkfs.vfat /dev/sda1</td>
+                                <td >Format mSATA device successfully</td>
+                        <td >              <span class="comment-head">Nguyen Tai 
+              on 2021-02-02 04:44 AM UTC</span>
+              <div id="comment_body1241326">
+                          This issue may relate to hardware design for the PCIe bus.<br />
+It is clarifying with Intel at https://trace3.windriver.com/forms/index.php?form_id=1720102#c62                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.1.3 - Writing data to the mSATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.3.1</td>
+                            <td >TC 1.10.1.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.3.2</td>
+                            <td >Mount mSATA hard drive. In serial port terminal, run below command on yocto to mount mSATA hard drive:<br />
+$ mount /dev/&lt;your mSATA's name&gt; /media/<br />
+Eg: mount /dev/sda /media</td>
+                                <td >Mount mSATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.10.1.3.3</td>
+                            <td >Run the command below to write test:<br />
+$ dd if=/dev/zero of=/media/bench bs=1M count=1024</td>
+                                <td >Run successfully</td>
+                        <td >              <span class="comment-head">Nguyen Tai 
+              on 2021-02-02 04:44 AM UTC</span>
+              <div id="comment_body1241327">
+                          This issue may relate to hardware design for the PCIe bus.<br />
+It is clarifying with Intel at https://trace3.windriver.com/forms/index.php?form_id=1720102#c62                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.1.4 - Reading data from the mSATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.4.1</td>
+                            <td >TC 1.10.1.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.4.2</td>
+                            <td >Mount mSATA hard drive. In serial port terminal, run below command on yocto to mount mSATA hard drive:<br />
+$ mount /dev/&lt;your mSATA's name&gt; /media/<br />
+Eg: mount /dev/sda /media</td>
+                                <td >Mount mSATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.1.4.3</td>
+                            <td >Run the command below to read test:<br />
+$ dd if=/dev/&lt;your mSATA's name&gt; of=/dev/null bs=1M count=1024</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.2.1 - Detection SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.1.1</td>
+                            <td >Plug-in SATA hard drive to SATA port 2(2101)  on DUT via SATA cable</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.1.2</td>
+                            <td >Boot-up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.1.3</td>
+                            <td >In serial port terminal, run below command to get SATA's name:<br />
+$ lsblk</td>
+                                <td >Run successfully. You can see a device name, which is match your SATA size.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.2.2 - Format SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.2.1</td>
+                            <td >TC 1.10.1.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.2.2</td>
+                            <td >In serial port terminal, run below command to format SATA device:<br />
+$ mkfs.vfat /dev/&lt;your SATA's name&gt;<br />
+Eg: mkfs.vfat /dev/sda1</td>
+                                <td >Format SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.2.3 - Writing data to the SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.3.1</td>
+                            <td >TC 1.10.2.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.3.2</td>
+                            <td >Mount SATA hard drive. In serial port terminal, run below command on yocto to mount SATA hard drive:<br />
+$ mount /dev/&lt;your SATA's name&gt; /media/<br />
+Eg: mount /dev/sda /media</td>
+                                <td >Mount SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.10.2.3.3</td>
+                            <td >Run the command below to write test:<br />
+$ dd if=/dev/zero of=/media/bench bs=1M count=1024</td>
+                                <td >Run successfully</td>
+                        <td >              <span class="comment-head">Nguyen Tai 
+              on 2021-02-01 09:02 AM UTC</span>
+              <div id="comment_body1241210">
+                          This issue may relate to hardware design for the PCIe bus.<br />
+It is clarifying with Intel at https://trace3.windriver.com/forms/index.php?form_id=1720102#c62                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.2.4 - Reading data from the SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.4.1</td>
+                            <td >TC 1.10.2.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.4.2</td>
+                            <td >Mount SATA hard drive. In serial port terminal, run below command on yocto to mount SATA hard drive:<br />
+$ mount /dev/&lt;your SATA's name&gt; /media/<br />
+Eg: mount /dev/sda /media</td>
+                                <td >Mount SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.2.4.3</td>
+                            <td >Run the command below to read test:<br />
+$ dd if=/dev/&lt;your SATA's name&gt; of=/dev/null bs=1M count=1024</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.3.1 - Detection SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.1.1</td>
+                            <td >Plug-in SATA hard drive to SATA port 3(CN2103) on DUT via SATA cable</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.1.2</td>
+                            <td >Boot-up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.1.3</td>
+                            <td >In serial port terminal, run below command to get SATA's name:<br />
+$ lsblk</td>
+                                <td >Run successfully. You can see a device name, which is match your SATA size.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.3.2 - Format SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.2.1</td>
+                            <td >TC 1.10.1.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.2.2</td>
+                            <td >In serial port terminal, run below command to format SATA device:<br />
+$ mkfs.vfat /dev/&lt;your SATA's name&gt;<br />
+Eg: mkfs.vfat /dev/sda1</td>
+                                <td >Format SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.3.3 - Writing data to the SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.3.1</td>
+                            <td >TC 1.10.3.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.3.2</td>
+                            <td >Mount SATA hard drive. In serial port terminal, run below command on yocto to mount SATA hard drive:<br />
+$ mount /dev/&lt;your SATA's name&gt; /media/<br />
+Eg: mount /dev/sda /media</td>
+                                <td >Mount SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.10.3.3.3</td>
+                            <td >Run the command below to write test:<br />
+$ dd if=/dev/zero of=/media/bench bs=1M count=1024</td>
+                                <td >Run successfully</td>
+                        <td >              <span class="comment-head">Nguyen Tai 
+              on 2021-02-01 09:02 AM UTC</span>
+              <div id="comment_body1241211">
+                          This issue may relate to hardware design for the PCIe bus.<br />
+It is clarifying with Intel at https://trace3.windriver.com/forms/index.php?form_id=1720102#c62                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.3.4 - Reading data from the SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.4.1</td>
+                            <td >TC 1.10.3.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.4.2</td>
+                            <td >Mount SATA hard drive. In serial port terminal, run below command on yocto to mount SATA hard drive:<br />
+$ mount /dev/&lt;your SATA's name&gt; /media/<br />
+Eg: mount /dev/sda /media</td>
+                                <td >Mount SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.3.4.3</td>
+                            <td >Run the command below to read test:<br />
+$ dd if=/dev/&lt;your SATA's name&gt; of=/dev/null bs=1M count=1024</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.4.1 - Detection SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.1.1</td>
+                            <td >Plug-in SATA hard drive to SATA port 4(CN2102) on DUT via SATA cable</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.1.2</td>
+                            <td >Boot-up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.1.3</td>
+                            <td >In serial port terminal, run below command to get SATA's name:<br />
+$ lsblk</td>
+                                <td >Run successfully. You can see a device name, which is match your SATA size.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.4.2 - Format SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.2.1</td>
+                            <td >TC 1.10.1.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.2.2</td>
+                            <td >In serial port terminal, run below command to format SATA device:<br />
+$ mkfs.vfat /dev/&lt;your SATA's name&gt;<br />
+Eg: mkfs.vfat /dev/sda1</td>
+                                <td >Format SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.4.3 - Writing data to the SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.3.1</td>
+                            <td >TC 1.10.4.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.3.2</td>
+                            <td >Mount SATA hard drive. In serial port terminal, run below command on yocto to mount SATA hard drive:<br />
+$ mount /dev/&lt;your SATA's name&gt; /media/<br />
+Eg: mount /dev/sda /media</td>
+                                <td >Mount SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.10.4.3.3</td>
+                            <td >Run the command below to write test:<br />
+$ dd if=/dev/zero of=/media/bench bs=1M count=1024</td>
+                                <td >Run successfully</td>
+                        <td >              <span class="comment-head">Nguyen Tai 
+              on 2021-02-01 09:02 AM UTC</span>
+              <div id="comment_body1241212">
+                          This issue may relate to hardware design for the PCIe bus.<br />
+It is clarifying with Intel at https://trace3.windriver.com/forms/index.php?form_id=1720102#c62                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.10.4.4 - Reading data from the SATA Hard Drive          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.4.1</td>
+                            <td >TC 1.10.4.1</td>
+                                <td >Successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.4.2</td>
+                            <td >Mount SATA hard drive. In serial port terminal, run below command on yocto to mount SATA hard drive:<br />
+$ mount /dev/&lt;your SATA's name&gt; /media/<br />
+Eg: mount /dev/sda /media</td>
+                                <td >Mount SATA device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.10.4.4.3</td>
+                            <td >Run the command below to read test:<br />
+$ dd if=/dev/&lt;your SATA's name&gt; of=/dev/null bs=1M count=1024</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.11 - TPM (Trusted Platform Module) enable          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.1</td>
+                            <td >Boot-up DUT</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.2</td>
+                            <td >Probe TPM driver:<br />
+- Run command:<br />
+	$ modprobe tpm_ftpm_tee<br />
+	$ modprobe tpm_tis_core<br />
+	$ modprobe tpm_tis_spi</td>
+                                <td >All modules are probed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.3</td>
+                            <td >Check TPM driver:<br />
+- Run command:<br />
+	$ dmesg | grep tpm</td>
+                                <td >Show log:<br />
+	tpm_tis_spi spi0.0: 2.0 TPM (device-id 0x1B, rev-id 22)<br />
+	tpm tpm0: A TPM error (256) occurred attempting the self test<br />
+	tpm tpm0: starting up the TPM manually<br />
+	tpm tpm0: tpm2 event-log base:0x84200000 size:0x8000</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.4</td>
+                            <td >Checking availability of TPM device id:<br />
+- Run command:<br />
+$ ls /dev/tpm*</td>
+                                <td >Have two files name tpm0 and tpmrm0 in the /dev folder</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.5</td>
+                            <td >Restart tpm2 resource manager:<br />
+- Run command:<br />
+$ systemctl stop tpm2-abrmd<br />
+$ systemctl start tpm2-abrmd<br />
+$ systemctl status tpm2-abrmd</td>
+                                <td >TPM2 is restarted successfully:<br />
+● tpm2-abrmd.service - TPM2 Access Broker and Resource Management Daemon<br />
+ Loaded: loaded (/lib/systemd/system/tpm2-abrmd.service; enabled; vendor preset: enabled)<br />
+ Active: active (running) since Wed 2020-11-25 02:33:44 UTC; 6s ago<br />
+Main PID: 1008 (tpm2-abrmd)<br />
+  Tasks: 7 (limit: 1764)<br />
+ Memory: 3.3M<br />
+ CGroup: /system.slice/tpm2-abrmd.service<br />
+         └─1008 /usr/sbin/tpm2-abrmd</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.6</td>
+                            <td >Using tmp2-tools  create a binary code for evaluate the integration software stack<br />
+- Run command:<br />
+$ tpm2_getrandom 16</td>
+                                <td >A binary code is created successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.7</td>
+                            <td >Download tests.zip from WRS FTP links and copy to USB<br />
+ftp://ftp-som@ftp.windriver.com/outgoing/SOM/TestTPM/tests.zip</td>
+                                <td >Download and copy to USB successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.8</td>
+                            <td >Plug USB to STL board, mount USB and unzip file tests.zip:<br />
+$ mount /dev/sda1 /media<br />
+$ unzip /media/tests.zip</td>
+                                <td >mount USB and unzip successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.11.9</td>
+                            <td >Staring the test for TPM:<br />
+- Run command<br />
+$ cd tests<br />
+$ chmod +x tpm_test.sh<br />
+$ ./tpm_test.sh</td>
+                                <td >The test run successfully and the logs finally will be shown on the terminal after running the test:<br />
+Generating RSA private key, 2048 bit long modulus (2 primes)<br />
+................................+++++<br />
+........................................+++++<br />
+e is 65537 (0x010001)<br />
+writing RSA key<br />
+name: 000b901c025d9adc15c73b3e798fbfd3da5ca76f4b515a67471d3cdf1abfd9182e08<br />
+e7b4cd1acdbd5fac4662c58944c9651f9afe880f675b39185462bd6725f8e7d2<br />
+e7b4cd1acdbd5fac4662c58944c9651f9afe880f675b39185462bd6725f8e7d2<br />
+e7b4cd1acdbd5fac4662c58944c9651f9afe880f675b39185462bd6725f8e7d2<br />
+0d84f55daf6e43ac97966e62c9bb989d3397777d25c5f749868055d65394f952<br />
+name: 000ba763677c4f7c0d9d8c990609c8e0c8ea84c4267a22a55d6051f1736ad0078a59<br />
+0d84f55daf6e43ac97966e62c9bb989d3397777d25c5f749868055d65394f952<br />
+0d84f55daf6e43ac97966e62c9bb989d3397777d25c5f749868055d65394f952</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.12 - Ethernet port 2 - PCIe ethernet          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.1</td>
+                            <td >Boot up DUT.</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.2</td>
+                            <td >Plug-in ethernet wire to port 2 of device.</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.3</td>
+                            <td >Run command: <br />
+$ ifconfig -a</td>
+                                <td >enp5s0 show up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.4</td>
+                            <td >Run command:<br />
+$ ifconfig enp5s0 up</td>
+                                <td >Run command successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.12.5</td>
+                            <td >Ping to google by run command:<br />
+$ ping google.com</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.13.1 - CAN0 bus          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.1</td>
+                            <td >Plug-in PCAN-USB-FD Adaptor to PC.</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.2</td>
+                            <td >Download and install driver for PCAN-USB-FD Adaptor at link: https://www.peak-system.com/fileadmin/media/linux/files/peak-linux-driver-8.10.0.tar.gz</td>
+                                <td >Install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.3</td>
+                            <td >In PC's terminal, run below command to install can-utils test tool <br />
+$ sudo apt-get install can-utils</td>
+                                <td >Install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.4</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.5</td>
+                            <td >Connect PCAN-USB-FD Adaptor to CAN0 on KMB device:<br />
+- Connect PCAN-USB-FD Adaptor CAN-H pin (pin 7) to KMB's CAN0 CAN-H pin (pin 7 at header CN4201).<br />
+- Connect PCAN-USB-FD Adaptor CAN-L pin (pin 2) to KMB's CAN0 CAN-L pin (pin 2 at header CN4201).</td>
+                                <td >Connect successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.6</td>
+                            <td >In KMB's terminal, run below command to start CAN0 bus<br />
+$ canconfig can0 bitrate 800000 start</td>
+                                <td >Start successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.7</td>
+                            <td >In PC's terminal, run below command to start PCAN-USB-FD bus<br />
+$ sudo ip link set can0 type can bitrate 800000<br />
+$ sudo ifconfig can0 up</td>
+                                <td >Start successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.8</td>
+                            <td >In KMB's terminal, run below command to show received data at CAN0<br />
+$ candump can0</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.9</td>
+                            <td >In PC's terminal, run below command to send data to KMB's CAN0<br />
+$ cansend can0 123#AABBCCDD</td>
+                                <td >Run successfully and see received data on KMB's terminal. It same below log.<br />
+$ &lt;0x123&gt; [4] aa bb cc dd</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.10</td>
+                            <td >In PC's terminal, run below command to show received data from KMB's CAN0<br />
+$ candump can0</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.1.11</td>
+                            <td >In KMB's terminal, run below command to send data to PC's PCAN-USB-FD bus<br />
+$ cansend can0 -i 0x123 0xAA 0xBB 0xCC 0xDD</td>
+                                <td >Run successfully and see received data on PC's terminal. It same below log.<br />
+$ can0  123   [4]  AA BB CC DD</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.13.2 - CAN1 bus          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.1</td>
+                            <td >Plug-in PCAN-USB-FD Adaptor to PC.</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.2</td>
+                            <td >Download and install driver for PCAN-USB-FD Adaptor at link: https://www.peak-system.com/fileadmin/media/linux/files/peak-linux-driver-8.10.0.tar.gz</td>
+                                <td >Install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.3</td>
+                            <td >In PC's terminal, run below command to install can-utils test tool:<br />
+$ sudo apt-get install can-utils</td>
+                                <td >Install successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.4</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.5</td>
+                            <td >Connect PCAN-USB-FD Adaptor to CAN1 on KMB device:<br />
+- Connect PCAN-USB-FD CAN-H pin (pin 7) to KMB's CAN1 CAN-H pin (pin 7 at header CN4202).<br />
+- Connect PCAN-USB-FD CAN-L pin (pin 2) to KMB's CAN1 CAN-L pin (pin 2 at header CN4202).</td>
+                                <td >Connect successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.6</td>
+                            <td >In KMB's terminal, run below command to start CAN1 bus<br />
+$ canconfig can1 bitrate 800000 start</td>
+                                <td >Start successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.7</td>
+                            <td >In PC's terminal, run below command to start PCAN-USB-FD bus<br />
+$ sudo ip link set can0 type can bitrate 800000<br />
+$ sudo ifconfig can0 up</td>
+                                <td >Start successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.8</td>
+                            <td >In KMB's terminal, run below command to show received data at CAN1<br />
+$ candump can1</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.9</td>
+                            <td >In PC's terminal, run below command to send data to KMB's CAN1<br />
+$ cansend can0 123#AABBCCDD</td>
+                                <td >Run successfully and see received data on KMB's terminal. It same below log.<br />
+$ &lt;0x123&gt; [4] aa bb cc dd</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.10</td>
+                            <td >In PC's terminal, run below command to show received data from KMB's CAN1<br />
+$ candump can0</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.13.2.11</td>
+                            <td >In KMB's terminal, run below command to send data to PC's PCAN-USB-FD Adaptor<br />
+$ cansend can1 -i 0x123 0xAA 0xBB 0xCC 0xDD</td>
+                                <td >Run successfully and see received data on PC's terminal. It same below log.<br />
+$ can0  123   [4]  AA BB CC DD</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.14 - Read/Write MAC address          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.2</td>
+                            <td >Read MAC address<br />
+$ ifconfig -a</td>
+                                <td >From the displayed information, find eth0 and enp5s0. Locate the number next to the HWaddr. This is your MAC address.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.3</td>
+                            <td >Shut down the network interface<br />
+$ ifconfig &lt;eth&gt; down<br />
+Ex:<br />
+* Ethernet port 1<br />
+$ ifconfig eth0 down<br />
+<br />
+* Ethernet port 2<br />
+$ ifconfig enp5s0 down</td>
+                                <td >Run command successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.14.4</td>
+                            <td >Write MAC address<br />
+$ ifconfig &lt;eth&gt; hw ether &lt;mac address&gt;<br />
+Ex:<br />
+* Ethernet port 1<br />
+$ ifconfig eth0 hw ether 00:BF:48:BA:DA:AB<br />
+<br />
+* Ethernet port 2<br />
+$ ifconfig enp5s0 hw ether 00:BF:48:CA:AD:AB</td>
+                                <td >MAC address is changed</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.15 - SD Card Read/Write          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.2</td>
+                            <td >Plug-in the SD Card to DUT(CN1201)</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.3</td>
+                            <td >Mount this SD Card on device<br />
+$ mount /dev/&lt;sd card&gt; /media</td>
+                                <td >Mount successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.15.4</td>
+                            <td >Write and read the file on SD Card<br />
+Create and write the content of a file<br />
+$ cd /media<br />
+$ echo &quot;a b c&quot; &gt; test.txt<br />
+Read the content of a file<br />
+$ cat test.txt</td>
+                                <td >Write and read successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.16 - USB Type-C          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.1</td>
+                            <td >Adjust switch: SW4901 ---&gt; ON DIP5</td>
+                                <td >Adjust switch successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.2</td>
+                            <td >Connect a USB Type C between keembay EVM and the host system</td>
+                                <td >Connect device and host system successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.3</td>
+                            <td >UART cable between the Keem Bay EVM and the host system</td>
+                                <td >UART port output log to host system successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.4</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.5</td>
+                            <td >Before the timer counts down to zero, press any key on your keyboard to interrupt and stop the &quot;auto boot&quot; up process</td>
+                                <td >Enter bootloader stage successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.6</td>
+                            <td >Enter below command to trigger fastboot service on Keem Bay EVM.<br />
+$ fastboot usb 0</td>
+                                <td >Keem Bay EVM enter fastboot mode successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.7</td>
+                            <td >From host system flash boot image successfully by below command<br />
+$ fastboot flash boot_a boot.img</td>
+                                <td >The output is similar to <br />
+$ fastboot flash boot_a boot.img<br />
+Sending 'boot_a' (262144 KB) OKAY [ 10.430s]<br />
+Writing 'boot_a' OKAY [ 40.216s]<br />
+Finished. Total time: 50.800s</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.16.8</td>
+                            <td >From host system run command:<br />
+$ fastboot reboot</td>
+                                <td >Device boots up to prompt successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.17 - SPI bus          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.17.1</td>
+                            <td >Please refer to the test plan (item TG1.13 - CAN bus)</td>
+                                <td >None</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.18.1 - General Output Feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.18.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.18.1.2</td>
+                            <td >Check pin GPIO44 on DUT<br />
+$ cd /sys/class/gpio/<br />
+$ echo 476 &gt; export<br />
+$ cd gpio476/<br />
+Set GPIO44 as an output:<br />
+$ echo out &gt; direction<br />
+Write the value 0 or 1 to the value file for the pin:<br />
+$ echo 0 &gt; value<br />
+$ echo 1 &gt; value</td>
+                                <td >Echo to direction and value successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.18.1.3</td>
+                            <td >Measure voltage output of pin GPIO 44 using power meter or scope. The voltage: 0 if set value equal 0 and 1.8V if set value equal 1</td>
+                                <td >The voltage return correctly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.18.2 - General Input Feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.18.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.18.2.2</td>
+                            <td >Check pin GPIO44 on DUT<br />
+$ cd /sys/class/gpio/<br />
+$ echo 476 &gt; export<br />
+$ cd gpio476/<br />
+Set GPIO44 as an input:<br />
+$ echo in &gt; direction<br />
+Create signal input using voltage 0 or 1.8V go into pin GPIO44.</td>
+                                <td >Echo to direction and value successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.18.2.3</td>
+                            <td >Get value from the terminal.<br />
+$ cat /sys/class/gpio/gpio476/value<br />
+0 if signal input equals 0 and 1 if signal input equals 1.8V.</td>
+                                <td >The value return correctly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.18.3 - General Interrupt Handler Feature          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.18.3.1</td>
+                            <td >Please refer to the test plan (item TC 1.3.3 - IO Expander).</td>
+                                <td >None</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.19.1 - USB Type-A port 1          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.1.1</td>
+                            <td >Adjust switch: SW4901 ---&gt; OFF DIP5</td>
+                                <td >Adjust switch successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.1.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.1.3</td>
+                            <td >Plug-in the USB storage (eg: The SanDisk Ultra USB) to USB Type-A port 1 on DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.1.4</td>
+                            <td >In serial port terminal, run below command to get the USB storage name:<br />
+$ lsblk</td>
+                                <td >You can see a device name, which is match your the USB size.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.1.5</td>
+                            <td >Mount this USB on device<br />
+$ mount /dev/&lt;usb&gt; /media</td>
+                                <td >Mount successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.19.2 - USB Type-A port 2          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.2.1</td>
+                            <td >Adjust switch: SW4901 ---&gt; OFF DIP5</td>
+                                <td >Adjust switch successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.2.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.2.3</td>
+                            <td >Plug-in the USB storage (eg: The SanDisk Ultra USB) to USB Type-A port 2 on DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.2.4</td>
+                            <td >In serial port terminal, run below command to get the USB name:<br />
+$ lsblk</td>
+                                <td >Run successfully. You can see a device name, which is match your USB size.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.2.5</td>
+                            <td >Mount this USB on device<br />
+$ mount /dev/&lt;usb&gt; /media</td>
+                                <td >Mount successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.19.3 - USB Type-A port 3          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.3.1</td>
+                            <td >Adjust switch: SW4901 ---&gt; OFF DIP5</td>
+                                <td >Adjust switch successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.3.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.3.3</td>
+                            <td >Plug-in the USB storage (eg: The SanDisk Ultra USB) to USB Type-A port 3 on DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.3.4</td>
+                            <td >In serial port terminal, run below command to get the USB name:<br />
+$ lsblk</td>
+                                <td >Run successfully. You can see a device name, which is match your the USB size.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.3.5</td>
+                            <td >Mount this USB on device<br />
+$ mount /dev/&lt;usb&gt; /media</td>
+                                <td >Mount successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.19.4 - USB Type-A port 4          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.4.1</td>
+                            <td >Adjust switch: SW4901 ---&gt; OFF DIP5</td>
+                                <td >Adjust switch successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.4.2</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.4.3</td>
+                            <td >Plug-in the USB storage (eg: The SanDisk Ultra USB) to USB Type-A port 4 on DUT</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.4.4</td>
+                            <td >In serial port terminal, run below command to get the USB name:<br />
+$ lsblk</td>
+                                <td >Run successfully. You can see a device name, which is match your the USB size.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.19.4.5</td>
+                            <td >Mount this USB on device<br />
+$ mount /dev/&lt;usb&gt; /media</td>
+                                <td >Mount successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.20.1 - fio tool          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.1.2</td>
+                            <td >Login to Keembay console</td>
+                                <td >Login successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.1.3</td>
+                            <td >Run commnd:<br />
+$ fio -h</td>
+                                <td >Run command successfully and display usage information</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.20.2 - dmidecode tool          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.2.2</td>
+                            <td >Login to Keembay console</td>
+                                <td >Login successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.2.3</td>
+                            <td >Run commnd:<br />
+$ dmidecode -h</td>
+                                <td >Run command successfully and display usage information</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.20.3 - lshw tool          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.3.2</td>
+                            <td >Login to Keembay console</td>
+                                <td >Login successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.20.3.3</td>
+                            <td >Run commnd:<br />
+$ lshw -h</td>
+                                <td >Run command successfully and display usage information</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.21.1 - System EEPROM (AT24C02D)          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.21.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.21.1.2</td>
+                            <td >Run the command below to write &quot;Hello world&quot; data into EEPROM:<br />
+$ echo 'Hello world' | sudo tee /sys/class/i2c-dev/i2c-2/device/2-0057/eeprom</td>
+                                <td >Run successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.21.1.3</td>
+                            <td >Reboot DUT</td>
+                                <td >Reboot properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.21.1.4</td>
+                            <td >Run the command below to read data from EEPROM:<br />
+$ sudo more /sys/class/i2c-dev/i2c-2/device/2-0057/eeprom</td>
+                                <td >Run successfully.<br />
+If the showed data in the terminal has contained of &quot;Hello world&quot; data, the EEPROM work normally.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.22.1 - Turn on system LED          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.22.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.22.1.2</td>
+                            <td >Login to Keembay console</td>
+                                <td >Login successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.22.1.3</td>
+                            <td >Run command<br />
+$ sudo reboot</td>
+                                <td >Run command successfully and DUT will reboot</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.22.1.4</td>
+                            <td >Checking LED4403, LED4405 is on after DUT boot to prompt</td>
+                                <td >LEDs turn on properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.22.2 - Turn off system LED          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.22.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.22.2.2</td>
+                            <td >Login to Keembay console</td>
+                                <td >Login successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.22.2.3</td>
+                            <td >Run command<br />
+$ sudo reboot</td>
+                                <td >Run command successfully and DUT will reboot</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.22.2.4</td>
+                            <td >Wait a few seconds and you will see LED4403, LED4405 is off. Waiting for the kernel is ready, the LEDs will turn on.</td>
+                                <td >LEDs turn off properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.23.1 - MySQL Open Source Database System          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.23.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.23.1.2</td>
+                            <td >Run the command below to open MySQL shell<br />
+$ mysql_deleteme</td>
+                                <td >Run successfully then the terminal enters MySQL shell.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.23.1.3</td>
+                            <td >In the MySQL shell, run command below to show hosts in MySQL database :<br />
+$ SELECT Host FROM mysql_deleteme.user;</td>
+                                <td >Run successfully and it will show hosts in database in the MySQL shell</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.24.1 - RTSP Server          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.1</td>
+                            <td >Adjust switch: SW4901 ---&gt; OFF DIP5</td>
+                                <td >Adjust switch successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.2</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.3</td>
+                            <td >Plug-in the ethernet cable to DUT.</td>
+                                <td >Plug-in successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.4</td>
+                            <td >Run the command below to get DUT's  inet addr:<br />
+$ ifconfig</td>
+                                <td >Run successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.5</td>
+                            <td >Copy the test_mp4 binary file to USB.<br />
+This file was created at ${YOCTO_ROOT_DIR}/build/tmp-glibc/work/aarch64-ese-linux/gstreamer1.0-rtsp-server/1.14.4-r0/build/examples/.libs/test-mp4</td>
+                                <td >The binary file is copied to USB successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.6</td>
+                            <td >Copy  an any mp4 video file to USB</td>
+                                <td >The mp4 video file is copied to USB successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.7</td>
+                            <td >Plug-in this USB to DUT.</td>
+                                <td >Plug-in successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.8</td>
+                            <td >Mount this USB on the device.<br />
+mount /dev/&lt;sdx&gt; /media/</td>
+                                <td >Mount successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.9</td>
+                            <td >Run the testing server for a mp4 video on device.<br />
+$ cd /media/ ; ./test-mp4 [the mp4 video file]<br />
+For example:<br />
+$ cd /media/ ; ./test-mp4 video_test.mp4</td>
+                                <td >Run successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.24.1.10</td>
+                            <td >On the testing PC, run command below to watch the video_test video:<br />
+gst-launch-1.0 rtspsrc location=rtsp://{DUT's  inet addr}:8554/test ! queue ! decodebin ! videoconvert ! autovideosink<br />
+For example:<br />
+gst-launch-1.0 rtspsrc location=rtsp://10.0.0.60:8554/test ! queue ! decodebin ! videoconvert ! autovideosink</td>
+                                <td >Run successfully.If it's passed, It will play video_test.mp4 video on the testing PC</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.25 - Testing meta-debian integration          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.25.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boots up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.25.2</td>
+                            <td >Login KMB console and run command:<br />
+$ pbzip2 -V</td>
+                                <td >Run command successfully and display the correct version (v1.1.9)<br />
+The output is similar to<br />
+$ pbzip2 -V<br />
+Parallel BZIP2 v1.1.9</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.26 - [Support raised by ADlink] Ethernet PORT1 MAC address configuration          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.26.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.26.2</td>
+                            <td >Run the command below to write the &quot;d2:c9:ec:59:06:61&quot; MAC address for eth0<br />
+$ i2cset -f -y 2 0x57 0x00 0xd2 0xc9 0xec 0x59 0x06 0x61 i</td>
+                                <td >Run successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.26.3</td>
+                            <td >Reboot DUT</td>
+                                <td >Reboot properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.26.4</td>
+                            <td >Run the command below to check eth0's MAC address:<br />
+$ ifconfig eth0</td>
+                                <td >Run successfully. If the eth0's MAC address is &quot;d2:c9:ec:59:06:61&quot;,  this feature work normally.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.27 - The mdio-tool's writing function          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.27.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.27.4</td>
+                            <td >Run the command below to read the current value of MDIO's register 9<br />
+$ mdio-tool r enp5s0 0x9</td>
+                                <td >Run successfully<br />
+the current value is 0x0200</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.27.3</td>
+                            <td >Run the command below to write the &quot;0x2200&quot; value to the MDIO's register 9 for Ethernet PORT2<br />
+$ mdio-tool w enp5s0 0x9 0x2200</td>
+                                <td >Run successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.27.4</td>
+                            <td >Run the command below to read the value of MDIO's register 9 to check mdio-tool's writing function:<br />
+$ mdio-tool r enp5s0 0x9</td>
+                                <td >Run successfully.<br />
+If it's passed, the current value will change to 0x2200</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.28 - Turn off fan when Poweroff OS          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.28.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.28.2</td>
+                            <td >Run the command below:<br />
+- Turn off fan<br />
+$ echo '0' &gt; /sys/class/hwmon/hwmon4/fan1_target<br />
+- Turn on fan<br />
+$ echo '1' &gt; /sys/class/hwmon/hwmon4/fan1_target</td>
+                                <td >Turn on/ turn off the fan correctly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.28.3</td>
+                            <td >Power off OS<br />
+$ powerofff</td>
+                                <td >In the shutdown process, the fan is turned off</td>
+                        <td >              <span class="comment-head">Nguyen Tai 
+              on 2021-02-01 09:01 AM UTC</span>
+              <div id="comment_body1241208">
+                          1. Disable PCIE<br />
+From userspace on KMB, turn on/ turn off fan successfully.<br />
+When type &quot;poweroff&quot;, the fan will turn off but KMB will power on again and boot to kernel again.<br />
+Root cause: It relates to hardware design on SOM(A3) at SW_POWER_OFF pin<br />
+2. Without disable PCIE<br />
+From userspace on KMB, turn on/ turn off fan successfully<br />
+When type &quot;poweroff&quot;, the fan will not turn off and KMB hang up<br />
+Root cause: It release to hardware design for the PCIe bus                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.29 - Control PIN &quot;SW_POWER_OFF&quot; when poweroff          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.29.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.29.2</td>
+                            <td >Run the command below:<br />
+$ powerofff</td>
+                                <td >In the shutdown process<br />
+- The fan is turned off<br />
+- The LED Power Switch (SW4401) also is turned off</td>
+                        <td >              <span class="comment-head">Nguyen Tai 
+              on 2021-02-01 09:01 AM UTC</span>
+              <div id="comment_body1241209">
+                          1. Disable PCIE<br />
+From userspace on KMB, turn on/ turn off fan successfully.<br />
+When type &quot;poweroff&quot;, the fan will turn off but KMB will power on again and boot to kernel again.<br />
+Root cause: It relates to hardware design on SOM(A3) at SW_POWER_OFF pin<br />
+2. Without disable PCIE<br />
+From userspace on KMB, turn on/ turn off fan successfully<br />
+When type &quot;poweroff&quot;, the fan will not turn off and KMB hang up<br />
+Root cause: It release to hardware design for the PCIe bus                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.30 - [STL] HDMI          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.30.1</td>
+                            <td >Plug in HDMI between STL device and monitor.</td>
+                                <td >Plug in succesfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.30.2</td>
+                            <td >Boot up devices. Enter login on STL device.</td>
+                                <td >Bootup and login successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.30.3</td>
+                            <td >Run command<br />
+$ modprobe adv7511<br />
+$ modprobe kmb-drm</td>
+                                <td >modprobe driver successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.30.4</td>
+                            <td >Run command:<br />
+$ gst-launch-1.0 -v videotestsrc pattern=smpte ! video/x-raw,width=1920,height=1080,framerate=30/1 ! kmssink</td>
+                                <td >Can see the video on monitor.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.31.1 - Power key          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.1.1</td>
+                            <td >Plug UART cable between the STL(CN2602) and the host system</td>
+                                <td >Plug successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.1.2</td>
+                            <td >In PC, open serial console via UART.<br />
+Example: Open serial uart via /dev/ttyUSB0</td>
+                                <td >Open successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.1.3</td>
+                            <td >Press and hold button PWR BTN(K3S N#1) (Power button) to boot up DUT.</td>
+                                <td >Press successfully and the serial console appears bootup logs of DUT.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.31.2 - Reset key          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.2.1</td>
+                            <td >Plug UART cable between the STL(CN2602) and the host system</td>
+                                <td >Plug successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.2.2</td>
+                            <td >In PC, open serial console via UART.<br />
+Example: Open serial uart via /dev/ttyUSB0</td>
+                                <td >Open successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.2.3</td>
+                            <td >Press and hold button PWR BTN(K3S N#1) (Power button) to boot up DUT.</td>
+                                <td >Press successfully and the serial console appears bootup logs of DUT.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.2.4</td>
+                            <td >Login to keembay console by account &quot;root&quot;.</td>
+                                <td >Login successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.2.5</td>
+                            <td >Press button RST BTN (K3S N#1) (reset button) to reboot DUT.</td>
+                                <td >System reboots. The serial console appears bootup logs of DUT.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.31.3 - USB Type-C          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.3.1</td>
+                            <td >Connect a USB Type C between keembay STL(USB5801) and the host system</td>
+                                <td >Connect device and host system successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.3.2</td>
+                            <td >Plug UART cable between the Keem Bay STL(CN6202) and the host system</td>
+                                <td >UART port output log to host system successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.3.3</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.3.4</td>
+                            <td >Before the timer counts down to zero, press any key on your keyboard to interrupt and stop the &quot;auto boot&quot; up process</td>
+                                <td >Enter bootloader stage successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.3.5</td>
+                            <td >Enter below command to trigger fastboot service on Keem Bay EVM.<br />
+$ fastboot usb 0</td>
+                                <td >Keem Bay STL enter fastboot mode successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.3.6</td>
+                            <td >From host system flash boot image successfully by below command<br />
+$ fastboot flash boot_a boot.img</td>
+                                <td >The output is similar to<br />
+$ fastboot flash boot_a boot.img<br />
+Sending 'boot_a' (262144 KB) OKAY [ 10.430s]<br />
+Writing 'boot_a' OKAY [ 40.216s]<br />
+Finished. Total time: 50.800s</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.3.7</td>
+                            <td >From host system run command:<br />
+$ fastboot reboot</td>
+                                <td >Device boots up to prompt successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.31.4 - Giga Ethernet - AR8035          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.4.2</td>
+                            <td >Plug-in ethernet wire to RJ45(K3S N#1) of the device.</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.4.3</td>
+                            <td >Run command:<br />
+$ ifconfig -a</td>
+                                <td >eth0 show up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.4.4</td>
+                            <td >Run command:<br />
+$ ifconfig eth0 up</td>
+                                <td >Run command successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.4.5</td>
+                            <td >Ping to google by run command:<br />
+$ ping google.com</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.31.5 - Micro SD card Read/Write          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.5.2</td>
+                            <td >Plug-in the SD Card to DUT(CN5601)</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.5.3</td>
+                            <td >Mount this SD Card on device<br />
+$ mount /dev/&lt;sd card&gt; /media</td>
+                                <td >Mount successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.5.4</td>
+                            <td >Write and read the file on SD Card<br />
+Create and write the content of a file<br />
+$ cd /media<br />
+$ echo &quot;a b c&quot; &gt; test.txt<br />
+Read the content of a file<br />
+$ cat test.txt</td>
+                                <td >Write and read successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.31.6 - Turn off SOM2's fan when Poweroff OS          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.6.2</td>
+                            <td >- Turn off fan<br />
+$ echo '0' &gt; /sys/class/hwmon/hwmon4/fan1_target<br />
+- Turn on fan<br />
+$ echo '1' &gt; /sys/class/hwmon/hwmon4/fan1_target</td>
+                                <td >Turn on/ turn off the fan correctly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.31.6.3</td>
+                            <td >Power off OS<br />
+$ powerofff</td>
+                                <td >In the shutdown process, the fan is turned off</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.32.1 - Power key          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.1.1</td>
+                            <td >Plug UART cable between the STL(CN7202) and the host system</td>
+                                <td >Plug successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.1.2</td>
+                            <td >In PC, open serial console via UART.<br />
+Example: Open serial uart via /dev/ttyUSB0</td>
+                                <td >Open successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.1.3</td>
+                            <td >Press and hold button PWR BTN(K3S N#2) (Power button) to boot up DUT.</td>
+                                <td >Press successfully and the serial console appears bootup logs of DUT.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.32.2 - Reset key          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.2.1</td>
+                            <td >Plug UART cable between the STL(CN7202) and the host system</td>
+                                <td >Plug successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.2.2</td>
+                            <td >In PC, open serial console via UART.<br />
+Example: Open serial uart via /dev/ttyUSB0</td>
+                                <td >Open successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.2.3</td>
+                            <td >Press and hold button PWR BTN(K3S N#2) (Power button) to boot up DUT.</td>
+                                <td >Press successfully and the serial console appears bootup logs of DUT.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.2.4</td>
+                            <td >Login to keembay console by account &quot;root&quot;.</td>
+                                <td >Login successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.2.5</td>
+                            <td >Press button RST BTN (K3S N#2) (reset button) to reboot DUT.</td>
+                                <td >System reboots. The serial console appears bootup logs of DUT.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.32.3 - USB Type-C          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.3.1</td>
+                            <td >Connect a USB Type C between keembay STL(USB6801) and the host system</td>
+                                <td >Connect device and host system successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.3.2</td>
+                            <td >Plug UART cable between the Keem Bay STL(CN7202) and the host system</td>
+                                <td >UART port output log to host system successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.3.3</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.3.4</td>
+                            <td >Before the timer counts down to zero, press any key on your keyboard to interrupt and stop the &quot;auto boot&quot; up process</td>
+                                <td >Enter bootloader stage successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.3.5</td>
+                            <td >Enter below command to trigger fastboot service on Keem Bay EVM.<br />
+$ fastboot usb 0</td>
+                                <td >Keem Bay STL enter fastboot mode successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.3.6</td>
+                            <td >From host system flash boot image successfully by below command<br />
+$ fastboot flash boot_a boot.img</td>
+                                <td >The output is similar to<br />
+$ fastboot flash boot_a boot.img<br />
+Sending 'boot_a' (262144 KB) OKAY [ 10.430s]<br />
+Writing 'boot_a' OKAY [ 40.216s]<br />
+Finished. Total time: 50.800s</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.3.7</td>
+                            <td >From host system run command:<br />
+$ fastboot reboot</td>
+                                <td >Device boots up to prompt successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.32.4 - Giga Ethernet - AR8035          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.4.2</td>
+                            <td >Plug-in ethernet wire to RJ45(K3S N#2) of the device.</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.4.3</td>
+                            <td >Run command:<br />
+$ ifconfig -a</td>
+                                <td >eth0 show up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.4.4</td>
+                            <td >Run command:<br />
+$ ifconfig eth0 up</td>
+                                <td >Run command successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.4.5</td>
+                            <td >Ping to google by run command:<br />
+$ ping google.com</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.32.5 - Micro SD card Read/Write          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.5.2</td>
+                            <td >Plug-in the SD Card to DUT(CN6601)</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.5.3</td>
+                            <td >Mount this SD Card on device<br />
+$ mount /dev/&lt;sd card&gt; /media</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.5.4</td>
+                            <td >Write and read the file on SD Card<br />
+Create and write the content of a file<br />
+$ cd /media<br />
+$ echo &quot;a b c&quot; &gt; test.txt<br />
+Read the content of a file<br />
+$ cat test.txt</td>
+                                <td >Write and read successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.32.6 - Turn off SOM3's fan when Poweroff OS          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.6.2</td>
+                            <td >- Turn off fan<br />
+$ echo '0' &gt; /sys/class/hwmon/hwmon4/fan1_target<br />
+- Turn on fan<br />
+$ echo '1' &gt; /sys/class/hwmon/hwmon4/fan1_target</td>
+                                <td >Turn on/ turn off the fan correctly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.32.6.3</td>
+                            <td >Power off OS<br />
+$ powerofff</td>
+                                <td >In the shutdown process, the fan is turned off</td>
+                        <td >      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+      </body>
+</html>

@@ -1,0 +1,1803 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <style>
+      table.data{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table.sub-data{
+        border-collapse: collapse;
+        border: none;
+      }
+      table.sub-data th, table.sub-data td{
+        border-color: white;
+      }
+      h1,h2,h3,h4,h5,h6,p,td,th{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      th,td{
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 3px;
+      }
+
+      h2,h1{
+        font-size: 14px;
+        color: black;
+      }
+      h3{
+        color: rgb(204,24,0);
+        font-size: 21px;
+      }
+
+      h4{
+        font-size: 18px;
+        color: rgb(0,0,0);
+      }
+
+      h5{
+        font-size: 16px;
+        color: rgb(102,102,102);
+      }
+
+      h6{
+        font-size: 14px;
+        color: rgb(0,0,0);
+        font-style: italic;
+      }
+
+      h6.h1{
+        color: rgb(128,128,128);
+      }
+
+      h6.h2{
+        color: rgb(0,0,0);
+        font-style: normal;
+        text-decoration: underline;
+      }
+
+      h6.h3{
+        color: rgb(128,128,128);
+        font-style: normal;
+      }
+
+      h6.h4{
+        color: rgb(0,0,0);
+        text-decoration: underline;
+      }
+      .form-id{
+        white-space: nowrap;
+      }
+      .field-value{
+        margin-left: 1em;
+      }
+      .field-value td{
+        padding: 0px 2px 0px 0px;
+      }
+
+      .positive{
+        color: rgb(0,128,64) !important;
+      }
+      .block-positive{
+      }
+
+      .neutral{
+        color: rgb(128,128,128) !important;
+      }
+      .block-neutral{
+      }
+
+      .negative{
+        color: rgb(204,0,0) !important;
+      }
+      .block-negative{
+      }
+
+      .highlight{
+        color: rgb(0,0,0) !important;
+        background-color: rgb(240,204,204) !important;
+      }
+      .block-highlight{
+      }
+      .nr{
+      }
+      .block-nr{
+      }
+      @page Section1{
+        size:11.0in 8.5in;
+        mso-page-orientation:landscape;
+        margin:1.25in 1.0in 1.25in 1.0in;
+        mso-header-margin:.5in;
+        mso-footer-margin:.5in;
+        mso-paper-source:0;
+      }
+      div.Section1{
+        page:Section1;
+      }
+    </style>
+            <xml xmlns:x="urn:schemas-microsoft-com:office:excel"
+            xmlns:o="urn:schemas-microsoft-com:office:office">
+          <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+              <x:ExcelWorksheet>
+<!--            <x:Name>Sheet1</x:Name> -->
+                <x:WorksheetOptions>
+                  <x:Selected/>
+                </x:WorksheetOptions>
+              </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+          </x:ExcelWorkbook>
+        </xml>
+      </head>
+  <body>
+        <!-- Stats -->
+    <div class="Section1">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th colspan="2" class="stat-type">Test Case</th>
+                        <th class="spacer"> </th>
+              <th colspan="2" class="stat-type">Test Step</th>
+          </tr>
+      </thead>
+      <tbody>            <tr>
+              <th class="positive">Pass</th>
+              <td class="stat-number">24</td>
+              <td class="stat-number">80%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">107</td>
+                  <td class="stat-number">86%</td></tr>            <tr>
+              <th class="negative">Fail</th>
+              <td class="stat-number">6</td>
+              <td class="stat-number">20%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">17</td>
+                  <td class="stat-number">14%</td></tr>            <tr>
+              <th class="neutral">N/A</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>        <tr>
+          <th class="nr">No Result</th>
+          <td class="stat-number">0</td>
+          <td class="stat-number">0%</td>
+                        <td class="spacer"> </td>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td></tr><tr>
+                <th class="ip">In Progress</th>
+                <td class="stat-number">0</td>
+                <td class="stat-number">0%</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>          <tr>
+            <th class="stat-total">Total</th>
+            <td class="stat-total stat-number">30</td>
+            <td> </td>
+                            <td class="spacer">&nbsp;</td>
+                <td class="stat-total stat-number">124</td>
+                <td>&nbsp;</td>
+            </tr>
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <table class="data">
+      <thead>
+        <tr>
+          <th colspan="5">Results Summary</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>
+          <th>Summary</th>
+          <th>Resulted By</th>
+          <th>Resulted On</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.1</td>
+                    <td >Receiving an IP address</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:30 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.2</td>
+                    <td >Accessing via console</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 06:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.3</td>
+                    <td >Accessing via SSH</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:02 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.4</td>
+                    <td >Accessing via LuCI</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:04 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.5</td>
+                    <td >Setting root password via LuCI</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:05 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.6</td>
+                    <td >Read system logs</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:06 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 1.7</td>
+                    <td >Logging messages</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:06 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.8</td>
+                    <td >Scheduling tasks with cron</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:10 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 1.9</td>
+                    <td >Managing services</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:32 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.1</td>
+                    <td >Network basics</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 07:33 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.2</td>
+                    <td >Firewall</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:10 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.3</td>
+                    <td >DNS and DHCP</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:16 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.4</td>
+                    <td >DNS and DHCP - Static leases</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:43 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.5</td>
+                    <td >DNS and DHCP - Hostnames</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.6</td>
+                    <td >DNS and DHCP - Logging DNS queries</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:57 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.7</td>
+                    <td >DNS and DHCP - DNS forwarding</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:00 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.1</td>
+                    <td >UCI system</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:02 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 3.2</td>
+                    <td >Modifying the UCI configuration - change the device's IP address</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:04 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 4.1</td>
+                    <td >Create new users and groups for applications or system services</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:05 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 4.2</td>
+                    <td >Managing packages</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:07 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 4.3</td>
+                    <td >Opkg package manager</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:11 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 5.1</td>
+                    <td >Customize and verify backup configuration</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:13 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 5.2</td>
+                    <td >Back up</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:14 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 5.3</td>
+                    <td >Restore</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 09:15 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 6.1</td>
+                    <td >DNS hijacking</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:55 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 6.2</td>
+                    <td >Firewall - Traffic Rules</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:53 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 6.3</td>
+                    <td >Parental controls - Time restriction of internet access</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:53 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 7.1</td>
+                    <td >Enable LuCI HTTPS redirect from HTTP</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:49 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 8.1</td>
+                    <td >NTP client</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:47 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="negative">
+           Fail</td>
+          <td class="form-id ">
+          TC 8.2</td>
+                    <td >NTP server</td>
+          <td >Lam Doan</td>
+          <td >2023-07-14 08:47 AM UTC</td>
+        </tr>
+          </tbody>
+    </table>
+    <br/>
+    <br/>    <table class="data" id="results-detail">
+      <thead>
+        <tr>
+          <th colspan="5">Results Detail</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>                <th>Description</th>
+                            <th>Expected Results</th>
+                      <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.1 - Receiving an IP address          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.2</td>
+                            <td >Plug-in ethernet wire to port of the device.</td>
+                                <td >Plug-in successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.3</td>
+                            <td >Configure the LAN interface dynamically with DHCP<br />
+$ uci set network.lan.proto=&quot;dhcp&quot;<br />
+$ uci commit network<br />
+$ systemctl restart network</td>
+                                <td >Run successfully.</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 07:30 AM UTC</span>
+              <div id="comment_body1310821">
+                          To restart network:<br />
+/etc/init.d/network restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.4</td>
+                            <td >Run command:<br />
+# ifconfig -a</td>
+                                <td >IP address can be shown up</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.1.5</td>
+                            <td >Ping to google by run command:<br />
+# ping 8.8.8.8</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.2 - Accessing via console          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.2</td>
+                            <td >Open serial port terminal by using command on PC's terminal:<br />
+# sudo gtkterm</td>
+                                <td >Open serial port terminal successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.3</td>
+                            <td >Select Configuration --&gt; Port, then choice /dev/ttyUSB0</td>
+                                <td >Config port successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.2.4</td>
+                            <td >Check console</td>
+                                <td >Access via console successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.3 - Accessing via SSH          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.2</td>
+                            <td >Get IP address by running command:<br />
+# ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.3.3</td>
+                            <td >Open PC's terminal, Run the command below:<br />
+# ssh root@&lt;IP address&gt;</td>
+                                <td >Connect via ssh successfully</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 07:02 AM UTC</span>
+              <div id="comment_body1310815">
+                          ssh root@&lt;IP address&gt; -p 20022                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.4 - Accessing via LuCI          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.2</td>
+                            <td >Get IP address by running command:<br />
+# ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.4.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.5 - Setting root password via LuCI          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.2</td>
+                            <td >Get IP address by running command:<br />
+# ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.4</td>
+                            <td >Select System --&gt; Administration --&gt; Router Password, then set password<br />
+Click Save &amp; Apply button to save</td>
+                                <td >Set password successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.5.5</td>
+                            <td >Select Logout and re-access LuCI, then enter the password</td>
+                                <td >Access LuCI successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.6 - Read system logs          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.2</td>
+                            <td >Get IP address by running command:<br />
+# ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.6.4</td>
+                            <td >Select Status --&gt; System Log</td>
+                                <td >Can view a System Log</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.7 - Logging messages          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.2</td>
+                            <td >In serial port terminal, run command to list syslog:<br />
+# logread</td>
+                                <td >Can show system log</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.3</td>
+                            <td >Run command to write a message with a tag to syslog:<br />
+# logger -t TAG MESSAGE</td>
+                                <td >Can write a message successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.7.4</td>
+                            <td >Run command to list syslog filtered by tag:<br />
+# logread -e TAG</td>
+                                <td >Can list syslog filtered by tag</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.8 - Scheduling tasks with cron          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.2</td>
+                            <td >Get IP address by running command:<br />
+$ ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.4</td>
+                            <td >Navigate to LuCI → System → Scheduled Tasks</td>
+                                <td >Can open Scheduled Tasks page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.8.5</td>
+                            <td >Add the configuration to textbox:  */2 * * * * systemctl restart network<br />
+ and click the Submit button</td>
+                                <td >Can save the configuration</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.8.6</td>
+                            <td >Wait for 2 minutes and then check if the network has been restarted<br />
+- The network logs should be displayed in the terminal as below sample<br />
+br-lan: port 1(eth0) entered disabled state<br />
+cpsw 4a100000.ethernet eth0: Link is Down<br />
+cpsw 4a100000.ethernet: initializing cpsw version 1.12 (0)<br />
+SMSC LAN8710/LAN8720 4a101000.mdio:00: attached PHY driver [SMSC LAN8710/LAN8720] (mii_bus:phy_addr=4a101000.mdio:00, irq=POLL)<br />
+8021q: adding VLAN 0 to HW filter on device eth0<br />
+br-lan: port 1(eth0) entered blocking state<br />
+br-lan: port 1(eth0) entered disabled state<br />
+device eth0 entered promiscuous mode<br />
+br-lan: port 1(eth0) entered blocking state<br />
+br-lan: port 1(eth0) entered forwarding state<br />
+br-lan: port 1(eth0) entered disabled state<br />
+cpsw 4a100000.ethernet eth0: Link is Up - 100Mbps/Full - flow control off<br />
+br-lan: port 1(eth0) entered blocking state<br />
+br-lan: port 1(eth0) entered forwarding state</td>
+                                <td >Scheduling tasks successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 1.9 - Managing services          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.9.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.9.2</td>
+                            <td >Get IP address by running command:<br />
+$ ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 1.9.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.9.4</td>
+                            <td >Navigate to LuCI → System → Startup, then see the list of all the available services</td>
+                                <td >Can see the list of all the available services</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 07:15 AM UTC</span>
+              <div id="comment_body1310820">
+                          Cannot access Startup:<br />
+oot@OpenWrt:/# openvswitch: Open vSwitch switching datapath<br />
+kmodloader: loading kernel modules from /etc/modules-boot.d/*<br />
+kmodloader: done loading kernel modules from /etc/modules-boot.d/*<br />
+init: - preinit -<br />
+mount_root: mounting /dev/root<br />
+EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)<br />
+urandom-seed: Seeding with /etc/urandom.seed<br />
+cpsw 4a100000.ethernet eth0: Link is Down<br />
+br-lan: port 1(eth0) entered disabled state<br />
+procd: Failed to add object: Invalid argument                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.9.5</td>
+                            <td >Click Enabled button for log service</td>
+                                <td >Enable service autostart successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.9.6</td>
+                            <td >Click Start button for log service</td>
+                                <td >Start the service successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.9.7</td>
+                            <td >Click Restart button  for log service</td>
+                                <td >Restart the service successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 1.9.8</td>
+                            <td >Click  Stop button  for log service</td>
+                                <td >Stop the service successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.1 - Network basics          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.1.2</td>
+                            <td >In serial port terminal, run command to restart the network configuration in the netifd daemon:<br />
+   $ systemctl restart network</td>
+                                <td >The network configuration can be restarted successfully</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 07:33 AM UTC</span>
+              <div id="comment_body1310822">
+                          To restart network:<br />
+/etc/init.d/network restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.1.3</td>
+                            <td >In serial port terminal, run command to view all information about a particular interface:<br />
+  # ifstatus lan</td>
+                                <td >Can view all information about a particular interface</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.1.4</td>
+                            <td >In serial port terminal, run command to show network uci subsystem:<br />
+# uci show network</td>
+                                <td >Can show network uci subsystem</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.1.5</td>
+                            <td >In serial port terminal, run command to show a list of network interfaces:<br />
+# ubus list network.interface.*</td>
+                                <td >Can show a list of network interfaces</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.2 - Firewall          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.2.2</td>
+                            <td >In serial port terminal, run command to show firewall configuration:<br />
+# uci show firewall</td>
+                                <td >The firewall configuration can be shown successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.2.3</td>
+                            <td >Open the Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.2.4</td>
+                            <td >Select Status --&gt;Firewall--&gt; Firewall Status</td>
+                                <td >Can view a Firewall Status</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.3 - DNS and DHCP          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.3.2</td>
+                            <td >In serial port terminal, run command to show dhcp:<br />
+# uci show dhcp</td>
+                                <td >show dhcp successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.3.3</td>
+                            <td >Run command to show the default settings for dnsmasq:<br />
+# uci -N show dhcp.@dnsmasq[0]</td>
+                                <td >Show the default settings for dnsmasq successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.3.4</td>
+                            <td >Run command to show the default settings for dhcp:<br />
+# uci -N show dhcp.@dhcp[0]</td>
+                                <td >Show the default settings for dhcp successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.4 - DNS and DHCP - Static leases          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.2</td>
+                            <td >Get IP address by running command:<br />
+$ ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.4</td>
+                            <td >Navigate to LuCI: Network → DHCP and DNS → Static Leases</td>
+                                <td >Can open DHCP and DNS page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.5</td>
+                            <td >In serial port terminal, run some commands to add a new lease entry:<br />
+# uci add dhcp host<br />
+# uci set dhcp.@host[-1].name=&quot;mydesktop&quot;<br />
+# uci set dhcp.@host[-1].dns='1'<br />
+# uci set dhcp.@host[-1].mac=&quot;00:11:22:33:44:55&quot;<br />
+# uci set dhcp.@host[-1].ip=&quot;192.168.1.22&quot;<br />
+# uci commit dhcp<br />
+# systemctl restart dnsmasq-init<br />
+Then reload the LuCI web</td>
+                                <td >Can add a new lease entry( Static Leases)</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 08:24 AM UTC</span>
+              <div id="comment_body1310831">
+                          To restart dnsmasq:<br />
+/etc/init.d/dnsmasq restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.5 - DNS and DHCP - Hostnames          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.2</td>
+                            <td >Get IP address by running command:<br />
+$ ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.4</td>
+                            <td >Navigate to LuCI → Network → Hostnames</td>
+                                <td >Can open Hostnames page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.5</td>
+                            <td >In serial port terminal, run some commands to add a new lease entry:<br />
+# uci add dhcp domain<br />
+# uci set dhcp.@domain[-1].name=&quot;mylaptop&quot;<br />
+# uci set dhcp.@domain[-1].ip=&quot;192.168.1.23&quot;<br />
+# uci add dhcp domain<br />
+# uci set dhcp.@domain[-1].name=&quot;mylaptop&quot;<br />
+# uci set dhcp.@domain[-1].ip=&quot;fdce::23&quot;<br />
+# uci commit dhcp<br />
+# systemctl restart dnsmasq-init<br />
+Then reload the LuCI web</td>
+                                <td >Can add  a custom domain name</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 08:44 AM UTC</span>
+              <div id="comment_body1310833">
+                          To restart dnsmasq:<br />
+/etc/init.d/dnsmasq restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.6 - DNS and DHCP - Logging DNS queries          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.6.2</td>
+                            <td >Get IP address by running command:<br />
+$ ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.6.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.6.4</td>
+                            <td >Navigate to LuCI → Network → DHCP and DNS → General Settings → Log queries</td>
+                                <td >Can view &quot;Log queries&quot; in General Settings page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.6.5</td>
+                            <td >In serial port terminal, run some commands to enable &quot;Log queries&quot; :<br />
+# uci set dhcp.@dnsmasq[0].logqueries=&quot;1&quot;<br />
+# uci commit dhcp<br />
+# systemctl restart dnsmasq-init<br />
+Then reload the LuCI web</td>
+                                <td >&quot;Log queries&quot; has been enabled successfully</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 08:57 AM UTC</span>
+              <div id="comment_body1310837">
+                          To restart dnsmasq:<br />
+/etc/init.d/dnsmasq restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.7 - DNS and DHCP - DNS forwarding          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.7.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.7.2</td>
+                            <td >Get IP address by running command:<br />
+$ ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.7.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.7.4</td>
+                            <td >Navigate to LuCI → Network → DHCP and DNS → General Settings → DNS forwardings</td>
+                                <td >Can view &quot;DNS forwardings&quot; in General Settings page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.7.5</td>
+                            <td >In serial port terminal, run some commands to forward DNS queries:<br />
+# uci -q delete dhcp.@dnsmasq[0].server<br />
+# uci add_list dhcp.@dnsmasq[0].server=&quot;8.8.8.8&quot;<br />
+# uci add_list dhcp.@dnsmasq[0].server=&quot;8.8.4.4&quot;<br />
+# uci commit dhcp<br />
+# systemctl restart dnsmasq-init<br />
+Then reload the LuCI web</td>
+                                <td >Can forward DNS queries to specific servers</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 09:00 AM UTC</span>
+              <div id="comment_body1310838">
+                          To restart dnsmasq:<br />
+/etc/init.d/dnsmasq restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.1 - UCI system          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.2</td>
+                            <td >In serial port terminal, run command to show Uci system:<br />
+# uci show system</td>
+                                <td >can show all system</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.1.3</td>
+                            <td >Run command to change the configuration in /etc/config/uhttpd)<br />
+# uci set uhttpd.main.listen_http='8080'<br />
+# uci commit uhttpd<br />
+# systemctl restart uhttpd-init<br />
+Then run the command to check:<br />
+# uci show uhttpd</td>
+                                <td >Can setting a value</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 09:01 AM UTC</span>
+              <div id="comment_body1310839">
+                          To restart uhttpd:<br />
+/etc/init.d/uhttpd restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 3.2 - Modifying the UCI configuration - change the device's IP address          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.2</td>
+                            <td >In serial port terminal, run the command to configure the LAN interface statically  <br />
+# uci set network.lan.proto=&quot;static&quot;<br />
+# uci set network.lan.ipaddr=&quot;192.168.2.2&quot;<br />
+# uci commit network</td>
+                                <td >Can config file successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 3.2.3</td>
+                            <td >Commit the settings by running<br />
+# systemctl restart network<br />
+Then run below command:<br />
+# ifconfig -a</td>
+                                <td >Can change the device's IP address successfully</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 09:04 AM UTC</span>
+              <div id="comment_body1310841">
+                          To restart the network:<br />
+/etc/init.d/network restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 4.1 - Create new users and groups for applications or system services          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 4.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 4.1.2</td>
+                            <td >Open the file for editing and add an entry of user details in /etc/passwd file:<br />
+# vim /etc/passwd<br />
+Example new entry:<br />
+testuser:x:501:501:testuser:/home/user:/bin/ash</td>
+                                <td >Can add a new user</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 4.1.3</td>
+                            <td >Assign a password to the user you just created by command:<br />
+# passwd testuser<br />
+Then enter the new password</td>
+                                <td >Can set the password for user</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 4.1.4</td>
+                            <td >Adding groups by modifying the /etc/group file: vim /etc/group<br />
+cvs::102:chris,logan,david,root</td>
+                                <td >Can add a new group</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 4.1.5</td>
+                            <td >Adding user's home directory by entered into the /etc/passwd file<br />
+# mkdir /home/testuser<br />
+# chown testuser /home/testuser<br />
+Then using command: ls -la /home/testuser<br />
+And check testuser user</td>
+                                <td >Can create the new user’s in home directory.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 4.2 - Managing packages          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 4.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 4.2.2</td>
+                            <td >Navigate to LuCI → System → Software.</td>
+                                <td >Can open a Software page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 4.2.3</td>
+                            <td >Click Update lists button</td>
+                                <td >Can fetch a list of available packages</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 4.2.4</td>
+                            <td >Switch to Available packages tab to show and install available packages</td>
+                                <td >Can show and install available packages</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 4.2.5</td>
+                            <td >Switch to Installed packages tab to show and remove installed packages</td>
+                                <td >Can show and remove installed packages</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 4.3 - Opkg package manager          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 4.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 4.3.2</td>
+                            <td >In serial port terminal, run command to install a package:<br />
+# opkg update<br />
+# opkg install luci-theme-openwrt</td>
+                                <td >Package can be installed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 4.3.3</td>
+                            <td >Run command to list packages:<br />
+# opkg list</td>
+                                <td >Can show a list packages</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 4.3.4</td>
+                            <td >Run command to display package information:<br />
+# opkg info luci-theme-openwrt</td>
+                                <td >Can display package information:<br />
+Package: luci-theme-openwrt<br />
+Version: git-21.285.75929-137ede6<br />
+Depends: libc<br />
+Status: install user installed<br />
+Section: luci<br />
+Architecture: all<br />
+Size: 11070<br />
+Filename: luci-theme-openwrt_git-21.285.75929-137ede6_all.ipk<br />
+Description: LuCI OpenWrt.org theme<br />
+Installed-Time: 1656056462</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 5.1 - Customize and verify backup configuration          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.1.2</td>
+                            <td >Navigate to LuCI → System → Backup / Flash Firmware → Configuration</td>
+                                <td >Can open a Configuration page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 5.1.3</td>
+                            <td >Add files/directories in the configuration text box:<br />
+<br />
+/etc/iproute2/<br />
+<br />
+Click the Submit button, reload the Luci web, and check the configuration text box</td>
+                                <td >The configuration can be saved.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 5.1.4</td>
+                            <td >Click Open list… button to view the list of files for backup.<br />
+And check if the directory /etc/iproute2/ exists</td>
+                                <td >Can add and verify the backup configuration</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 5.1.5</td>
+                            <td >Remove the files/directories in the configuration text box:<br />
+- Remove '/etc/iproute2/' from the configuration text box<br />
+<br />
+Click the Submit button, reload the Luci web, and check the configuration text box</td>
+                                <td >The '/etc/iproute2/' configuration can be removed</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 5.1.6</td>
+                            <td >Click Open list… button to view the list of files for backup.<br />
+And check if the directory '/etc/iproute2/' does not exist.</td>
+                                <td >Can remove and verify the backup configuration</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 5.2 - Back up          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.2.2</td>
+                            <td >Navigate to LuCI → System → Backup / Flash Firmware → Actions: Backup</td>
+                                <td >Can open a Actions page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.2.3</td>
+                            <td >Click Generate archive button to download the archive</td>
+                                <td >Download a tar archive of the current configuration files successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 5.3 - Restore          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.3.2</td>
+                            <td >Navigate to LuCI → System → Backup / Flash Firmware → Actions: Restore</td>
+                                <td >Can open a Actions page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.3.3</td>
+                            <td >Click Choose File button, then select the backup image to upload</td>
+                                <td >Can select a tar archive of the current configuration files successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 5.3.4</td>
+                            <td >Click Upload archive.. button</td>
+                                <td >Can restore backup successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 6.1 - DNS hijacking          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 6.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 6.1.2</td>
+                            <td >Navigate to LuCI → Network → Firewall → Port Forwards</td>
+                                <td >Can open a Firewall - Port Forwards page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 6.1.3</td>
+                            <td >Add a new port forward:<br />
+- Name: Intercept-DNS<br />
+- Protocol: TCP + UDP<br />
+- External zone:  wan<br />
+- External port: 53<br />
+- Internal zone: lan<br />
+- Internal IP address: 192.168.5.10<br />
+- Internal port: 53<br />
+ Click  Add button,then click Save &amp; Apply button</td>
+                                <td >Configuration changes can be applied successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 6.2 - Firewall - Traffic Rules          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 6.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 6.2.2</td>
+                            <td >Navigate to LuCI → Network → Firewall → Traffic Rule</td>
+                                <td >Can view all firewall rule you have added</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 6.3 - Parental controls - Time restriction of internet access          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 6.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 6.3.2</td>
+                            <td >Navigate to LuCI → Network → Firewall → Traffic Rules</td>
+                                <td >Can open a Firewall - Traffic Rules page successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 6.3.3</td>
+                            <td >Click &quot;Add and edit...&quot; button in New forward rule session:<br />
+- Name: Filter-Parental-Controls<br />
+- Protocol: Any<br />
+- Source zone: lan<br />
+- Destination zone: wan<br />
+- Action: reject<br />
+- Week Days: Monday, Tuesday, Wednesday, Thursday, Friday<br />
+- Start Time: 21:30:00<br />
+- Stop Time: 07:00:00<br />
+Click Save, then Save &amp; Apply button</td>
+                                <td >Configuration changes can be applied successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 7.1 - Enable LuCI HTTPS redirect from HTTP          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 7.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 7.1.2</td>
+                            <td >Get IP address by running command:<br />
+$ ifconfig -a</td>
+                                <td >Get IP address successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 7.1.3</td>
+                            <td >Open Web browser, go to &lt;IP address&gt;</td>
+                                <td >LuCI web UI can be opened successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 7.1.4</td>
+                            <td >In the serial port terminal, run some commands to activate the redirection to HTTPS :<br />
+# uci set uhttpd.main.redirect_https=1   <br />
+# uci commit uhttpd<br />
+# systemctl restart uhttpd-init<br />
+Then reload LuCI web: https://&lt;IP address&gt;/cgi-bin/luci</td>
+                                <td >Activate the redirection to HTTPS successfully</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 08:49 AM UTC</span>
+              <div id="comment_body1310836">
+                          To restart uhttpd:<br />
+/etc/init.d/uhttpd restart                  </div>
+          <br />
+          </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 8.1 - NTP client          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 8.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 8.1.2</td>
+                            <td >In serial port terminal, run below command to show NTP configuration:<br />
+# uci show system<br />
+Then check &quot; system.ntp.enabled='1' &quot;</td>
+                                <td >NTP client is enabled</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 8.2 - NTP server          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 8.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >Boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-2">
+          <td class="negative">
+            Fail</td>
+          <td class="form-id ">TS 8.2.2</td>
+                            <td >In serial port terminal, run some command to enable server mode:<br />
+# uci set system.ntp.enable_server=&quot;1&quot;<br />
+# uci commit system<br />
+# /etc/init.d/system restart<br />
+Then run command to show NTP configuration:<br />
+# uci show system<br />
+ And check &quot; system.ntp.enable_server='1' &quot;</td>
+                                <td >Enable NTP server successfully</td>
+                        <td >              <span class="comment-head">Lam Doan 
+              on 2023-07-14 08:47 AM UTC</span>
+              <div id="comment_body1310834">
+                          There is an issue:<br />
+root@ti-am335x:/# /etc/init.d/system restart<br />
+date: invalid option -- 'k'<br />
+Try 'date --help' for more information.                  </div>
+          <br />
+          </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+      </body>
+</html>

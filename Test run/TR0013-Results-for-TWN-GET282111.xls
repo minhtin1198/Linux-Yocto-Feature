@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <style>
+      table.data{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table.sub-data{
+        border-collapse: collapse;
+        border: none;
+      }
+      table.sub-data th, table.sub-data td{
+        border-color: white;
+      }
+      h1,h2,h3,h4,h5,h6,p,td,th{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      th,td{
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 3px;
+      }
+
+      h2,h1{
+        font-size: 14px;
+        color: black;
+      }
+      h3{
+        color: rgb(204,24,0);
+        font-size: 21px;
+      }
+
+      h4{
+        font-size: 18px;
+        color: rgb(0,0,0);
+      }
+
+      h5{
+        font-size: 16px;
+        color: rgb(102,102,102);
+      }
+
+      h6{
+        font-size: 14px;
+        color: rgb(0,0,0);
+        font-style: italic;
+      }
+
+      h6.h1{
+        color: rgb(128,128,128);
+      }
+
+      h6.h2{
+        color: rgb(0,0,0);
+        font-style: normal;
+        text-decoration: underline;
+      }
+
+      h6.h3{
+        color: rgb(128,128,128);
+        font-style: normal;
+      }
+
+      h6.h4{
+        color: rgb(0,0,0);
+        text-decoration: underline;
+      }
+      .form-id{
+        white-space: nowrap;
+      }
+      .field-value{
+        margin-left: 1em;
+      }
+      .field-value td{
+        padding: 0px 2px 0px 0px;
+      }
+
+      .positive{
+        color: rgb(0,128,64) !important;
+      }
+      .block-positive{
+      }
+
+      .neutral{
+        color: rgb(128,128,128) !important;
+      }
+      .block-neutral{
+      }
+
+      .negative{
+        color: rgb(204,0,0) !important;
+      }
+      .block-negative{
+      }
+
+      .highlight{
+        color: rgb(0,0,0) !important;
+        background-color: rgb(240,204,204) !important;
+      }
+      .block-highlight{
+      }
+      .nr{
+      }
+      .block-nr{
+      }
+      @page Section1{
+        size:11.0in 8.5in;
+        mso-page-orientation:landscape;
+        margin:1.25in 1.0in 1.25in 1.0in;
+        mso-header-margin:.5in;
+        mso-footer-margin:.5in;
+        mso-paper-source:0;
+      }
+      div.Section1{
+        page:Section1;
+      }
+    </style>
+            <xml xmlns:x="urn:schemas-microsoft-com:office:excel"
+            xmlns:o="urn:schemas-microsoft-com:office:office">
+          <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+              <x:ExcelWorksheet>
+<!--            <x:Name>Sheet1</x:Name> -->
+                <x:WorksheetOptions>
+                  <x:Selected/>
+                </x:WorksheetOptions>
+              </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+          </x:ExcelWorkbook>
+        </xml>
+      </head>
+  <body>
+        <!-- Stats -->
+    <div class="Section1">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th colspan="2" class="stat-type">Test Case</th>
+                        <th class="spacer"> </th>
+              <th colspan="2" class="stat-type">Test Step</th>
+          </tr>
+      </thead>
+      <tbody>            <tr>
+              <th class="positive">Pass</th>
+              <td class="stat-number">11</td>
+              <td class="stat-number">100%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">31</td>
+                  <td class="stat-number">100%</td></tr>            <tr>
+              <th class="negative">Fail</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>            <tr>
+              <th class="neutral">N/A</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>        <tr>
+          <th class="nr">No Result</th>
+          <td class="stat-number">0</td>
+          <td class="stat-number">0%</td>
+                        <td class="spacer"> </td>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td></tr><tr>
+                <th class="ip">In Progress</th>
+                <td class="stat-number">0</td>
+                <td class="stat-number">0%</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>          <tr>
+            <th class="stat-total">Total</th>
+            <td class="stat-total stat-number">11</td>
+            <td> </td>
+                            <td class="spacer">&nbsp;</td>
+                <td class="stat-total stat-number">31</td>
+                <td>&nbsp;</td>
+            </tr>
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <table class="data">
+      <thead>
+        <tr>
+          <th colspan="5">Results Summary</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>
+          <th>Summary</th>
+          <th>Resulted By</th>
+          <th>Resulted On</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.1</td>
+                    <td >B0047- The screen icon overlaps in the unlock display</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 07:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.2</td>
+                    <td >B0031 - On the office dock. Audio AUX output is fail after Install and uninstall device</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-10 04:13 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.3</td>
+                    <td >B0035 - Device show call forwarding and related settings</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 07:45 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.4</td>
+                    <td >B0048 - RSSI information is not displayed</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 07:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.5</td>
+                    <td >B0022 Text afterimage with Launcher</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 07:58 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.6</td>
+                    <td >B0034 No internet access</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 08:06 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.7</td>
+                    <td >B0054 The draw pattern area is not in the middle of the screen.</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 08:07 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.8</td>
+                    <td >B0056 Sometimes, the video recorder time bar is incorrect</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 08:12 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.9</td>
+                    <td >B0020 &quot;Automatically select network&quot; function failed</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 08:15 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.10</td>
+                    <td >B0060 Unlock icon overlap</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-06 08:16 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.11</td>
+                    <td >B0058 There is no Ethernet setting UI when connect to LTE network</td>
+          <td >Nguyen Tai</td>
+          <td >2021-05-07 08:15 AM UTC</td>
+        </tr>
+          </tbody>
+    </table>
+    <br/>
+    <br/>    <table class="data" id="results-detail">
+      <thead>
+        <tr>
+          <th colspan="5">Results Detail</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>                <th>Description</th>
+                            <th>Expected Results</th>
+                      <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.1 - B0047- The screen icon overlaps in the unlock display          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.1.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.1.2</td>
+                            <td >Observe unlock icon.</td>
+                                <td >The screen icon overlaps in the unlock display is gone.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.2 - B0031 - On the office dock. Audio AUX output is fail after Install and uninstall device          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.2.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.2.2</td>
+                            <td >Place ZX70 on the office docking<br />
+Enter ＞ Getac settings ＞ Dock （Audio）<br />
+Switch audio source output to AUX</td>
+                                <td >Switch audio source output to AUX successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.2.3</td>
+                            <td >Play a MP3 or Youtube<br />
+Uninstall ZX70 from docking ＞ Put ZX70 re-back on docking</td>
+                                <td >The sound will automatically switch back to AUX successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.3 - B0035 - Device show call forwarding and related settings          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.3.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.3.2</td>
+                            <td >Insert SIM</td>
+                                <td >Insert SIM successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.3.3</td>
+                            <td >Device do not pop notification about &quot;call forwarding&quot;</td>
+                                <td >Device do not pop notification about &quot;call forwarding&quot; successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.4 - B0048 - RSSI information is not displayed          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.2</td>
+                            <td >Insert a SIM Card<br />
+Confirm connection to the operator</td>
+                                <td >Insert a SIM Card and confirm connection to the operator successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.3</td>
+                            <td >RSSI information is displayed</td>
+                                <td >RSSI information is displayed successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.5 - B0022 Text afterimage with Launcher          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.2</td>
+                            <td >Switch screen between app and launcher</td>
+                                <td >Text afterimage worked properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.6 - B0034 No internet access          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.6.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.6.2</td>
+                            <td >Insert SIM card(prepaid card and run out of data)<br />
+RSSI icon will show X</td>
+                                <td >Insert SIM successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.6.3</td>
+                            <td >Connect to any wifi AP</td>
+                                <td >Connect wifi successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.7 - B0054 The draw pattern area is not in the middle of the screen.          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.7.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.7.2</td>
+                            <td >Settings -&gt; Security -&gt; Screen lock -&gt; Pattern -&gt; Enable security start-up<br />
+Reboot device</td>
+                                <td >Enable security start-up and reboot successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.7.3</td>
+                            <td >Observe: the draw pattern area is in the middle of the unlock screen</td>
+                                <td >The draw pattern area is in the middle of the screen.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.8 - B0056 Sometimes, the video recorder time bar is incorrect          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.8.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.8.2</td>
+                            <td >Record a video a few seconds</td>
+                                <td >Record a video a few seconds successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.8.3</td>
+                            <td >Play video</td>
+                                <td >The video recorder time bar is correct.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.9 - B0020 &quot;Automatically select network&quot; function failed          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.9.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.9.2</td>
+                            <td >Settings --&gt; Network &amp; internet --&gt; Mobile network --&gt; Automatically select network</td>
+                                <td >Automatically select network successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.10 - B0060 Unlock icon overlap          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.10.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.10.2</td>
+                            <td >Enable SIM PIN<br />
+Power on device</td>
+                                <td >Enable SIM PIN and power on device successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.10.3</td>
+                            <td >On lock screen, icon overlap</td>
+                                <td >Lock icon is disappeared</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.11 - B0058 There is no Ethernet setting UI when connect to LTE network          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.11.1</td>
+                            <td >Boot up DUT</td>
+                                <td >DUT boot up properly</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.11.2</td>
+                            <td >Insert SIM card and power on.<br />
+Plug in device to Dock(Connect LAN and AC adapter)</td>
+                                <td >Insert SIM and plug in device to Dock successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.11.3</td>
+                            <td >Waiting for LAN connection (show icon)<br />
+Disable LTE data connection</td>
+                                <td >Disable LTE data connection successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.11.4</td>
+                            <td >LAN icon is disappeared and settings UI is also hide.</td>
+                                <td >There is exist Ethernet setting UI when connect to LTE network.</td>
+                        <td >      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+      </body>
+</html>

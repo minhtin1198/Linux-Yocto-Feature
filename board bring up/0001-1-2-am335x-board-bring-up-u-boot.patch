@@ -1,0 +1,359 @@
+From ec4f11bda532d68c4a9627e297cdd7393889c1db Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Thu, 2 Feb 2023 10:29:53 +0700
+Subject: [PATCH 1/2] [1/2] am335x board bring up:u-boot
+
+Description:
+	am335x board bring up
+
+Root cause:
+	no OSC 32K on Board in Delta board
+	Delta board change to use the IS43DR16128A DDR2 RAM
+	Board don't have external I2C EEPROM for Board information
+
+Solution:
+	Don't anable RTC due to there is no OSC 32K on Board
+	ISSI DDR2 enabling
+	Disable CONFIG_BOOTCOUNT_LIMIT config because The RTC function was disabled
+	Hardcode-EVMSK-board for Delta board
+---
+ ...-due-to-there-is-no-OSC-32K-on-board.patch |  25 +++
+ ...oard-bring-up-and-ISSI-DDR2-enabling.patch | 172 ++++++++++++++++++
+ .../files/0003-Hardcode-EVMSK-board.patch     |  65 +++++++
+ ...isable-CONFIG_BOOTCOUNT_LIMIT-config.patch |  25 +++
+ .../u-boot/u-boot-ti-staging_2021.01.bb       |   7 +
+ 5 files changed, 294 insertions(+)
+ create mode 100644 recipes-bsp/u-boot/files/0001-don-t-enable-RTC-due-to-there-is-no-OSC-32K-on-board.patch
+ create mode 100644 recipes-bsp/u-boot/files/0002-board-bring-up-and-ISSI-DDR2-enabling.patch
+ create mode 100644 recipes-bsp/u-boot/files/0003-Hardcode-EVMSK-board.patch
+ create mode 100644 recipes-bsp/u-boot/files/0004-disable-CONFIG_BOOTCOUNT_LIMIT-config.patch
+
+diff --git a/recipes-bsp/u-boot/files/0001-don-t-enable-RTC-due-to-there-is-no-OSC-32K-on-board.patch b/recipes-bsp/u-boot/files/0001-don-t-enable-RTC-due-to-there-is-no-OSC-32K-on-board.patch
+new file mode 100644
+index 00000000..3faec870
+--- /dev/null
++++ b/recipes-bsp/u-boot/files/0001-don-t-enable-RTC-due-to-there-is-no-OSC-32K-on-board.patch
+@@ -0,0 +1,25 @@
++From c660e782f4c151afb3dc7f445c4fde94aa7bb7e9 Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen@windriver.com>
++Date: Thu, 2 Feb 2023 10:04:46 +0700
++Subject: [PATCH 1/4] don't enable RTC due to there is no OSC 32K on board
++
++---
++ arch/arm/mach-omap2/am33xx/board.c | 2 +-
++ 1 file changed, 1 insertion(+), 1 deletion(-)
++
++diff --git a/arch/arm/mach-omap2/am33xx/board.c b/arch/arm/mach-omap2/am33xx/board.c
++index 2888390d..8027186b 100644
++--- a/arch/arm/mach-omap2/am33xx/board.c
+++++ b/arch/arm/mach-omap2/am33xx/board.c
++@@ -571,7 +571,7 @@ void early_system_init(void)
++ 
++ #if defined(CONFIG_SPL_AM33XX_ENABLE_RTC32K_OSC)
++ 	/* Enable RTC32K clock */
++-	rtc32k_enable();
+++	//rtc32k_enable();
++ #endif
++ }
++ 
++-- 
++2.25.1
++
+diff --git a/recipes-bsp/u-boot/files/0002-board-bring-up-and-ISSI-DDR2-enabling.patch b/recipes-bsp/u-boot/files/0002-board-bring-up-and-ISSI-DDR2-enabling.patch
+new file mode 100644
+index 00000000..e3f8eb11
+--- /dev/null
++++ b/recipes-bsp/u-boot/files/0002-board-bring-up-and-ISSI-DDR2-enabling.patch
+@@ -0,0 +1,172 @@
++From 87afee8f7eef584c89a3d764cc2b0ace94060a2e Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen@windriver.com>
++Date: Thu, 2 Feb 2023 10:05:42 +0700
++Subject: [PATCH 2/4] board bring up and ISSI DDR2 enabling
++
++---
++ arch/arm/include/asm/arch-am33xx/ddr_defs.h | 16 +++++++
++ arch/arm/mach-omap2/am33xx/clock_am33xx.c   |  2 +-
++ board/ti/am335x/board.c                     | 47 +++++++++++++++++++++
++ board/ti/am335x/board.h                     |  3 +-
++ 4 files changed, 66 insertions(+), 2 deletions(-)
++
++diff --git a/arch/arm/include/asm/arch-am33xx/ddr_defs.h b/arch/arm/include/asm/arch-am33xx/ddr_defs.h
++index 15a5b641..e7935744 100644
++--- a/arch/arm/include/asm/arch-am33xx/ddr_defs.h
+++++ b/arch/arm/include/asm/arch-am33xx/ddr_defs.h
++@@ -170,6 +170,22 @@
++ #define K4B2G1646EBIH9_PHY_WR_DATA		0x76
++ #define K4B2G1646EBIH9_IOCTRL_VALUE		0x18B
++ 
+++/* ISSI IS43DR16128A */
+++#define DDR2_RD_DQS                     0x12
+++#define DDR2_PHY_FIFO_WE                0x80
+++#define DDR2_PHY_WR_DATA                0x40
+++#define IS43DR16128A_IOCTRL_VALUE       0x18B
+++#define IS43DR16128A_EMIF_READ_LATENCY  0x05
+++#define IS43DR16128A_EMIF_TIM1          0x0666B3D6
+++#define IS43DR16128A_EMIF_TIM2          0x143731DA
+++#define IS43DR16128A_EMIF_TIM3          0x00000347
+++#define IS43DR16128A_EMIF_SDCFG         0x43805332
+++#define IS43DR16128A_EMIF_SDREF         0x0000081a
+++#define IS43DR16128A_RATIO              0x80
+++#define IS43DR16128A_RD_DQS             ((DDR2_RD_DQS<<30)|(DDR2_RD_DQS<<20) | (DDR2_RD_DQS<<10)|(DDR2_RD_DQS<<0))
+++#define IS43DR16128A_PHY_FIFO_WE        ((DDR2_PHY_FIFO_WE<<30)|(DDR2_PHY_FIFO_WE<<20) |(DDR2_PHY_FIFO_WE<<10)|(DDR2_PHY_FIFO_WE<<0))
+++#define IS43DR16128A_PHY_WR_DATA        ((DDR2_PHY_WR_DATA<<30)|(DDR2_PHY_WR_DATA<<20) |(DDR2_PHY_WR_DATA<<10)|(DDR2_PHY_WR_DATA<<0))
+++
++ #define  LPDDR2_ADDRCTRL_IOCTRL_VALUE   0x294
++ #define  LPDDR2_ADDRCTRL_WD0_IOCTRL_VALUE 0x00000000
++ #define  LPDDR2_ADDRCTRL_WD1_IOCTRL_VALUE 0x00000000
++diff --git a/arch/arm/mach-omap2/am33xx/clock_am33xx.c b/arch/arm/mach-omap2/am33xx/clock_am33xx.c
++index 2427933c..cefd305d 100644
++--- a/arch/arm/mach-omap2/am33xx/clock_am33xx.c
+++++ b/arch/arm/mach-omap2/am33xx/clock_am33xx.c
++@@ -129,7 +129,7 @@ const struct dpll_params dpll_ddr3_400MHz[NUM_CRYSTAL_FREQ] = {
++ const struct dpll_params dpll_ddr2_266MHz[NUM_CRYSTAL_FREQ] = {
++ 		{665, 47, 1, -1, -1, -1, -1}, /*19.2*/
++ 		{133, 11, 1, -1, -1, -1, -1}, /* 24 MHz */
++-		{266, 24, 1, -1, -1, -1, -1}, /* 25 MHz */
+++		{266, 23, 1, -1, -1, -1, -1}, /* 25 MHz */
++ 		{133, 12, 1, -1, -1, -1, -1}  /* 26 MHz */
++ };
++ 
++diff --git a/board/ti/am335x/board.c b/board/ti/am335x/board.c
++index 4dc04817..29859e29 100644
++--- a/board/ti/am335x/board.c
+++++ b/board/ti/am335x/board.c
++@@ -129,6 +129,30 @@ static const struct emif_regs ddr2_evm_emif_reg_data = {
++ 	.ocp_config = EMIF_OCP_CONFIG_AM335X_EVM,
++ 	.emif_ddr_phy_ctlr_1 = MT47H128M16RT25E_EMIF_READ_LATENCY,
++ };
+++//Delta ISSI DRAM
+++static const struct ddr_data ddr2_issi_data = {
+++	.datardsratio0 = IS43DR16128A_RD_DQS,
+++	.datafwsratio0 = IS43DR16128A_PHY_FIFO_WE,
+++	.datawrsratio0 = IS43DR16128A_PHY_WR_DATA,
+++};
+++
+++
+++static const struct cmd_control ddr2_issi_cmd_ctrl_data = {
+++	.cmd0csratio = IS43DR16128A_RATIO,
+++
+++	.cmd1csratio = IS43DR16128A_RATIO,
+++
+++	.cmd2csratio = IS43DR16128A_RATIO,
+++};
+++
+++static const struct emif_regs ddr2_issi_emif_reg_data = {
+++	.sdram_config = IS43DR16128A_EMIF_SDCFG,
+++	.ref_ctrl = IS43DR16128A_EMIF_SDREF,
+++	.sdram_tim1 = IS43DR16128A_EMIF_TIM1,
+++	.sdram_tim2 = IS43DR16128A_EMIF_TIM2,
+++	.sdram_tim3 = IS43DR16128A_EMIF_TIM3,
+++	.emif_ddr_phy_ctlr_1 = IS43DR16128A_EMIF_READ_LATENCY,
+++};
++ 
++ static const struct ddr_data ddr3_data = {
++ 	.datardsratio0 = MT41J128MJT125_RD_DQS,
++@@ -271,6 +295,7 @@ const struct dpll_params *get_dpll_ddr_params(void)
++ {
++ 	int ind = get_sys_clk_index();
++ 
+++#if 0
++ 	if (board_is_evm_sk())
++ 		return &dpll_ddr3_303MHz[ind];
++ 	else if (board_is_pb() || board_is_bone_lt() || board_is_icev2())
++@@ -279,6 +304,9 @@ const struct dpll_params *get_dpll_ddr_params(void)
++ 		return &dpll_ddr3_303MHz[ind];
++ 	else
++ 		return &dpll_ddr2_266MHz[ind];
+++#else
+++	return &dpll_ddr2_266MHz[ind];
+++#endif
++ }
++ 
++ static u8 bone_not_connected_to_ac_power(void)
++@@ -543,9 +571,18 @@ const struct ctrl_ioregs ioregs = {
++ 	.dt0ioctl		= MT47H128M16RT25E_IOCTRL_VALUE,
++ 	.dt1ioctl		= MT47H128M16RT25E_IOCTRL_VALUE,
++ };
+++//Delta
+++const struct ctrl_ioregs ioregs_issi = {
+++	.cm0ioctl		= IS43DR16128A_IOCTRL_VALUE,
+++	.cm1ioctl		= IS43DR16128A_IOCTRL_VALUE,
+++	.cm2ioctl		= IS43DR16128A_IOCTRL_VALUE,
+++	.dt0ioctl		= IS43DR16128A_IOCTRL_VALUE,
+++	.dt1ioctl		= IS43DR16128A_IOCTRL_VALUE,
+++};
++ 
++ void sdram_init(void)
++ {
+++#if 0
++ 	if (board_is_evm_sk()) {
++ 		/*
++ 		 * EVM SK 1.2A and later use gpio0_7 to enable DDR3.
++@@ -581,6 +618,12 @@ void sdram_init(void)
++ 	else
++ 		config_ddr(266, &ioregs, &ddr2_data,
++ 			   &ddr2_cmd_ctrl_data, &ddr2_emif_reg_data, 0);
+++#else
+++
+++	config_ddr(266, &ioregs_issi, &ddr2_issi_data,
+++			   &ddr2_issi_cmd_ctrl_data, &ddr2_issi_emif_reg_data, 0);
+++
+++#endif
++ }
++ #endif
++ 
++@@ -954,6 +997,7 @@ U_BOOT_DEVICE(am335x_eth) = {
++ #ifdef CONFIG_SPL_LOAD_FIT
++ int board_fit_config_name_match(const char *name)
++ {
+++#if 0
++ 	if (board_is_gp_evm() && !strcmp(name, "am335x-evm"))
++ 		return 0;
++ 	else if (board_is_bone() && !strcmp(name, "am335x-bone"))
++@@ -970,6 +1014,9 @@ int board_fit_config_name_match(const char *name)
++ 		return 0;
++ 	else
++ 		return -1;
+++#else
+++	return 0;
+++#endif
++ }
++ #endif
++ 
++diff --git a/board/ti/am335x/board.h b/board/ti/am335x/board.h
++index 48df914a..41946dc9 100644
++--- a/board/ti/am335x/board.h
+++++ b/board/ti/am335x/board.h
++@@ -56,7 +56,8 @@ static inline int board_is_beaglebonex(void)
++ 
++ static inline int board_is_evm_sk(void)
++ {
++-	return board_ti_is("A335X_SK");
+++	//return board_ti_is("A335X_SK");
+++	return 1;
++ }
++ 
++ static inline int board_is_idk(void)
++-- 
++2.25.1
++
+diff --git a/recipes-bsp/u-boot/files/0003-Hardcode-EVMSK-board.patch b/recipes-bsp/u-boot/files/0003-Hardcode-EVMSK-board.patch
+new file mode 100644
+index 00000000..c66b1968
+--- /dev/null
++++ b/recipes-bsp/u-boot/files/0003-Hardcode-EVMSK-board.patch
+@@ -0,0 +1,65 @@
++From d514e39ddfd6e83e70b53c9ae710bdae256ab696 Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen@windriver.com>
++Date: Thu, 2 Feb 2023 10:07:09 +0700
++Subject: [PATCH 3/4] Hardcode-EVMSK-board
++
++---
++ board/ti/am335x/board.h        |  3 +--
++ board/ti/common/board_detect.c | 22 +++++++++++++++++++---
++ 2 files changed, 20 insertions(+), 5 deletions(-)
++
++diff --git a/board/ti/am335x/board.h b/board/ti/am335x/board.h
++index 41946dc9..48df914a 100644
++--- a/board/ti/am335x/board.h
+++++ b/board/ti/am335x/board.h
++@@ -56,8 +56,7 @@ static inline int board_is_beaglebonex(void)
++ 
++ static inline int board_is_evm_sk(void)
++ {
++-	//return board_ti_is("A335X_SK");
++-	return 1;
+++	return board_ti_is("A335X_SK");
++ }
++ 
++ static inline int board_is_idk(void)
++diff --git a/board/ti/common/board_detect.c b/board/ti/common/board_detect.c
++index 8b3b4bc8..f012c342 100644
++--- a/board/ti/common/board_detect.c
+++++ b/board/ti/common/board_detect.c
++@@ -285,14 +285,30 @@ int __maybe_unused ti_i2c_eeprom_am_get(int bus_addr, int dev_addr)
++ 	ep->version[0] = 0x0;
++ 	ep->serial[0] = 0x0;
++ 	ep->config[0] = 0x0;
++-
+++/*
++ 	rc = ti_i2c_eeprom_get(bus_addr, dev_addr, TI_EEPROM_HEADER_MAGIC,
++ 			       sizeof(am_ep), (uint8_t *)&am_ep);
++ 	if (rc)
++ 		return rc;
++-
++-	ep->header = am_ep.header;
+++*/
+++
+++	am_ep.header = TI_EEPROM_HEADER_MAGIC;
+++	strcpy(am_ep.name, "A335X_SK");
+++	strcpy(am_ep.version, "1.2B");
+++	strcpy(am_ep.serial, "01224P190001"); //WWYY4P19nnnn, WW:week of year,YY:year,nnnn:board number
+++	strcpy(am_ep.config, "SKU#00");       //default configuration
+++	am_ep.mac_addr[0][0] = 0x00;
+++	am_ep.mac_addr[0][1] = 0x18;
+++	am_ep.mac_addr[0][2] = 0x23;
+++	am_ep.mac_addr[0][3] = 0x00;
+++	am_ep.mac_addr[0][4] = 0x03;
+++	am_ep.mac_addr[0][5] = 0x10;
+++	//am_ep.emif1_size = 0x80000;         //maybe uboot.img size
+++	//am_ep.emif2_size = 0x800000;        //maybe kernel size
+++
+++    ep->header = am_ep.header;
++ 	strlcpy(ep->name, am_ep.name, TI_EEPROM_HDR_NAME_LEN + 1);
+++
++ 	ti_eeprom_string_cleanup(ep->name);
++ 
++ 	/* BeagleBone Green '1' eeprom, board_rev: 0x1a 0x00 0x00 0x00 */
++-- 
++2.25.1
++
+diff --git a/recipes-bsp/u-boot/files/0004-disable-CONFIG_BOOTCOUNT_LIMIT-config.patch b/recipes-bsp/u-boot/files/0004-disable-CONFIG_BOOTCOUNT_LIMIT-config.patch
+new file mode 100644
+index 00000000..663aee8b
+--- /dev/null
++++ b/recipes-bsp/u-boot/files/0004-disable-CONFIG_BOOTCOUNT_LIMIT-config.patch
+@@ -0,0 +1,25 @@
++From f2cf7db570eeaa024b6baaf96d927bfb803b4ce2 Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen@windriver.com>
++Date: Thu, 2 Feb 2023 10:09:40 +0700
++Subject: [PATCH 4/4] disable CONFIG_BOOTCOUNT_LIMIT config
++
++---
++ configs/am335x_evm_defconfig | 2 +-
++ 1 file changed, 1 insertion(+), 1 deletion(-)
++
++diff --git a/configs/am335x_evm_defconfig b/configs/am335x_evm_defconfig
++index 9a61a04a..baa924b4 100644
++--- a/configs/am335x_evm_defconfig
+++++ b/configs/am335x_evm_defconfig
++@@ -44,7 +44,7 @@ CONFIG_ENV_VARS_UBOOT_RUNTIME_CONFIG=y
++ CONFIG_SPL_ENV_IS_NOWHERE=y
++ CONFIG_VERSION_VARIABLE=y
++ CONFIG_BOOTP_SEND_HOSTNAME=y
++-CONFIG_BOOTCOUNT_LIMIT=y
+++# CONFIG_BOOTCOUNT_LIMIT is not set
++ CONFIG_CLK=y
++ CONFIG_CLK_CDCE9XX=y
++ CONFIG_DFU_TFTP=y
++-- 
++2.25.1
++
+diff --git a/recipes-bsp/u-boot/u-boot-ti-staging_2021.01.bb b/recipes-bsp/u-boot/u-boot-ti-staging_2021.01.bb
+index 5b13329f..cfa87b16 100644
+--- a/recipes-bsp/u-boot/u-boot-ti-staging_2021.01.bb
++++ b/recipes-bsp/u-boot/u-boot-ti-staging_2021.01.bb
+@@ -7,3 +7,10 @@ PR = "r22"
+ BRANCH = "ti-u-boot-2021.01"
+ 
+ SRCREV = "44a87e3ab85c6d64044f0b5ad677008316baad70"
++
++SRC_URI += " \
++file://0001-don-t-enable-RTC-due-to-there-is-no-OSC-32K-on-board.patch \
++file://0002-board-bring-up-and-ISSI-DDR2-enabling.patch \
++file://0003-Hardcode-EVMSK-board.patch \
++file://0004-disable-CONFIG_BOOTCOUNT_LIMIT-config.patch \
++"
+-- 
+2.25.1
+

@@ -1,0 +1,338 @@
+From 7e6bcf06a3dc56fc2fb0599f49eb3cb6cc28c0e7 Mon Sep 17 00:00:00 2001
+From: Lam Doan <lam.doan@windriver.com>
+Date: Tue, 5 Jul 2022 17:01:49 +0700
+Subject: [PATCH 3/3] [3/3] Linux kernel Training
+
+Description:
+	Working with Linux Kernel
+Solution:
+	Create a new draft driver and device file to control gpio53 that can probe successfully
+---
+ recipes-kernel/linux/files/ti-am335x/fan.cfg  |   3 +-
+ .../linux/files/ti-am335x/kernel-patches.scc  |   3 +-
+ ...ft-driver-and-device-file-to-control.patch | 293 ++++++++++++++++++
+ 3 files changed, 297 insertions(+), 2 deletions(-)
+ create mode 100644 recipes-kernel/linux/files/ti-am335x/patches/0001-Create-a-new-draft-driver-and-device-file-to-control.patch
+
+diff --git a/recipes-kernel/linux/files/ti-am335x/fan.cfg b/recipes-kernel/linux/files/ti-am335x/fan.cfg
+index 9d40f0f..1d55703 100644
+--- a/recipes-kernel/linux/files/ti-am335x/fan.cfg
++++ b/recipes-kernel/linux/files/ti-am335x/fan.cfg
+@@ -1 +1,2 @@
+-CONFIG_SENSORS_GPIO_FAN=m
+\ No newline at end of file
++CONFIG_SENSORS_GPIO_FAN=m
++CONFIG_PPS_GENERATOR_GPIO53=m
+\ No newline at end of file
+diff --git a/recipes-kernel/linux/files/ti-am335x/kernel-patches.scc b/recipes-kernel/linux/files/ti-am335x/kernel-patches.scc
+index 7ffca1f..dafd579 100644
+--- a/recipes-kernel/linux/files/ti-am335x/kernel-patches.scc
++++ b/recipes-kernel/linux/files/ti-am335x/kernel-patches.scc
+@@ -1 +1,2 @@
+-patch patches/0001-Change-configuration-of-a-GPIO-and-disable-enable-of.patch
+\ No newline at end of file
++patch patches/0001-Change-configuration-of-a-GPIO-and-disable-enable-of.patch
++patch patches/0001-Create-a-new-draft-driver-and-device-file-to-control.patch
+\ No newline at end of file
+diff --git a/recipes-kernel/linux/files/ti-am335x/patches/0001-Create-a-new-draft-driver-and-device-file-to-control.patch b/recipes-kernel/linux/files/ti-am335x/patches/0001-Create-a-new-draft-driver-and-device-file-to-control.patch
+new file mode 100644
+index 0000000..896572f
+--- /dev/null
++++ b/recipes-kernel/linux/files/ti-am335x/patches/0001-Create-a-new-draft-driver-and-device-file-to-control.patch
+@@ -0,0 +1,293 @@
++From 3694c232cb34eceee99a1408b53f69ba4f8da732 Mon Sep 17 00:00:00 2001
++From: ldoan <lam.doan@windriver.com>
++Date: Tue, 5 Jul 2022 09:55:09 +0000
++Subject: [PATCH] Create a new draft driver and device file to control gpio53
++
++---
++ arch/arm/boot/dts/am335x-boneblack.dts |  14 ++
++ drivers/hwmon/Kconfig                  |   7 +
++ drivers/hwmon/Makefile                 |   1 +
++ drivers/hwmon/pps_gen_gpio.c           | 211 +++++++++++++++++++++++++
++ 4 files changed, 233 insertions(+)
++ create mode 100644 drivers/hwmon/pps_gen_gpio.c
++
++diff --git a/arch/arm/boot/dts/am335x-boneblack.dts b/arch/arm/boot/dts/am335x-boneblack.dts
++index 9cb9e702441f..536d3462517e 100644
++--- a/arch/arm/boot/dts/am335x-boneblack.dts
+++++ b/arch/arm/boot/dts/am335x-boneblack.dts
++@@ -15,6 +15,13 @@
++ / {
++ 	model = "TI AM335x BeagleBone Black";
++ 	compatible = "ti,am335x-bone-black", "ti,am335x-bone", "ti,am33xx";
+++
+++	pps-gen {
+++		pinctrl-names = "default";
+++		pinctrl-0 = <&pps_gen_pins>;
+++		compatible = "pps-gen-gpio";
+++		pps-gen-gpio53 = <&gpio1 21 GPIO_ACTIVE_HIGH>;
+++	};
++ };
++ 
++ &cpu0_opp_table {
++@@ -27,3 +34,10 @@
++ 		opp-supported-hw = <0x06 0x0100>;
++ 	};
++ };
+++&am33xx_pinmux {
+++	pps_gen_pins: pinmux_pps_gen_pins {
+++		pinctrl-single,pins = <
+++			0x4C (PIN_OUTPUT_PULLDOWN | MUX_MODE7)  /* gpmc_a3.gpio1_19 */
+++		>;
+++	};
+++};
++\ No newline at end of file
++diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
++index 650dd71f9724..bd5cda4f2a3e 100644
++--- a/drivers/hwmon/Kconfig
+++++ b/drivers/hwmon/Kconfig
++@@ -570,6 +570,13 @@ config SENSORS_GPIO_FAN
++ 	  This driver can also be built as a module. If so, the module
++ 	  will be called gpio-fan.
++ 
+++config PPS_GENERATOR_GPIO53
+++	tristate "GPIO53 PPS signal generator"
+++	help
+++	  If you say yes here you get support for a PPS signal generator which
+++	  utilizes a GPIO pin specified in the Device Tree. It uses hrtimers to 
+++	  precisely control the signal.
+++
++ config SENSORS_HIH6130
++ 	tristate "Honeywell Humidicon HIH-6130 humidity/temperature sensor"
++ 	depends on I2C
++diff --git a/drivers/hwmon/Makefile b/drivers/hwmon/Makefile
++index 8db472ea04f0..078a5dad4bd7 100644
++--- a/drivers/hwmon/Makefile
+++++ b/drivers/hwmon/Makefile
++@@ -72,6 +72,7 @@ obj-$(CONFIG_SENSORS_G762)	+= g762.o
++ obj-$(CONFIG_SENSORS_GL518SM)	+= gl518sm.o
++ obj-$(CONFIG_SENSORS_GL520SM)	+= gl520sm.o
++ obj-$(CONFIG_SENSORS_GPIO_FAN)	+= gpio-fan.o
+++obj-$(CONFIG_PPS_GENERATOR_GPIO53) += pps_gen_gpio.o
++ obj-$(CONFIG_SENSORS_HIH6130)	+= hih6130.o
++ obj-$(CONFIG_SENSORS_ULTRA45)	+= ultra45_env.o
++ obj-$(CONFIG_SENSORS_I5500)	+= i5500_temp.o
++diff --git a/drivers/hwmon/pps_gen_gpio.c b/drivers/hwmon/pps_gen_gpio.c
++new file mode 100644
++index 000000000000..3f5664a35bda
++--- /dev/null
+++++ b/drivers/hwmon/pps_gen_gpio.c
++@@ -0,0 +1,211 @@
+++#include <linux/err.h>
+++#include <linux/errno.h>
+++#include <linux/input.h>
+++#include <linux/irq.h>
+++#include <linux/gpio.h>
+++#include <linux/interrupt.h>
+++#include <linux/slab.h>
+++#include <linux/pm.h>
+++#include <linux/module.h>
+++#include <linux/kernel.h>
+++#include <linux/init.h>
+++#include <linux/cdev.h>
+++#include <linux/regulator/consumer.h>
+++#include <linux/of_gpio.h>
+++#include <linux/platform_device.h>
+++#include <linux/delay.h>
+++#include <linux/pm_runtime.h>
+++#include <linux/uaccess.h>
+++
+++#define DEVICE_NAME     "led_53"
+++
+++static dev_t dev_num;
+++static struct cdev *my_cdev;
+++struct class *my_class;
+++struct device *my_dev;
+++static int dev_open(struct inode*,struct file *);
+++static int dev_close(struct inode*,struct file *);
+++static ssize_t dev_read(struct file*,char __user*,size_t len, loff_t *);
+++static ssize_t dev_write(struct file*,const char __user*,size_t len, loff_t *);
+++struct pps_gen_gpio_devdata *data;
+++struct pps_gen_gpio_devdata {
+++	int gpio;			/* device use gpio number */
+++	struct input_dev *pps_gen_gpio_driver;
+++	int pps_gpio;
+++
+++	
+++};
+++
+++static struct file_operations fops = {
+++	.open = dev_open,
+++	.release = dev_close,
+++	.read = dev_read,
+++	.write = dev_write,
+++};
+++static int dev_open(struct inode *inodep, struct file *filep)
+++{
+++	printk("open\n");
+++	return 0;
+++}
+++static int dev_close(struct inode *inodep, struct file *filep)
+++{
+++	printk("close\n");
+++	return 0;
+++}
+++char rec_data[100];
+++static ssize_t dev_write(struct file*filep, const char __user *buf, size_t len, loff_t *offset)
+++{
+++	printk("Write1\n");
+++	memset(rec_data,0,100);
+++	copy_from_user(rec_data,buf,len);
+++	printk("Write2\n");
+++	if(rec_data[0] == '0')
+++	{	printk("Turn off led");
+++		gpio_set_value(data->pps_gpio, 0);
+++	}
+++	else if(rec_data[0] == '1')
+++	{
+++		printk("Turn on led");
+++		gpio_set_value(data->pps_gpio, 1);
+++
+++	}
+++	printk("user write = %d \n",rec_data[0]);
+++	return -1;
+++}
+++
+++
+++static ssize_t dev_read(struct file*filep, char __user *buf, size_t len, loff_t *offset)
+++{
+++	printk("read\n");
+++	return 0;
+++}
+++
+++
+++static int pps_gen_gpio_probe(struct platform_device *pdev)
+++{
+++	struct device *dev = &pdev->dev;
+++	struct device_node *np = pdev->dev.of_node;
+++	int err = 0;
+++
+++	data = devm_kzalloc(dev, sizeof(struct pps_gen_gpio_devdata), GFP_KERNEL);
+++	if (data == NULL) {
+++		err = -ENOMEM;
+++		pr_err("Failed to allocate memory %d\n", err);
+++		goto exit;
+++	}
+++
+++	dev_set_drvdata(dev, data);
+++	data->pps_gpio = of_get_named_gpio(np, "pps-gen-gpio53", 0);
+++	pr_info("Get gpio number: %d from DT\n", data->pps_gpio);
+++
+++	if (!gpio_is_valid(data->pps_gpio)) {
+++		pr_err("gpio pin %d is not available\n", data->pps_gpio);
+++		goto exit;
+++	}
+++
+++	err = gpio_request(data->pps_gpio, "pps-gen");
+++	if (err) {
+++		pr_err("Can not request gpio: %d\n", data->pps_gpio);
+++		goto exit;
+++	}
+++	
+++	err = gpio_direction_output(data->pps_gpio, 0);
+++	if (err) {
+++		pr_err("Unable to set dir for %d\n", data->pps_gpio);
+++		goto free_gpio;
+++	}
+++	/*if(gpio_get_value(data->pps_gpio) == 0) {
+++		gpio_set_value(data->pps_gpio, 1);
+++	}
+++	else {
+++		printk("Status on");
+++	}*/
+++	printk("The driver probe successfully");
+++	return 0;
+++
+++free_gpio:
+++	gpio_free(data->gpio);
+++	
+++	gpio_free(data->pps_gpio);
+++	
+++exit:
+++	return err;
+++}
+++
+++static int pps_gen_gpio_remove(struct platform_device *pdev)
+++{
+++	struct device *dev = &pdev->dev;
+++	struct pps_gen_gpio_devdata *data = platform_get_drvdata(pdev);
+++	gpio_set_value(data->pps_gpio, 0);
+++	gpio_free(data->gpio);
+++	gpio_free(data->pps_gpio);
+++	printk("The driver remove successfully");
+++	return 0;
+++}
+++
+++static struct of_device_id pps_gen_gpio_dt_ids[] = {
+++	{.compatible = "pps-gen-gpio", },
+++	{ },
+++};
+++
+++static struct platform_driver pps_gen_gpio_driver = {
+++	.driver = {
+++		.name = "pps_gen_gpio",
+++		.owner = THIS_MODULE,
+++		.of_match_table = of_match_ptr(pps_gen_gpio_dt_ids),
+++	},
+++	.probe = pps_gen_gpio_probe,
+++	.remove = pps_gen_gpio_remove,
+++};
+++
+++static int __init pps_gen_gpio_init(void)
+++{
+++	int ret = 0;
+++	dev_num = 0;
+++	// Create Device File
+++	ret = alloc_chrdev_region(&dev_num, 0, 1, DEVICE_NAME);
+++	if(ret <0){
+++		printk("failed to register device number dynamically\n");
+++	}
+++	printk("allocated device number (%d,%d)\n", MAJOR(dev_num),MINOR(dev_num));
+++	my_cdev = cdev_alloc();
+++	if(my_cdev == NULL) {
+++		printk("failed to allocate cdev structure\n");
+++	}
+++	cdev_init(my_cdev,&fops);
+++	ret = cdev_add(my_cdev,dev_num, 1 );
+++	if(ret < 0) {
+++		printk("failed to add the char device to the system");
+++	}
+++	if(ret < 0)
+++	{
+++		pr_info("cdev_add error\n");
+++		return ret;
+++	}
+++	my_class = class_create(THIS_MODULE, DEVICE_NAME);
+++	if(my_class == NULL) {
+++		printk("failed to create a device class\n");
+++	}
+++	my_dev = device_create(my_class, NULL, dev_num, NULL, DEVICE_NAME);
+++	if(IS_ERR(my_dev)) {
+++		printk("failed to create a device \n");
+++	}
+++	return platform_driver_register(&pps_gen_gpio_driver);
+++
+++}
+++
+++static void __exit pps_gen_gpio_exit(void)
+++{
+++	pr_info("Goodbye\n");
+++	platform_driver_unregister(&pps_gen_gpio_driver);
+++	cdev_del(my_cdev);
+++	device_destroy(my_class, dev_num);
+++	class_destroy(my_class);
+++	unregister_chrdev_region(dev_num, DEVICE_NAME);
+++}
+++
+++module_init(pps_gen_gpio_init);
+++module_exit(pps_gen_gpio_exit);
+++
+++MODULE_DESCRIPTION("GPIO PPS signal generator");
+++MODULE_LICENSE("GPL v2");
++-- 
++2.17.1
++
+-- 
+2.25.1
+

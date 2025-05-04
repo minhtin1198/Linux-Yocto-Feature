@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <style>
+      table.data{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table.sub-data{
+        border-collapse: collapse;
+        border: none;
+      }
+      table.sub-data th, table.sub-data td{
+        border-color: white;
+      }
+      h1,h2,h3,h4,h5,h6,p,td,th{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      th,td{
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 3px;
+      }
+
+      h2,h1{
+        font-size: 14px;
+        color: black;
+      }
+      h3{
+        color: rgb(204,24,0);
+        font-size: 21px;
+      }
+
+      h4{
+        font-size: 18px;
+        color: rgb(0,0,0);
+      }
+
+      h5{
+        font-size: 16px;
+        color: rgb(102,102,102);
+      }
+
+      h6{
+        font-size: 14px;
+        color: rgb(0,0,0);
+        font-style: italic;
+      }
+
+      h6.h1{
+        color: rgb(128,128,128);
+      }
+
+      h6.h2{
+        color: rgb(0,0,0);
+        font-style: normal;
+        text-decoration: underline;
+      }
+
+      h6.h3{
+        color: rgb(128,128,128);
+        font-style: normal;
+      }
+
+      h6.h4{
+        color: rgb(0,0,0);
+        text-decoration: underline;
+      }
+      .form-id{
+        white-space: nowrap;
+      }
+      .field-value{
+        margin-left: 1em;
+      }
+      .field-value td{
+        padding: 0px 2px 0px 0px;
+      }
+
+      .positive{
+        color: rgb(0,128,64) !important;
+      }
+      .block-positive{
+      }
+
+      .neutral{
+        color: rgb(128,128,128) !important;
+      }
+      .block-neutral{
+      }
+
+      .negative{
+        color: rgb(204,0,0) !important;
+      }
+      .block-negative{
+      }
+
+      .highlight{
+        color: rgb(0,0,0) !important;
+        background-color: rgb(240,204,204) !important;
+      }
+      .block-highlight{
+      }
+      .nr{
+      }
+      .block-nr{
+      }
+      @page Section1{
+        size:11.0in 8.5in;
+        mso-page-orientation:landscape;
+        margin:1.25in 1.0in 1.25in 1.0in;
+        mso-header-margin:.5in;
+        mso-footer-margin:.5in;
+        mso-paper-source:0;
+      }
+      div.Section1{
+        page:Section1;
+      }
+    </style>
+            <xml xmlns:x="urn:schemas-microsoft-com:office:excel"
+            xmlns:o="urn:schemas-microsoft-com:office:office">
+          <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+              <x:ExcelWorksheet>
+<!--            <x:Name>Sheet1</x:Name> -->
+                <x:WorksheetOptions>
+                  <x:Selected/>
+                </x:WorksheetOptions>
+              </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+          </x:ExcelWorkbook>
+        </xml>
+      </head>
+  <body>
+        <!-- Stats -->
+    <div class="Section1">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Stats</th>
+          <th colspan="2" class="stat-type">Test Case</th>
+                        <th class="spacer"> </th>
+              <th colspan="2" class="stat-type">Test Step</th>
+          </tr>
+      </thead>
+      <tbody>            <tr>
+              <th class="positive">Pass</th>
+              <td class="stat-number">2</td>
+              <td class="stat-number">100%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">16</td>
+                  <td class="stat-number">100%</td></tr>            <tr>
+              <th class="negative">Fail</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>            <tr>
+              <th class="neutral">N/A</th>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td>
+                                <td class="spacer"> </td>
+                  <td class="stat-number">0</td>
+                  <td class="stat-number">0%</td></tr>        <tr>
+          <th class="nr">No Result</th>
+          <td class="stat-number">0</td>
+          <td class="stat-number">0%</td>
+                        <td class="spacer"> </td>
+              <td class="stat-number">0</td>
+              <td class="stat-number">0%</td></tr><tr>
+                <th class="ip">In Progress</th>
+                <td class="stat-number">0</td>
+                <td class="stat-number">0%</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>          <tr>
+            <th class="stat-total">Total</th>
+            <td class="stat-total stat-number">2</td>
+            <td> </td>
+                            <td class="spacer">&nbsp;</td>
+                <td class="stat-total stat-number">16</td>
+                <td>&nbsp;</td>
+            </tr>
+      </tbody>
+    </table>
+    <br/>
+    <br/>
+    <table class="data">
+      <thead>
+        <tr>
+          <th colspan="5">Results Summary</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>
+          <th>Summary</th>
+          <th>Resulted By</th>
+          <th>Resulted On</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.4</td>
+                    <td >Support Wifi dongle- Connect to an unsecured network</td>
+          <td >Tin Nguyen</td>
+          <td >2023-07-26 11:01 AM UTC</td>
+        </tr>
+            <tr>
+          <td class="positive">
+           Pass</td>
+          <td class="form-id ">
+          TC 2.5</td>
+                    <td >Support Wifi dongle- Connect to a secured network with the WPA2 protocol</td>
+          <td >Tin Nguyen</td>
+          <td >2023-07-26 10:52 AM UTC</td>
+        </tr>
+          </tbody>
+    </table>
+    <br/>
+    <br/>    <table class="data" id="results-detail">
+      <thead>
+        <tr>
+          <th colspan="5">Results Detail</th>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <th>Form ID</th>                <th>Description</th>
+                            <th>Expected Results</th>
+                      <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.4 - Support Wifi dongle- Connect to an unsecured network          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.1</td>
+                            <td >Setup an unsecured network(do not setup the password) for the WIFI Access Point</td>
+                                <td >Setup the WIFI Access Point successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.2</td>
+                            <td >Boot up DUT and login to root</td>
+                                <td >Boot up and login successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.3</td>
+                            <td >Plug the Wifi dongle into the USB port (SJ2) to DUT</td>
+                                <td >Plug the Wifi dongle successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.4</td>
+                            <td >Check the Wifi dongle interface by run the command below:<br />
+$ ifconfig wlan0</td>
+                                <td >Wifi dongle interface(wlan0) show up properly.<br />
+root@delta-am65x:~# ifconfig wlan0<br />
+wlan0     Link encap:Ethernet  HWaddr d0:37:45:d8:ee:69  <br />
+          BROADCAST MULTICAST  MTU:1500  Metric:1<br />
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0<br />
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0<br />
+          collisions:0 txqueuelen:1000 <br />
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.5</td>
+                            <td >Setup connection to WIFI Access Point by running the command below<br />
+$ rm -rf /etc/wpa_supplicant.conf<br />
+$ touch /etc/wpa_supplicant.conf<br />
+$ echo &quot;ctrl_interface=/var/run/wpa_supplicant<br />
+$ ctrl_interface_group=0<br />
+$ update_config=1<br />
+$ network={<br />
+$    ssid=\&quot;NAME-OF-YOUR-NETWORK\&quot;<br />
+$    key_mgmt=NONE<br />
+$ }&quot; &gt;&gt; /etc/wpa_supplicant.conf<br />
+<br />
+- Then read config to confirm by the command:<br />
+$ cat /etc/wpa_supplicant.conf<br />
+<br />
+- Modify configurations based on Wi-Fi Access Point, example:<br />
+$ cat /etc/wpa_supplicant.conf<br />
+ctrl_interface=/var/run/wpa_supplicant<br />
+ctrl_interface_group=0<br />
+update_config=1<br />
+network={<br />
+    ssid=&quot;dd-wrt&quot;<br />
+    key_mgmt=NONE<br />
+}</td>
+                                <td >Set up the connection to WIFI Access Point successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.6</td>
+                            <td >Connect the Wi-Fi to Wi-Fi access point<br />
+$ killall wpa_supplicant<br />
+$ ifconfig wlan0 up<br />
+$ wpa_supplicant -iwlan0 -D wext -c /etc/wpa_supplicant.conf - &amp;</td>
+                                <td >Connect to WIFI Access Point successfully.<br />
+The terminal show this log: <br />
+Successfully initialized wpa_supplicant<br />
+rfkill: Cannot get wiphy information<br />
+ioctl[SIOCSIWAP]: Operation not permitted<br />
+wlan0: Trying to associate with 00:18:39:5f:e9:8a (SSID='dd-wrt' freq=2437 MHz)<br />
+Failed to add supported operating classes IE<br />
+wlan0: Associated with 00:18:39:5f:e9:8a<br />
+wlan0: CTRL-EVENT-CONNECTED - Connection to 00:18:39:5f:e9:8a completed [id=0 id_str=]</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.7</td>
+                            <td >Set the IP for wlan0 by DHCP through the  AP router by the command below:<br />
+$ dhclient -r<br />
+$ dhclient -v wlan0</td>
+                                <td >Run the command successfully. The wlan0 was assigned IP.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.4.8</td>
+                            <td >Check the ethernet access by ping to Google DNS server<br />
+$ ping 8.8.8.8 -I wlan0</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="filter-hidden">
+          <th colspan="5" class="detail ">
+            TC 2.5 - Support Wifi dongle- Connect to a secured network with the WPA2 protocol          </th>
+        </tr>        <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.1</td>
+                            <td >Setup a secured network with the WPA2 protocol for the WIFI Access Point</td>
+                                <td >Setup the WIFI Access Point successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.2</td>
+                            <td >Boot up DUT and login to root</td>
+                                <td >Boot up and login successfully</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.3</td>
+                            <td >Plug the Wifi dongle into the USB port (SJ2) to DUT</td>
+                                <td >Plug the Wifi dongle successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.4</td>
+                            <td >Check the Wifi dongle interface by run the command below:<br />
+$ ifconfig wlan0</td>
+                                <td >Wifi dongle interface(wlan0) show up properly.<br />
+root@delta-am65x:~# ifconfig wlan0<br />
+wlan0     Link encap:Ethernet  HWaddr d0:37:45:d8:ee:69  <br />
+          BROADCAST MULTICAST  MTU:1500  Metric:1<br />
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0<br />
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0<br />
+          collisions:0 txqueuelen:1000 <br />
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.5</td>
+                            <td >Setup connection to WIFI Access Point<br />
+$ rm -rf /etc/wpa_supplicant.conf<br />
+$ touch /etc/wpa_supplicant.conf<br />
+$ echo &quot;ctrl_interface=/var/run/wpa_supplicant<br />
+$ ctrl_interface_group=0<br />
+$ update_config=1<br />
+$ network={<br />
+$    ssid=\&quot;NAME-OF-YOUR-NETWORK\&quot;<br />
+$    psk=\&quot;PASSWORD\&quot;<br />
+$    proto=RSN<br />
+$    key_mgmt=WPA-PSK<br />
+$    pairwise=CCMP TKIP<br />
+$    group=CCMP TKIP<br />
+$ }&quot; &gt;&gt; /etc/wpa_supplicant.conf<br />
+<br />
+Then read config to confirm by the command:<br />
+$ cat /etc/wpa_supplicant.conf<br />
+<br />
+- Modify configurations based on Wi-Fi Access Point, for example:<br />
+$  cat /etc/wpa_supplicant.conf<br />
+ctrl_interface=/var/run/wpa_supplicant<br />
+ctrl_interface_group=0<br />
+update_config=1<br />
+network={<br />
+    ssid=&quot;dd-wrt&quot;<br />
+    psk=&quot;12345678&quot;<br />
+    proto=RSN<br />
+    key_mgmt=WPA-PSK<br />
+    pairwise=CCMP TKIP<br />
+    group=CCMP TKIP<br />
+}</td>
+                                <td >Set up the connection to WIFI Access Point successfully.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.6</td>
+                            <td >Connect the Wi-Fi to Wi-Fi access point<br />
+$ killall wpa_supplicant<br />
+$ ifconfig wlan0 up<br />
+$ wpa_supplicant -iwlan0 -D wext -c /etc/wpa_supplicant.conf - &amp;</td>
+                                <td >Connect to WIFI Access Point successfully.<br />
+The terminal show this log:<br />
+Successfully initialized wpa_supplicant<br />
+rfkill: Cannot get wiphy information<br />
+ioctl[SIOCSIWAP]: Operation not permitted<br />
+<br />
+root@delta-am65x:~# wlan0: Trying to associate with 00:18:39:5f:e9:8a (SSID='dd-wrt' freq=2437 MHz)<br />
+Failed to add supported operating classes IE<br />
+wlan0: Associated with 00:18:39:5f:e9:8a<br />
+wlan0: WPA: Key negotiation completed with 00:18:39:5f:e9:8a [PTK=CCMP GTK=CCMP]<br />
+wlan0: CTRL-EVENT-CONNECTED - Connection to 00:18:39:5f:e9:8a completed [id=0 id_str=]</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.7</td>
+                            <td >Set the IP for wlan0 by DHCP through the  AP router by the command below:<br />
+$ dhclient -r<br />
+$ dhclient -v wlan0</td>
+                                <td >Run the command successfully. The wlan0 was assigned IP.</td>
+                        <td >      </td>
+    </tr>
+            <tr class="result-1">
+          <td class="positive">
+            Pass</td>
+          <td class="form-id ">TS 2.5.8</td>
+                            <td >Check the ethernet access by ping to Google DNS server<br />
+$ ping 8.8.8.8 -I wlan0</td>
+                                <td >Ping successfully.</td>
+                        <td >      </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+      </body>
+</html>

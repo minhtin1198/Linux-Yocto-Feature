@@ -1,0 +1,175 @@
+diff --git a/drivers/net/usb/asix_devices.c b/drivers/net/usb/asix_devices.c
+index ef548beba684..c77d9d49a47f 100644
+--- a/drivers/net/usb/asix_devices.c
++++ b/drivers/net/usb/asix_devices.c
+@@ -40,6 +40,122 @@ struct ax88172_int_data {
+ 	__le16 res3;
+ } __packed;
+ 
++struct usbnet *usbnetdev;
++
++static ssize_t read_register_x(struct kobject *kobj, struct kobj_attribute *attr,
++			 const char *buf, size_t count)
++{
++	int ret, addr;
++	u8 reg_val;
++	ret = kstrtouint(buf, 16, &addr);
++	if (ret < 0)
++		return ret;
++	ret = asix_read_cmd(usbnetdev, addr, 0, 0, 1, &reg_val, 0);
++	if (ret < 0)
++		return ret;
++	
++	netdev_err(usbnetdev->net, "asix register_addr_0x%02x=0x%02x\n", addr, reg_val);
++
++	return count;
++}
++
++static ssize_t read_medium_register(struct kobject *kobj, struct kobj_attribute *attr,
++			 const char *buf, size_t count)
++{
++	int ret, addr;
++	u16 reg_val;
++	ret = kstrtouint(buf, 16, &addr);
++	if (ret < 0)
++		return ret;
++	ret = asix_read_cmd(usbnetdev, addr, 0, 0, 2, &reg_val, 0);
++	if (ret < 0)
++		return ret;
++	
++	netdev_err(usbnetdev->net, "asix register_addr_0x%02x=0x%02x\n", addr, reg_val);
++
++	return count;
++}
++
++static ssize_t read_phy_register_x(struct kobject *kobj, struct kobj_attribute *attr,
++			 const char *buf, size_t count)
++{
++	int ret, addr;
++	int reg_val;
++	ret = kstrtouint(buf, 16, &addr);
++	if (ret < 0)
++		return ret;
++
++	reg_val = asix_mdio_read(usbnetdev->net, usbnetdev->mii.phy_id, addr);
++	
++	netdev_err(usbnetdev->net, "asix phy_register_addr_0x%02x=0x%04x\n", addr, reg_val);
++
++	return count;
++}
++static ssize_t write_register_x(struct kobject *kobj, struct kobj_attribute *attr,
++			 const char *buf, size_t count)
++{
++	int ret,input;
++	u32 reg_val,addr;
++	if ((int)count != 5) 
++		return -1;
++	ret = kstrtouint(buf, 16, &input);
++	if (ret < 0)
++		return ret;
++	
++	addr = (input >> 8);
++	reg_val = input & 0xff;
++	netdev_err(usbnetdev->net, "asix write register_addr_0x%02x=0x%02x count %d\n", addr, reg_val,count);
++	ret = asix_write_cmd(usbnetdev, addr, 0, 0, 1, &reg_val, 0);
++	if (ret < 0)
++		return ret;
++
++	return count;
++}
++
++static ssize_t write_phy_register_x(struct kobject *kobj, struct kobj_attribute *attr,
++			 const char *buf, size_t count)
++{
++	int ret, input;
++	u32 reg_val,addr;
++	if ((int)count != 7) 
++		return -1;
++	ret = kstrtouint(buf, 16, &input);
++	if (ret < 0)
++		return ret;
++
++	addr = (input >> 16);
++	reg_val = input & 0xffff;
++	netdev_err(usbnetdev->net, "asix write_phy register_addr_0x%02x=0x%04x count %d\n", addr, reg_val,count);
++	asix_mdio_write(usbnetdev->net, usbnetdev->mii.phy_id, addr,reg_val);
++
++	return count;
++}
++
++static struct kobj_attribute read_register_attribute =
++	__ATTR(read_register, 0664, NULL, read_register_x);
++static struct kobj_attribute read_phy_register_attribute =
++	__ATTR(read_phy_register, 0664, NULL, read_phy_register_x);
++static struct kobj_attribute write_register_attribute =
++	__ATTR(write_register, 0664, NULL, write_register_x);
++static struct kobj_attribute write_phy_register_attribute =
++	__ATTR(write_phy_register, 0664, NULL, write_phy_register_x);
++static struct kobj_attribute read_medium_register_attribute =
++	__ATTR(read_medium_register, 0664, NULL, read_medium_register);
++
++static struct attribute *attrs[] = {
++	&read_register_attribute.attr,
++	&read_phy_register_attribute.attr,
++	&write_register_attribute.attr,
++	&write_phy_register_attribute.attr,
++	&read_medium_register_attribute.attr,
++	NULL
++};
++
++static struct attribute_group attr_group = {
++	.attrs = attrs,
++};
++static struct kobject *example_kobj;
++
+ static void asix_status(struct usbnet *dev, struct urb *urb)
+ {
+ 	struct ax88172_int_data *event;
+@@ -764,7 +880,24 @@ static int ax88772_bind(struct usbnet *dev, struct usb_interface *intf)
+ 
+ 	return 0;
+ }
+-
++static int ax88772_early_init(struct usbnet *dev)
++{
++	printk("ax88772_early_init \n");
++	int retval;
++	usbnetdev = dev;
++	printk("asix asix_init \n");
++	example_kobj = kobject_create_and_add("kobject_example", kernel_kobj);
++	if (example_kobj)
++	{
++
++	/* Create the files associated with this kobject */
++	retval = sysfs_create_group(example_kobj, &attr_group);
++	if (retval)
++		kobject_put(example_kobj);
++	printk("asix asix_init oke %d \n",retval);
++	}
++	return 0;
++}
+ static void ax88772_unbind(struct usbnet *dev, struct usb_interface *intf)
+ {
+ 	asix_rx_fixup_common_free(dev->driver_priv);
+@@ -1172,6 +1305,7 @@ static const struct driver_info ax88772b_info = {
+ 	.rx_fixup = asix_rx_fixup_common,
+ 	.tx_fixup = asix_tx_fixup,
+ 	.data = FLAG_EEPROM_MAC,
++	.early_init = ax88772_early_init,
+ };
+ 
+ static const struct driver_info ax88178_info = {
+diff --git a/drivers/net/usb/usbnet.c b/drivers/net/usb/usbnet.c
+index 402390b1a66b..8eb27c497e42 100644
+--- a/drivers/net/usb/usbnet.c
++++ b/drivers/net/usb/usbnet.c
+@@ -1671,6 +1671,9 @@ usbnet_probe (struct usb_interface *udev, const struct usb_device_id *prod)
+ 	dev->driver_info = info;
+ 	dev->driver_name = name;
+ 
++	printk("asix dev->driver_info->early_init(dev); \n");
++	info->early_init(dev);
++
+ 	dev->stats64 = netdev_alloc_pcpu_stats(struct pcpu_sw_netstats);
+ 	if (!dev->stats64)
+ 		goto out0;
