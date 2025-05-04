@@ -1,0 +1,27 @@
+From 2e0b1e6e80a2b252cdfa3cd43280e2ea0da48fc4 Mon Sep 17 00:00:00 2001
+From: Hoang <hoang.bui@zien.vn>
+Date: Thu, 22 Aug 2024 10:36:25 +0700
+Subject: [PATCH] A0013 [Task] Task 2: Linux Customization Part B #8 Booting
+ optimization
+
+1. Turn off console output by adding 'quiet' to the kernel command line.
+---
+ recipes-bsp/u-boot/u-boot-uenv_2.0.bb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/recipes-bsp/u-boot/u-boot-uenv_2.0.bb b/recipes-bsp/u-boot/u-boot-uenv_2.0.bb
+index d70fd53..b4c3eb2 100644
+--- a/recipes-bsp/u-boot/u-boot-uenv_2.0.bb
++++ b/recipes-bsp/u-boot/u-boot-uenv_2.0.bb
+@@ -363,7 +363,7 @@ else
+   setenv loadkernel ext4load \${devtype} \${devnum}:\${mmcpart} \${loadaddr} \${ostver}/vmlinuz
+   setenv loadramdisk ext4load \${devtype} \${devnum}:\${mmcpart} \${initrd_addr} \${ostver}/initramfs
+ fi
+-setenv bootargs "\${fdtargs} \${bootpart} ostree=/ostree/\${ostver} \${rootpart} ${OSTREE_CONSOLE} ${OSTREE_BSP_ARGS} \${smp} flux=fluxdata\${labelpre}"
++setenv bootargs "\${fdtargs} \${bootpart} ostree=/ostree/\${ostver} \${rootpart} ${OSTREE_CONSOLE} ${OSTREE_BSP_ARGS} \${smp} flux=fluxdata\${labelpre} quiet"
+ if test "\${no_fatwrite}" = yes; then
+  setenv bootargs "\${bootargs} no_fatwrite=yes"
+ fi
+-- 
+2.43.0
+

@@ -1,0 +1,123 @@
+From e8a9e0cccb50e596684387417569432ac6a959c8 Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Tue, 17 Sep 2024 13:42:43 +0700
+Subject: [PATCH 3/4] A0013 [Task] Task 2: Linux Customization Part B #8
+ Booting optimization
+
+1.disable USB boot mode
+---
+ .../A0013-Disable-USB-boot-mode.patch         | 91 +++++++++++++++++++
+ .../u-boot/u-boot-imx_2022.04.bbappend        |  1 +
+ 2 files changed, 92 insertions(+)
+ create mode 100644 recipes-bsp/u-boot/u-boot-imx/A0013-Disable-USB-boot-mode.patch
+
+diff --git a/recipes-bsp/u-boot/u-boot-imx/A0013-Disable-USB-boot-mode.patch b/recipes-bsp/u-boot/u-boot-imx/A0013-Disable-USB-boot-mode.patch
+new file mode 100644
+index 0000000..ab12d5a
+--- /dev/null
++++ b/recipes-bsp/u-boot/u-boot-imx/A0013-Disable-USB-boot-mode.patch
+@@ -0,0 +1,91 @@
++From 2b21d046b2d743be06814261014bafa0d6f20618 Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen6@windriver.com>
++Date: Tue, 17 Sep 2024 06:37:30 +0000
++Subject: [PATCH 3/3] A0013 Disable USB boot mode
++
++---
++ configs/imx8mp_dmsse36_4G_defconfig | 34 ++++++++++++++---------------
++ include/configs/imx8mp_dmsse36.h    |  1 -
++ 2 files changed, 17 insertions(+), 18 deletions(-)
++
++diff --git a/configs/imx8mp_dmsse36_4G_defconfig b/configs/imx8mp_dmsse36_4G_defconfig
++index 59f44970b7..8d115aca2e 100755
++--- a/configs/imx8mp_dmsse36_4G_defconfig
+++++ b/configs/imx8mp_dmsse36_4G_defconfig
++@@ -62,8 +62,8 @@ CONFIG_CMD_GPIO=y
++ CONFIG_CMD_I2C=y
++ CONFIG_CMD_MMC=y
++ CONFIG_CMD_POWEROFF=y
++-CONFIG_CMD_USB=y
++-CONFIG_CMD_USB_MASS_STORAGE=y
+++# CONFIG_CMD_USB is not set
+++# CONFIG_CMD_USB_MASS_STORAGE is not set
++ CONFIG_CMD_SNTP=y
++ CONFIG_CMD_BMP=y
++ CONFIG_CMD_CACHE=y
++@@ -95,11 +95,11 @@ CONFIG_CLK_IMX8MP=y
++ CONFIG_DFU_TFTP=y
++ CONFIG_DFU_MMC=y
++ CONFIG_DFU_RAM=y
++-CONFIG_USB_FUNCTION_FASTBOOT=y
++-CONFIG_UDP_FUNCTION_FASTBOOT=y
++-CONFIG_FASTBOOT_BUF_ADDR=0x42800000
++-CONFIG_FASTBOOT_BUF_SIZE=0x40000000
++-CONFIG_FASTBOOT_FLASH=y
+++# CONFIG_USB_FUNCTION_FASTBOOT is not set
+++# CONFIG_UDP_FUNCTION_FASTBOOT is not set
+++# CONFIG_FASTBOOT_BUF_ADDR is not set
+++# CONFIG_FASTBOOT_BUF_SIZE is not set
+++# CONFIG_FASTBOOT_FLASH is not set
++ CONFIG_MXC_GPIO=y
++ CONFIG_DM_PCA953X=y
++ CONFIG_DM_I2C=y
++@@ -125,7 +125,7 @@ CONFIG_DM_ETH=y
++ CONFIG_DM_ETH_PHY=y
++ CONFIG_PHY_GIGE=y
++ CONFIG_PHY=y
++-CONFIG_PHY_IMX8MQ_USB=y
+++# CONFIG_PHY_IMX8MQ_USB is not set
++ CONFIG_DWC_ETH_QOS=y
++ CONFIG_DWC_ETH_QOS_IMX=y
++ CONFIG_FEC_MXC=y
++@@ -149,15 +149,15 @@ CONFIG_SYSRESET=y
++ CONFIG_SYSRESET_PSCI=y
++ CONFIG_DM_THERMAL=y
++ CONFIG_IMX_TMU=y
++-CONFIG_USB=y
++-CONFIG_DM_USB=y
++-CONFIG_USB_XHCI_HCD=y
++-CONFIG_USB_XHCI_DWC3=y
++-CONFIG_USB_DWC3=y
++-CONFIG_USB_GADGET=y
++-CONFIG_USB_GADGET_MANUFACTURER="FSL"
++-CONFIG_USB_GADGET_VENDOR_NUM=0x1fc9
++-CONFIG_USB_GADGET_PRODUCT_NUM=0x0152
+++# CONFIG_USB is not set
+++# CONFIG_DM_USB is not set
+++# CONFIG_USB_XHCI_HCD is not set
+++# CONFIG_USB_XHCI_DWC3 is not set
+++# CONFIG_USB_DWC3 is not set
+++# CONFIG_USB_GADGET is not set
+++# CONFIG_USB_GADGET_MANUFACTURER is not set
+++# CONFIG_USB_GADGET_VENDOR_NUM is not set
+++# CONFIG_USB_GADGET_PRODUCT_NUM is not set
++ CONFIG_DM_VIDEO=y
++ CONFIG_BMP_16BPP=y
++ CONFIG_BMP_24BPP=y
++diff --git a/include/configs/imx8mp_dmsse36.h b/include/configs/imx8mp_dmsse36.h
++index 0d97d075f4..122bca23e5 100755
++--- a/include/configs/imx8mp_dmsse36.h
+++++ b/include/configs/imx8mp_dmsse36.h
++@@ -63,7 +63,6 @@
++ 
++ #ifdef CONFIG_DISTRO_DEFAULTS
++ #define BOOT_TARGET_DEVICES(func) \
++-	func(USB, usb, 0) \
++ 	func(MMC, mmc, 1) \
++ 	func(MMC, mmc, 2)
++ 
++-- 
++2.25.1
++
+diff --git a/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend b/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
+index 30116f5..463531a 100644
+--- a/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
++++ b/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
+@@ -4,4 +4,5 @@ SRC_URI += " \
+ file://A0012-Enable-bootmenu-command.patch \
+ file://A0013-Set-bootdelay-to-0.patch \
+ file://A0013-silent-the-console-output.patch \
++file://A0013-Disable-USB-boot-mode.patch \
+ "
+-- 
+2.43.0
+

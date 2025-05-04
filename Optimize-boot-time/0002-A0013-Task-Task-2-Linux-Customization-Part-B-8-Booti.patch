@@ -1,0 +1,67 @@
+From 2860206880829d7447750161dbfc82c1bd87e272 Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Tue, 17 Sep 2024 13:41:43 +0700
+Subject: [PATCH 2/4] A0013 [Task] Task 2: Linux Customization Part B #8
+ Booting optimization
+
+1.silent the console output
+---
+ .../A0013-silent-the-console-output.patch     | 35 +++++++++++++++++++
+ .../u-boot/u-boot-imx_2022.04.bbappend        |  1 +
+ 2 files changed, 36 insertions(+)
+ create mode 100644 recipes-bsp/u-boot/u-boot-imx/A0013-silent-the-console-output.patch
+
+diff --git a/recipes-bsp/u-boot/u-boot-imx/A0013-silent-the-console-output.patch b/recipes-bsp/u-boot/u-boot-imx/A0013-silent-the-console-output.patch
+new file mode 100644
+index 0000000..56d3d6c
+--- /dev/null
++++ b/recipes-bsp/u-boot/u-boot-imx/A0013-silent-the-console-output.patch
+@@ -0,0 +1,35 @@
++From e222226d8f943e08f91082b6fbd324f702d748e7 Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen6@windriver.com>
++Date: Tue, 17 Sep 2024 06:34:28 +0000
++Subject: [PATCH 2/3] A0013 silent the console output
++
++---
++ common/console.c                    | 2 +-
++ configs/imx8mp_dmsse36_4G_defconfig | 1 +
++ 2 files changed, 2 insertions(+), 1 deletion(-)
++
++diff --git a/common/console.c b/common/console.c
++index 92b1c93be1..8a072b3dd8 100644
++--- a/common/console.c
+++++ b/common/console.c
++@@ -897,7 +897,7 @@ static bool console_update_silent(void)
++ 	if (!IS_ENABLED(CONFIG_SILENT_CONSOLE))
++ 		return false;
++ 
++-	if (env_get("silent")) {
+++	if (1) {
++ 		gd->flags |= GD_FLG_SILENT;
++ 		return false;
++ 	}
++diff --git a/configs/imx8mp_dmsse36_4G_defconfig b/configs/imx8mp_dmsse36_4G_defconfig
++index 2c15f33b52..59f44970b7 100755
++--- a/configs/imx8mp_dmsse36_4G_defconfig
+++++ b/configs/imx8mp_dmsse36_4G_defconfig
++@@ -193,3 +193,4 @@ CONFIG_EFI_HAVE_CAPSULE_UPDATE=y
++ CONFIG_FIT_SIGNATURE=y
++ CONFIG_CMD_BOOTMENU=y
++ CONFIG_BOOTDELAY=0
+++CONFIG_SILENT_CONSOLE=y
++-- 
++2.25.1
++
+diff --git a/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend b/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
+index fa4cbd3..30116f5 100644
+--- a/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
++++ b/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
+@@ -3,4 +3,5 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+ SRC_URI += " \
+ file://A0012-Enable-bootmenu-command.patch \
+ file://A0013-Set-bootdelay-to-0.patch \
++file://A0013-silent-the-console-output.patch \
+ "
+-- 
+2.43.0
+

@@ -1,0 +1,107 @@
+From a24cec7401b4857837b8c9ece81e2a14361d97e0 Mon Sep 17 00:00:00 2001
+From: Hoang <hoang.bui@zien.vn>
+Date: Thu, 22 Aug 2024 10:26:45 +0700
+Subject: [PATCH 4/4] A0013 [Task] Task 2: Linux Customization Part B #8
+ Booting optimization
+
+1. Change the console and message loglevel
+---
+ recipes-fsl/fsl-rc-local/files/rc.local.etc   | 32 +++++++++++++++++++
+ .../fsl-rc-local/fsl-rc-local.bbappend        |  2 ++
+ ...nge-the-console-and-message-loglevel.patch | 25 +++++++++++++++
+ recipes-kernel/linux/linux-imx_5.15.bbappend  |  1 +
+ 4 files changed, 60 insertions(+)
+ create mode 100755 recipes-fsl/fsl-rc-local/files/rc.local.etc
+ create mode 100644 recipes-fsl/fsl-rc-local/fsl-rc-local.bbappend
+ create mode 100644 recipes-kernel/linux/linux-imx/A0013-Change-the-console-and-message-loglevel.patch
+
+diff --git a/recipes-fsl/fsl-rc-local/files/rc.local.etc b/recipes-fsl/fsl-rc-local/files/rc.local.etc
+new file mode 100755
+index 0000000..17458a3
+--- /dev/null
++++ b/recipes-fsl/fsl-rc-local/files/rc.local.etc
+@@ -0,0 +1,32 @@
++#!/bin/sh -e
++#
++# rc.local
++#
++# This script is executed at the end of each multiuser runlevel.
++# Make sure that the script will "exit 0" on success or any other
++# value on error.
++#
++# In order to enable or disable this script just change the execution
++# bits.
++#
++# By default this script does nothing.
++
++# Set THP as madvise mode
++if [ -e /sys/kernel/mm/transparent_hugepage/enabled ]
++then
++    echo madvise >/sys/kernel/mm/transparent_hugepage/enabled
++fi
++
++# Set min_free_kbyte to avoid kernel dump from eth for 4K video playback use case
++echo 30000 >  /proc/sys/vm/min_free_kbytes
++if [ -f /sys/devices/soc0/soc_id ]
++then
++    CPUREV=$(cat /sys/devices/soc0/soc_id)
++    if [ $CPUREV == "i.MX8QM" ] || [ $CPUREV == "i.MX8QXP" ] || [ $CPUREV == "i.MX8MQ" ]
++    then
++        echo 80000 >  /proc/sys/vm/min_free_kbytes
++    fi
++fi
++
++exit 0
++
+diff --git a/recipes-fsl/fsl-rc-local/fsl-rc-local.bbappend b/recipes-fsl/fsl-rc-local/fsl-rc-local.bbappend
+new file mode 100644
+index 0000000..d7b891b
+--- /dev/null
++++ b/recipes-fsl/fsl-rc-local/fsl-rc-local.bbappend
+@@ -0,0 +1,2 @@
++#Provide our own rc.local file
++FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+diff --git a/recipes-kernel/linux/linux-imx/A0013-Change-the-console-and-message-loglevel.patch b/recipes-kernel/linux/linux-imx/A0013-Change-the-console-and-message-loglevel.patch
+new file mode 100644
+index 0000000..366e129
+--- /dev/null
++++ b/recipes-kernel/linux/linux-imx/A0013-Change-the-console-and-message-loglevel.patch
+@@ -0,0 +1,25 @@
++From 86a7a4a9be6530b15d0ca4c320c211c2486a87ab Mon Sep 17 00:00:00 2001
++From: Hoang Bui <hoang.bui@windriver.com>
++Date: Wed, 21 Aug 2024 10:41:46 +0000
++Subject: [PATCH] A0013 [Task] Task 2: Linux Customization Part B #8 Booting optimization
++
++1. Change the console and message loglevel
++---
++ arch/arm64/configs/imx_v8_adv_defconfig | 4 ++++
++ 1 file changed, 4 insertions(+)
++
++diff --git a/arch/arm64/configs/imx_v8_adv_defconfig b/arch/arm64/configs/imx_v8_adv_defconfig
++index 9e65e7ab5de1..c88105a4d464 100644
++--- a/arch/arm64/configs/imx_v8_adv_defconfig
+++++ b/arch/arm64/configs/imx_v8_adv_defconfig
++@@ -1311,3 +1311,7 @@ CONFIG_CRYPTO_AUTHENC=y
++ CONFIG_CRYPTO_SEQIV=y
++ 
++ CONFIG_CRYPTO_CBC=y
+++
+++CONFIG_CONSOLE_LOGLEVEL_DEFAULT=3
+++CONFIG_CONSOLE_LOGLEVEL_QUIET=3
+++CONFIG_MESSAGE_LOGLEVEL_DEFAULT=3
++-- 
++2.25.1
++
+diff --git a/recipes-kernel/linux/linux-imx_5.15.bbappend b/recipes-kernel/linux/linux-imx_5.15.bbappend
+index 52605a7..eb111eb 100644
+--- a/recipes-kernel/linux/linux-imx_5.15.bbappend
++++ b/recipes-kernel/linux/linux-imx_5.15.bbappend
+@@ -2,4 +2,5 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+ 
+ SRC_URI += " \
+ file://A0006-Enable-kernel-config-for-Docker.patch \
++file://A0013-Change-the-console-and-message-loglevel.patch \
+ "
+-- 
+2.43.0
+

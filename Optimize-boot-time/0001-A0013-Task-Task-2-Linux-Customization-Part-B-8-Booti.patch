@@ -1,0 +1,66 @@
+From 4ed4e629ab422d5e736204116f782cce94424be7 Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Tue, 17 Sep 2024 13:39:56 +0700
+Subject: [PATCH 1/4] A0013 [Task] Task 2: Linux Customization Part B #8
+ Booting optimization
+
+1. set the bootdelay of uboot to 0
+---
+ .../u-boot-imx/A0013-Set-bootdelay-to-0.patch | 34 +++++++++++++++++++
+ .../u-boot/u-boot-imx_2022.04.bbappend        |  1 +
+ 2 files changed, 35 insertions(+)
+ create mode 100644 recipes-bsp/u-boot/u-boot-imx/A0013-Set-bootdelay-to-0.patch
+
+diff --git a/recipes-bsp/u-boot/u-boot-imx/A0013-Set-bootdelay-to-0.patch b/recipes-bsp/u-boot/u-boot-imx/A0013-Set-bootdelay-to-0.patch
+new file mode 100644
+index 0000000..d85fbd5
+--- /dev/null
++++ b/recipes-bsp/u-boot/u-boot-imx/A0013-Set-bootdelay-to-0.patch
+@@ -0,0 +1,34 @@
++From 5ae25a67cd317d4e435ef8e237194862e9cc11eb Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen6@windriver.com>
++Date: Tue, 17 Sep 2024 06:33:21 +0000
++Subject: [PATCH 1/3] A0013 Set bootdelay to 0
++
++---
++ configs/imx8mp_dmsse36_4G_defconfig | 1 +
++ env/env.c                           | 1 +
++ 2 files changed, 2 insertions(+)
++
++diff --git a/configs/imx8mp_dmsse36_4G_defconfig b/configs/imx8mp_dmsse36_4G_defconfig
++index ddecdcde0e..2c15f33b52 100755
++--- a/configs/imx8mp_dmsse36_4G_defconfig
+++++ b/configs/imx8mp_dmsse36_4G_defconfig
++@@ -192,3 +192,4 @@ CONFIG_EFI_ESRT=y
++ CONFIG_EFI_HAVE_CAPSULE_UPDATE=y
++ CONFIG_FIT_SIGNATURE=y
++ CONFIG_CMD_BOOTMENU=y
+++CONFIG_BOOTDELAY=0
++diff --git a/env/env.c b/env/env.c
++index 7bb94dc8c1..db67ac2b99 100644
++--- a/env/env.c
+++++ b/env/env.c
++@@ -187,6 +187,7 @@ int env_load(void)
++ 		ret = drv->load();
++ 		if (!ret) {
++ 			printf("OK\n");
+++			env_set("bootdelay",__stringify(CONFIG_BOOTDELAY));
++ 			gd->env_load_prio = prio;
++ 
++ #if !CONFIG_IS_ENABLED(ENV_APPEND)
++-- 
++2.25.1
++
+diff --git a/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend b/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
+index e84f3ef..fa4cbd3 100644
+--- a/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
++++ b/recipes-bsp/u-boot/u-boot-imx_2022.04.bbappend
+@@ -2,4 +2,5 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+ 
+ SRC_URI += " \
+ file://A0012-Enable-bootmenu-command.patch \
++file://A0013-Set-bootdelay-to-0.patch \
+ "
+-- 
+2.43.0
+
