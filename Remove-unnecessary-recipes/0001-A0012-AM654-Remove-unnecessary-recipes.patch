@@ -1,0 +1,42 @@
+From 47e40d4b5d312297243ced1e1d953236b362b870 Mon Sep 17 00:00:00 2001
+From: Lam Doan <lam.doan@windriver.com>
+Date: Mon, 27 Mar 2023 10:45:06 +0700
+Subject: [PATCH] A0012 [AM654] Remove unnecessary recipes
+
+Description:
+	Remove unnecessary recipes
+
+Solution:
+	Using PACKAGE_EXCLUDE_append variable
+
+Trace Link:
+	https://trace3.windriver.com/?TWN-DDA307483_LX,A0012
+---
+ build/conf/local.conf | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/build/conf/local.conf b/build/conf/local.conf
+index b0a9802..58c9ee2 100644
+--- a/build/conf/local.conf
++++ b/build/conf/local.conf
+@@ -348,6 +348,10 @@ KERNEL_FEATURES_append = " cfg/systemd.scc"
+ #VIRTUAL-RUNTIME_init_manager = "sysvinit"
+ #VIRTUAL-RUNTIME_initscripts = "initscripts"
+ 
++INHERIT += "buildhistory"
++BUILDHISTORY_COMMIT = "1"
++BUILDHISTORY_FEATURES = "image"
++
+ #
+ # Qemu configuration
+ #
+@@ -386,3 +390,5 @@ IMAGE_INSTALL_append = " codesys components libgpiod ethtool"
+ # Remove GPLv3 Package
+ #INCOMPATIBLE_LICENSE = "GPLv3 GPLv3+ LGPLv3 LGPLv3+"
+ #IMAGE_INSTALL_append = " opkg"
++
++PACKAGE_EXCLUDE_append = " attr packagegroup-wr-base"
+\ No newline at end of file
+-- 
+2.25.1
+
