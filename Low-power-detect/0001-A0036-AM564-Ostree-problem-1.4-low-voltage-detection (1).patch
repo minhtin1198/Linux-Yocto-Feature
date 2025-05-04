@@ -1,0 +1,109 @@
+From b7de53cd3e22ffc0de759fe2fec18c4b957263ad Mon Sep 17 00:00:00 2001
+From: Hoang <hoang.bui@zien.vn>
+Date: Tue, 7 May 2024 14:12:03 +0700
+Subject: [PATCH] A0036 [AM564]Ostree problem-1.4 low voltage detection new
+ requirement
+
+1. check the low power flag and boot time flag to process the number of consecutive boot failures
+---
+ recipes-bsp/u-boot/u-boot-uenv_2.0.bb | 62 +++++++++++++++++++++++++++
+ 1 file changed, 62 insertions(+)
+
+diff --git a/recipes-bsp/u-boot/u-boot-uenv_2.0.bb b/recipes-bsp/u-boot/u-boot-uenv_2.0.bb
+index 087de3f..df05147 100644
+--- a/recipes-bsp/u-boot/u-boot-uenv_2.0.bb
++++ b/recipes-bsp/u-boot/u-boot-uenv_2.0.bb
+@@ -131,6 +131,11 @@ if fatload mmc \${mmcdev}:1 \${loadaddr} boot_ab_flag;then setexpr.l bpartv *\${
+ setenv obpart \${bpart}
+ setexpr loadaddr1 \${loadaddr} + 1
+ setexpr loadaddr2 \${loadaddr} + 2
++setexpr loadaddr3 \${loadaddr} + 3
++setexpr loadaddr4 \${loadaddr} + 4
++setexpr loadaddr5 \${loadaddr} + 5
++setexpr loadaddr6 \${loadaddr} + 6
++
+ setexpr bct_addr \${loadaddr} + 200
+ setexpr bct_addr1 \${loadaddr} + 201
+ setexpr rootFS_A_addr \${loadaddr} + 202
+@@ -140,21 +145,78 @@ setexpr boot_ctl_addr \${loadaddr} + 204
+ mw.l \${bct_addr} 52573030
+ setenv cntv 30
+ setenv bdef 30
++setenv low_power_flag_value 30
++setenv boot_time_flag_value 30
++setenv compare_low_power_flag_value 30
++setenv compare_boot_time_flag_value 30
+ #setenv abctrl 3030
+ setenv switchab if test \\\${bpart} = B\\;then setenv bpart A\\;else setenv bpart B\\;fi
+ 
++#Creating and writing to compare_low_power_flag if it doesn't exist
++if fatload mmc \${mmcdev}:1 \${loadaddr3} compare_low_power_flag; then
++    setexpr.b compare_low_power_flag_value *\${loadaddr3}
++else
++    mw.b \${loadaddr3} 30
++    fatwrite mmc \${mmcdev}:1 \${loadaddr3} compare_low_power_flag 1
++    setexpr.b compare_low_power_flag_value *\${loadaddr3}
++fi
++
++#Creating and writing to compare_boot_time_flag if it doesn't exist
++if fatload mmc \${mmcdev}:1 \${loadaddr3} compare_boot_time_flag; then
++    setexpr.b compare_boot_time_flag_value *\${loadaddr3}
++else
++    mw.b \${loadaddr3} 30
++    fatwrite mmc \${mmcdev}:1 \${loadaddr3} compare_boot_time_flag 1
++    setexpr.b compare_boot_time_flag_value *\${loadaddr3}
++fi
++
+ if fatload mmc \${mmcdev}:1 \${boot_ctl_addr} boot_ctl; then
+     setexpr.w abctrl *\${boot_ctl_addr} \& 0x0000ffff;
+ fi
+ 
+ if fatload mmc \${mmcdev}:1 \${loadaddr} boot_cnt;then setexpr.w cntv0 *\${loadaddr2};if test \${cntv0} = 5257;then setexpr.b cntv *\${loadaddr};setexpr.b bdef *\${loadaddr1};fi;fi
+ if test \${bdef} = 31;then run switchab;fi
++#Read data in the low_power_flag file
++if ext4load mmc \${mmcdev}:6 \${loadaddr4} low_power_flag; then
++    setexpr.b low_power_flag_value *\${loadaddr4}
++else
++    mw.b \${loadaddr4} 30
++    setexpr.b low_power_flag_value *\${loadaddr4}
++fi
++
++#Read data in the boot_time_flag file
++if ext4load mmc \${mmcdev}:6 \${loadaddr6} boot_time_flag; then
++    setexpr.b boot_time_flag_value *\${loadaddr6}
++else
++    mw.b \${loadaddr6} 30
++    setexpr.b boot_time_flag_value *\${loadaddr6}
++fi
++
++# Compare values and reset compare_value if they are different
++if test \${compare_low_power_flag_value} -ne \${low_power_flag_value}; then
++    # Decreasing the cntv variable if the preboot failed for the low voltage issue.
++    if test \${cntv} -gt 30; then
++        if test \${compare_boot_time_flag_value} -eq \${boot_time_flag_value}; then
++		   setexpr.b cntv \${cntv} - 1
++        fi
++    fi
++    setexpr.b compare_low_power_flag_value \${low_power_flag_value}
++    mw.b \${loadaddr3} \${compare_low_power_flag_value}
++
++    setexpr.b compare_boot_time_flag_value \${boot_time_flag_value}
++    mw.b \${loadaddr5} \${compare_boot_time_flag_value}
++
++fi
++
+ if test \${cntv} -gt \${bretry};then run switchab;setenv cntv 30;if test \${bdef} = 31; then setenv bdef 30;else setenv bdef 31;fi;else setexpr.b cntv \${cntv} + 1;fi
++
+ mw.b \${bct_addr} \${cntv}
+ mw.b \${bct_addr1} \${bdef}
+ fatwrite mmc \${mmcdev}:1 \${bct_addr} boot_cnt 4
+ fatwrite mmc \${mmcdev}:1 \${rootFS_A_addr} rootFS_A 4
+ fatwrite mmc \${mmcdev}:1 \${boot_ctl_addr} boot_ctl 4
++fatwrite mmc \${mmcdev}:1 \${loadaddr3} compare_low_power_flag 1
++fatwrite mmc \${mmcdev}:1 \${loadaddr5} compare_boot_time_flag 1
+ if test -n \${oURL}; then
+  setenv URL "\${oURL}"
+ else
+-- 
+2.43.0
+

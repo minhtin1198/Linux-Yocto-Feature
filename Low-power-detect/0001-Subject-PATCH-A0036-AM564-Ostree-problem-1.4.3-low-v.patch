@@ -1,0 +1,25 @@
+From 91b6be1ed9860b6c0bb9a5e5f58f6f232b60e639 Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Mon, 27 May 2024 14:22:12 +0700
+Subject: [PATCH] Subject: [PATCH] A0036 [AM564]Ostree problem-1.4.3 low
+ voltage detection new requirement
+
+1. Disable the GPIO IRQ after the watchdog service is running to confirm the OS has started
+---
+ recipes-support/watchdog/files/clearbootflag_arm.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/recipes-support/watchdog/files/clearbootflag_arm.sh b/recipes-support/watchdog/files/clearbootflag_arm.sh
+index f3de64e..dc0ddf6 100644
+--- a/recipes-support/watchdog/files/clearbootflag_arm.sh
++++ b/recipes-support/watchdog/files/clearbootflag_arm.sh
+@@ -31,5 +31,6 @@ if [ "$tdir" != "" ] ; then
+ 	fi
+ 	umount ${tdir}
+ 	rm -rf ${tdir}
++	printf '1' > /sys/module/lp_detect_gpio/parameters/is_boot_success_flag
+ fi
+ 
+-- 
+2.43.0
+

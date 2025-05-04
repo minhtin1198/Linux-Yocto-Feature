@@ -1,0 +1,621 @@
+From 486f46b8cfacdacfa65dc3491e11ec716379cc2f Mon Sep 17 00:00:00 2001
+From: tnguyen6 <Tin.Nguyen@windriver.com>
+Date: Tue, 28 May 2024 11:00:29 +0700
+Subject: [PATCH] A0036 [AM564]Ostree problem-1.4 low voltage detection new
+ requirement
+
+1. Create the GPIO Interrupt driver to get the low power event and set low power flag to eMMC
+2. Create the Timer Interrupt service to check the boot time and set boot time flag to eMMC
+---
+ .../A0036-AM564-Ostree-problem-1.3.patch      | 346 ++++++++++++++++++
+ ...ee-problem-Develop-the-Timer-interru.patch | 219 +++++++++++
+ recipes-kernel/linux/files/ti-am65x-patch.scc |   2 +
+ recipes-kernel/linux/files/ti-am65x.cfg       |   6 +
+ 4 files changed, 573 insertions(+)
+ create mode 100644 recipes-kernel/linux/files/A0036-AM564-Ostree-problem-1.3.patch
+ create mode 100644 recipes-kernel/linux/files/A0036-AM564-Ostree-problem-Develop-the-Timer-interru.patch
+
+diff --git a/recipes-kernel/linux/files/A0036-AM564-Ostree-problem-1.3.patch b/recipes-kernel/linux/files/A0036-AM564-Ostree-problem-1.3.patch
+new file mode 100644
+index 0000000..90ce5cd
+--- /dev/null
++++ b/recipes-kernel/linux/files/A0036-AM564-Ostree-problem-1.3.patch
+@@ -0,0 +1,346 @@
++From 650b866dea0f2f53b59569787886635e7f74bf44 Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen@windriver.com>
++Date: Wed, 17 Apr 2024 02:51:03 +0000
++Subject: [PATCH 1/2] A0036 [AM564]Ostree problem-1.3
++
++1. Create the GPIO interrupt driver
++---
++ .../arm64/boot/dts/ti/k3-am654-base-board.dts |  15 +-
++ drivers/hwmon/Kconfig                         |   6 +
++ drivers/hwmon/Makefile                        |   1 +
++ drivers/hwmon/lp_detect_gpio.c                | 257 ++++++++++++++++++
++ 4 files changed, 278 insertions(+), 1 deletion(-)
++ create mode 100644 drivers/hwmon/lp_detect_gpio.c
++
++diff --git a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
++index 6b88e2bb514d..bb73c66a7f77 100644
++--- a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
+++++ b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
++@@ -13,6 +13,12 @@
++ 	compatible =  "ti,am654-evm", "ti,am654";
++ 	model = "Texas Instruments AM654 Base Board";
++ 
+++	lp-gpio {
+++		pinctrl-names = "default";
+++		pinctrl-0 = <&lp_gpio_pins>;
+++		compatible = "lp-detect-gpio";
+++	};
+++
++ 	aliases {
++ 		ethernet1 = &pruss1_emac0; //Ethernet port 0
++ 		//ethernet2 = &pruss1_emac1; //EtherCAT port 1
++@@ -363,7 +369,6 @@
++ 			AM65X_IOPAD(0x0064, PIN_OUTPUT, 7)  /* (T24) GPIO0_25 */ /*/AX58100-PYH-RST*/
++ 			AM65X_IOPAD(0x0068, PIN_OUTPUT, 7)  /* (R24) GPIO0_26 */ /*CAN-TERM*/
++ 			AM65X_IOPAD(0x0070, PIN_OUTPUT, 7)  /* (R25) GPIO0_28 */ /*GPIO-eMMC-RST*/
++-			AM65X_IOPAD(0x0074, PIN_INPUT, 7)   /* (T27) GPIO0_29 */ /*/24V-LV*/
++ 			AM65X_IOPAD(0x00ac, PIN_INPUT, 1)   /* (AH15) PRG2_PRU1_GPO0.GPIO0_43 */
++ 			AM65X_IOPAD(0x00b0, PIN_INPUT, 1)   /* (AC16) PRG2_PRU1_GPO1.GPIO0_44 */
++ 			AM65X_IOPAD(0x00b4, PIN_INPUT, 1)   /* (AD17) PRG2_PRU1_GPO2.GPIO0_45 */
++@@ -919,3 +924,11 @@
++ 		ti,fifo-depth = <DP83867_PHYCR_FIFO_DEPTH_4_B_NIB>;
++ 	};
++ };
+++
+++&main_pmx0 {
+++	lp_gpio_pins: pinmux_lp_gpio_pins {
+++		pinctrl-single,pins = <
+++			AM65X_IOPAD(0x0074, PIN_INPUT, 7)   /* (T27) GPIO0_29 */ /*/24V-LV*/
+++		>;
+++	};
+++};
++diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
++index 650dd71f9724..97529673a4cc 100644
++--- a/drivers/hwmon/Kconfig
+++++ b/drivers/hwmon/Kconfig
++@@ -570,6 +570,12 @@ config SENSORS_GPIO_FAN
++ 	  This driver can also be built as a module. If so, the module
++ 	  will be called gpio-fan.
++ 
+++config LP_DETECT_GPIO
+++	tristate "Handle low power event"
+++	help
+++	  If you select 'yes' here, you will receive support
+++	  for an interrupt to trigger from GPIO (24V-LV).
+++
++ config SENSORS_HIH6130
++ 	tristate "Honeywell Humidicon HIH-6130 humidity/temperature sensor"
++ 	depends on I2C
++diff --git a/drivers/hwmon/Makefile b/drivers/hwmon/Makefile
++index 8db472ea04f0..31f203cedf2a 100644
++--- a/drivers/hwmon/Makefile
+++++ b/drivers/hwmon/Makefile
++@@ -72,6 +72,7 @@ obj-$(CONFIG_SENSORS_G762)	+= g762.o
++ obj-$(CONFIG_SENSORS_GL518SM)	+= gl518sm.o
++ obj-$(CONFIG_SENSORS_GL520SM)	+= gl520sm.o
++ obj-$(CONFIG_SENSORS_GPIO_FAN)	+= gpio-fan.o
+++obj-$(CONFIG_LP_DETECT_GPIO) += lp_detect_gpio.o
++ obj-$(CONFIG_SENSORS_HIH6130)	+= hih6130.o
++ obj-$(CONFIG_SENSORS_ULTRA45)	+= ultra45_env.o
++ obj-$(CONFIG_SENSORS_I5500)	+= i5500_temp.o
++diff --git a/drivers/hwmon/lp_detect_gpio.c b/drivers/hwmon/lp_detect_gpio.c
++new file mode 100644
++index 000000000000..eef2db282830
++--- /dev/null
+++++ b/drivers/hwmon/lp_detect_gpio.c
++@@ -0,0 +1,257 @@
+++#include <asm/uaccess.h>
+++#include <linux/cdev.h>
+++#include <linux/delay.h>
+++#include <linux/err.h>
+++#include <linux/errno.h>
+++#include <linux/fcntl.h>
+++#include <linux/fs.h>
+++#include <linux/gpio.h>
+++#include <linux/init.h>
+++#include <linux/input.h>
+++#include <linux/interrupt.h>
+++#include <linux/irq.h>
+++#include <linux/kernel.h>
+++#include <linux/module.h>
+++#include <linux/moduleparam.h>
+++#include <linux/of_gpio.h>
+++#include <linux/platform_device.h>
+++#include <linux/pm.h>
+++#include <linux/pm_runtime.h>
+++#include <linux/regulator/consumer.h>
+++#include <linux/slab.h>
+++#include <linux/syscalls.h>
+++#include <linux/uaccess.h>
+++#include <linux/workqueue.h>
+++
+++#define GPIO_NUM 389
+++/** variable contains pin number o interrupt controller to which GPIO0_29 is
+++ * mapped to */
+++unsigned int irq_number;
+++
+++static const char *path_log = "/sysroot/low_power_flag";
+++
+++/*Creating work by Static Method */
+++void set_low_power_flag_work_proc(struct work_struct *work);
+++
+++DECLARE_WORK(set_low_power_flag_work, set_low_power_flag_work_proc);
+++
+++/*Workqueue Function*/
+++void set_low_power_flag_work_proc(struct work_struct *work)
+++{
+++	/**
+++	 * Write to a file when the low voltage was deteted
+++	 */
+++
+++	struct file *file;
+++	struct file *read;
+++	char data[1] = "1";
+++	ssize_t len;
+++
+++	/*Checking file is exsit*/
+++	read = filp_open(path_log, O_RDONLY, 0);
+++
+++	if (read == -ENOENT)
+++	{
+++
+++		/* Open the file */
+++		file = filp_open(path_log, O_CREAT | O_RDWR | O_TRUNC, 0664);
+++		if (IS_ERR(file))
+++		{
+++			pr_err("GPIO_IRQ: Error opening file\n");
+++			return PTR_ERR(file);
+++		}
+++
+++		/* Write to the file */
+++		len = kernel_write(file, data, sizeof(data), &file->f_pos);
+++		if (len < 0)
+++		{
+++			pr_err("GPIO_IRQ: Error writing to file: %d\n", len);
+++			filp_close(file, NULL);
+++		}
+++
+++		vfs_fsync(file, 0);
+++		filp_close(file, NULL);
+++	}
+++	else
+++	{
+++		/**
+++		 * If the file exists, toggle the variable in this file
+++		 */
+++		/* Reading it back */
+++		memset(data, 0, sizeof(data));
+++		read->f_pos = 0;
+++		len = kernel_read(read, data, sizeof(data), &read->f_pos);
+++		if (len < 0)
+++		{
+++			pr_err("GPIO_IRQ: Error reading the file: %d\n", len);
+++			filp_close(read, NULL);
+++		}
+++
+++		/*Toggle the detect variable*/
+++		if (data[0] == '1')
+++		{
+++			/* Opening the file */
+++			file = filp_open(path_log, O_CREAT | O_RDWR | O_TRUNC, 0664);
+++
+++			if (IS_ERR(file))
+++			{
+++				pr_err("GPIO_IRQ: Error opening file\n");
+++				return PTR_ERR(file);
+++			}
+++
+++			file->f_pos = 0;
+++			len = kernel_write(file, "0", sizeof(char), &file->f_pos);
+++			if (len < 0)
+++			{
+++				pr_err("GPIO_IRQ: Error writing to file: %d\n", len);
+++				filp_close(file, NULL);
+++			}
+++		}
+++		else
+++		{
+++			/* Opening the file */
+++			file = filp_open(path_log, O_CREAT | O_RDWR | O_TRUNC, 0664);
+++
+++			if (IS_ERR(file))
+++			{
+++				pr_err("GPIO_IRQ: Error opening file\n");
+++				return PTR_ERR(file);
+++			}
+++
+++			file->f_pos = 0;
+++			len = kernel_write(file, "1", sizeof(char), &file->f_pos);
+++			if (len < 0)
+++			{
+++				pr_err("GPIO_IRQ: Error writing to file: %d\n", len);
+++				filp_close(file, NULL);
+++			}
+++		}
+++		vfs_fsync(file, 0);
+++		filp_close(file, NULL);
+++	}
+++}
+++/*----------------------Module_param_cb()--------------------------------*/
+++int is_boot_success_flag = 0;
+++int notify_param(const char *val, const struct kernel_param *kp)
+++{
+++	int res = param_set_int(val, kp); // Use helper for write variable
+++	if (res == 0)
+++	{
+++
+++		/*disable IRQ*/
+++		disable_irq(gpio_to_irq(GPIO_NUM));
+++
+++		gpio_free(GPIO_NUM);
+++
+++		return 0;
+++	}
+++	return -1;
+++}
+++
+++static const struct kernel_param_ops my_param_ops = {
+++	.set = notify_param,
+++	.get = param_get_int,
+++};
+++
+++module_param_cb(is_boot_success_flag, &my_param_ops, &is_boot_success_flag,
+++				S_IRUGO | S_IWUSR);
+++/*-------------------------------------------------------------------------*/
+++/**
+++ * @brief Interrupt service routine is called, when interrupt is triggered
+++ */
+++
+++static irq_handler_t gpio_irq_handler(unsigned int irq, void *dev_id,
+++									  struct pt_regs *regs)
+++{
+++
+++	schedule_work(&set_low_power_flag_work);
+++	return (irq_handler_t)IRQ_HANDLED;
+++}
+++
+++static int lp_detect_gpio_probe(struct platform_device *pdev)
+++{
+++	struct device *dev = &pdev->dev;
+++	int err = 0;
+++
+++	if (!gpio_is_valid(GPIO_NUM))
+++	{
+++		pr_err("GPIO_IRQ: gpio pin %d is not available\n", GPIO_NUM);
+++		goto exit;
+++	}
+++
+++	err = gpio_request(GPIO_NUM, "24V-LV");
+++	if (err)
+++	{
+++		pr_err("GPIO_IRQ: Can not request gpio: %d\n", GPIO_NUM);
+++		goto exit;
+++	}
+++
+++	/* Set GPIO direction */
+++	if (gpio_direction_input(GPIO_NUM))
+++	{
+++		pr_err("GPIO_IRQ: Can not set GPIO0_29 to input!\n");
+++		gpio_free(GPIO_NUM);
+++		return -1;
+++	}
+++
+++	/* Setup the interrupt */
+++	irq_number = gpio_to_irq(GPIO_NUM);
+++
+++	if (request_irq(irq_number, (irq_handler_t)gpio_irq_handler,
+++					IRQF_TRIGGER_FALLING, "my_gpio_irq", NULL) != 0)
+++	{
+++		pr_err("GPIO_IRQ:Can not request interrupt nr.: %d\n", irq_number);
+++		gpio_free(GPIO_NUM);
+++		return -1;
+++	}
+++
+++	return 0;
+++
+++free_gpio:
+++	gpio_free(GPIO_NUM);
+++
+++exit:
+++	return err;
+++}
+++
+++static int lp_detect_gpio_remove(struct platform_device *pdev)
+++{
+++	struct device *dev = &pdev->dev;
+++	gpio_free(GPIO_NUM);
+++
+++	return 0;
+++}
+++
+++static struct of_device_id lp_detect_gpio_dt_ids[] = {
+++	{
+++		.compatible = "lp-detect-gpio",
+++	},
+++	{},
+++};
+++
+++static struct platform_driver lp_detect_gpio_driver = {
+++	.driver =
+++		{
+++			.name = "lp-detect-gpio",
+++			.owner = THIS_MODULE,
+++			.of_match_table = of_match_ptr(lp_detect_gpio_dt_ids),
+++		},
+++	.probe = lp_detect_gpio_probe,
+++	.remove = lp_detect_gpio_remove,
+++};
+++
+++static int __init lp_detect_gpio_init(void)
+++{
+++	return platform_driver_register(&lp_detect_gpio_driver);
+++}
+++
+++static void __exit lp_detect_gpio_exit(void)
+++{
+++	platform_driver_unregister(&lp_detect_gpio_driver);
+++}
+++
+++module_init(lp_detect_gpio_init);
+++module_exit(lp_detect_gpio_exit);
+++
+++MODULE_DESCRIPTION("GPIO LOW POWER Detect");
+++MODULE_LICENSE("GPL v2");
++-- 
++2.43.0
++
+diff --git a/recipes-kernel/linux/files/A0036-AM564-Ostree-problem-Develop-the-Timer-interru.patch b/recipes-kernel/linux/files/A0036-AM564-Ostree-problem-Develop-the-Timer-interru.patch
+new file mode 100644
+index 0000000..81d2049
+--- /dev/null
++++ b/recipes-kernel/linux/files/A0036-AM564-Ostree-problem-Develop-the-Timer-interru.patch
+@@ -0,0 +1,219 @@
++From 6855ae4cd09b15ace2c6206ea7f187a1f550db34 Mon Sep 17 00:00:00 2001
++From: tnguyen6 <Tin.Nguyen@windriver.com>
++Date: Fri, 24 May 2024 03:35:48 +0000
++Subject: [PATCH 2/2] A0036 [AM564]Ostree problem:Develop the Timer interrupt
++
++1. Create the timer interrupt to check the booting time is 20 second.
++---
++ drivers/hwmon/Kconfig           |   6 ++
++ drivers/hwmon/Makefile          |   1 +
++ drivers/hwmon/timer-interrupt.c | 168 ++++++++++++++++++++++++++++++++
++ 3 files changed, 175 insertions(+)
++ create mode 100644 drivers/hwmon/timer-interrupt.c
++
++diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
++index 97529673a4cc..9593359a9092 100644
++--- a/drivers/hwmon/Kconfig
+++++ b/drivers/hwmon/Kconfig
++@@ -576,6 +576,12 @@ config LP_DETECT_GPIO
++ 	  If you select 'yes' here, you will receive support
++ 	  for an interrupt to trigger from GPIO (24V-LV).
++ 
+++config TIMER_INTERRUPT
+++	tristate "Timer interrupt to check the booting time"
+++	help
+++	  If you select 'yes' here, you will receive support
+++	  for a Timer interrupt to check the booting time
+++
++ config SENSORS_HIH6130
++ 	tristate "Honeywell Humidicon HIH-6130 humidity/temperature sensor"
++ 	depends on I2C
++diff --git a/drivers/hwmon/Makefile b/drivers/hwmon/Makefile
++index 31f203cedf2a..ee3f94a0a85c 100644
++--- a/drivers/hwmon/Makefile
+++++ b/drivers/hwmon/Makefile
++@@ -73,6 +73,7 @@ obj-$(CONFIG_SENSORS_GL518SM)	+= gl518sm.o
++ obj-$(CONFIG_SENSORS_GL520SM)	+= gl520sm.o
++ obj-$(CONFIG_SENSORS_GPIO_FAN)	+= gpio-fan.o
++ obj-$(CONFIG_LP_DETECT_GPIO) += lp_detect_gpio.o
+++obj-$(CONFIG_TIMER_INTERRUPT) += timer-interrupt.o
++ obj-$(CONFIG_SENSORS_HIH6130)	+= hih6130.o
++ obj-$(CONFIG_SENSORS_ULTRA45)	+= ultra45_env.o
++ obj-$(CONFIG_SENSORS_I5500)	+= i5500_temp.o
++diff --git a/drivers/hwmon/timer-interrupt.c b/drivers/hwmon/timer-interrupt.c
++new file mode 100644
++index 000000000000..dd72504e078b
++--- /dev/null
+++++ b/drivers/hwmon/timer-interrupt.c
++@@ -0,0 +1,168 @@
+++#include <linux/cdev.h>
+++#include <linux/device.h>
+++#include <linux/err.h>
+++#include <linux/fs.h>
+++#include <linux/init.h>
+++#include <linux/jiffies.h>
+++#include <linux/kdev_t.h>
+++#include <linux/kernel.h>
+++#include <linux/module.h>
+++#include <linux/timer.h>
+++
+++// Timer Variable
+++#define TIMEOUT 500							// milliseconds
+++#define BOOT_TIME_SEC 20					// seconds
+++#define BOOT_TIME_MSEC BOOT_TIME_SEC * 1000 // milliseconds
+++#define TIME_COUNT_LIMIT BOOT_TIME_MSEC / TIMEOUT
+++
+++static struct timer_list etx_timer;
+++
+++static unsigned int count = 0;
+++
+++static int __init timer_driver_init(void);
+++static void __exit timer_driver_exit(void);
+++
+++static const char *path_log = "/sysroot/boot_time_flag";
+++
+++void set_boot_time_flag_work_proc(struct work_struct *work);
+++
+++/*Creating work by Static Method */
+++DECLARE_WORK(set_boot_time_flag_work, set_boot_time_flag_work_proc);
+++
+++/*Workqueue Function*/
+++void set_boot_time_flag_work_proc(struct work_struct *work)
+++{
+++	/**
+++	 * Write the boot time flag
+++	 */
+++
+++	struct file *file;
+++	struct file *read;
+++	char data[1] = "1";
+++	ssize_t len;
+++
+++	/*Checking file is exsit*/
+++	read = filp_open(path_log, O_RDONLY, 0);
+++
+++	if (read == -ENOENT)
+++	{
+++
+++		/* Open the file */
+++		file = filp_open(path_log, O_CREAT | O_RDWR | O_TRUNC, 0664);
+++		if (IS_ERR(file))
+++		{
+++			pr_err("Timer: Error opening file\n");
+++			return PTR_ERR(file);
+++		}
+++
+++		/* Write to the file */
+++		len = kernel_write(file, data, sizeof(data), &file->f_pos);
+++		if (len < 0)
+++		{
+++			pr_err("Timer: Error writing to file: %d\n", len);
+++			filp_close(file, NULL);
+++		}
+++
+++		vfs_fsync(file, 0);
+++		filp_close(file, NULL);
+++	}
+++	else
+++	{
+++		/**
+++		 * If the file exists, toggle the variable in this file
+++		 */
+++		/* Reading it back */
+++		memset(data, 0, sizeof(data));
+++		read->f_pos = 0;
+++		len = kernel_read(read, data, sizeof(data), &read->f_pos);
+++		if (len < 0)
+++		{
+++			pr_err("Timer: Error reading the file: %d\n", len);
+++			filp_close(read, NULL);
+++		}
+++
+++		/*Toggle the detect variable*/
+++		if (data[0] == '1')
+++		{
+++			/* Opening the file */
+++			file = filp_open(path_log, O_CREAT | O_RDWR | O_TRUNC, 0664);
+++
+++			if (IS_ERR(file))
+++			{
+++				pr_err("Timer: Error opening file\n");
+++				return PTR_ERR(file);
+++			}
+++
+++			file->f_pos = 0;
+++			len = kernel_write(file, "0", sizeof(char), &file->f_pos);
+++			if (len < 0)
+++			{
+++				pr_err("Timer: Error writing to file: %d\n", len);
+++				filp_close(file, NULL);
+++			}
+++		}
+++		else
+++		{
+++			/* Opening the file */
+++			file = filp_open(path_log, O_CREAT | O_RDWR | O_TRUNC, 0664);
+++
+++			if (IS_ERR(file))
+++			{
+++				pr_err("Timer: Error opening file\n");
+++				return PTR_ERR(file);
+++			}
+++
+++			file->f_pos = 0;
+++			len = kernel_write(file, "1", sizeof(char), &file->f_pos);
+++			if (len < 0)
+++			{
+++				pr_err("Timer: Error writing to file: %d\n", len);
+++				filp_close(file, NULL);
+++			}
+++		}
+++		vfs_fsync(file, 0);
+++		filp_close(file, NULL);
+++	}
+++}
+++
+++// Timer Callback function. This will be called when timer expires
+++void timer_callback(struct timer_list *data)
+++{
+++	count++;
+++	mod_timer(&etx_timer, jiffies + msecs_to_jiffies(TIMEOUT));
+++
+++	if (count == TIME_COUNT_LIMIT)
+++	{
+++		del_timer(&etx_timer);
+++		schedule_work(&set_boot_time_flag_work);
+++	}
+++}
+++
+++/*
+++** Module Init function
+++*/
+++static int __init timer_driver_init(void)
+++{
+++	/* setup your timer to call my_timer_callback */
+++	timer_setup(&etx_timer, timer_callback, 0);
+++
+++	/* setup timer interval to based on TIMEOUT Macro */
+++	mod_timer(&etx_timer, jiffies + msecs_to_jiffies(TIMEOUT));
+++
+++	return 0;
+++}
+++
+++/*
+++** Module exit function
+++*/
+++static void __exit timer_driver_exit(void)
+++{
+++	/* remove kernel timer when unloading module */
+++	del_timer(&etx_timer);
+++}
+++
+++module_init(timer_driver_init);
+++module_exit(timer_driver_exit);
+++
+++MODULE_LICENSE("GPL");
+++MODULE_DESCRIPTION("A simple Timer Interrupt Service");
++-- 
++2.43.0
++
+diff --git a/recipes-kernel/linux/files/ti-am65x-patch.scc b/recipes-kernel/linux/files/ti-am65x-patch.scc
+index ed8d45b..8018702 100644
+--- a/recipes-kernel/linux/files/ti-am65x-patch.scc
++++ b/recipes-kernel/linux/files/ti-am65x-patch.scc
+@@ -650,3 +650,5 @@ patch 0001-net-ethernet-icssg-prueth-add-support-for-half-duple.patch
+ patch 0002-Enable-100M-bps-half-mode-for-PRU-ICSSG-Ethernet-Por.patch
+ patch 0001-Change-all-spin_lock-to-raw_spin_lock.patch
+ patch 0001-Linux-Kernel-Disable-spi-usb-i2c-that-not-use.patch
++patch A0036-AM564-Ostree-problem-1.3.patch
++patch A0036-AM564-Ostree-problem-Develop-the-Timer-interru.patch
+diff --git a/recipes-kernel/linux/files/ti-am65x.cfg b/recipes-kernel/linux/files/ti-am65x.cfg
+index c91e69a..42a9c7c 100644
+--- a/recipes-kernel/linux/files/ti-am65x.cfg
++++ b/recipes-kernel/linux/files/ti-am65x.cfg
+@@ -448,3 +448,9 @@ CONFIG_NETDEVICES=y
+ CONFIG_CONSOLE_LOGLEVEL_DEFAULT=3
+ CONFIG_CONSOLE_LOGLEVEL_QUIET=3
+ CONFIG_MESSAGE_LOGLEVEL_DEFAULT=3
++
++# LP detect gpio Drivers
++CONFIG_LP_DETECT_GPIO=y
++
++# Timer interrupt
++CONFIG_TIMER_INTERRUPT=y
+-- 
+2.43.0
+
